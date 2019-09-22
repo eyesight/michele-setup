@@ -1,0 +1,104 @@
+.popup-open {
+  overflow: hidden;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: white;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  overflow: auto;
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.popup__close,
+.popup__title {
+  @include content-width();
+}
+
+.popup__close {
+  margin-top: $gutter;
+  position: relative;
+  cursor: pointer;
+  @include font-size($font-settings-text-sm);
+  @include flexbox($align-content: center);
+  @include ld-margin-bottom($gutter);
+}
+
+.popup__close-icon {
+  margin-right: $gutter;
+  @include size(34px);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    background: $color-main-text;
+    width: 2px;
+    height: 45px;
+    display: block;
+    top: -6px;
+    left: 16px;
+    transform-origin: center center;
+  }
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+.popup__title {
+  opacity: 0;
+  transition: .3s all ease;
+  @include font-size($font-settings-btn-lg);
+  @include ld-margin-bottom($gutter * 2);
+
+  @include xl-min {
+    @include ld-margin-bottom($gutter * 4);
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.popup__content {
+  padding-bottom: $gutter;
+  @include full-width();
+  @include flexbox(row, wrap, space-between, flex-start);
+
+  @include sm-min {
+    padding-bottom: $gutter * 2;
+  }
+}
+
+.popup__member {
+  width: 100% !important; // important because stories won't be correct width otherwise in popup
+
+  @include md-min {
+    width: calc((100% / 2) - (50px / 2)) !important; // important because stories won't be correct width otherwise in popup
+  }
+
+  @include xl-min {
+    width: calc((100% / 3) - (150px / 2)) !important; // important because stories won't be correct width otherwise in popup
+  }
+
+  &.post-list__post{
+    margin-bottom: $gutter*3;
+
+    & +* {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+.nhs-arrow-btn {
+  display: inline-block;
+  color: $color-dark-gray;
+  position: relative;
+  transition: all 0.2s;
+  border-radius: 0;
+
+  .related--stories &,
+  .grey-theme & {
+    color: $color-white;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &:hover {
+    .pink-theme &,
+    .blue-theme &,
+    .yellow-theme & {
+      color: $color-main-text;
+    }
+
+    .nhs-arrow-btn__arrow--left {
+      .nhs-arrow-btn__shaft {
+        width: $shaft-width;
+        transition-delay: 0.1s;
+
+        &:before,
+        &:after {
+          width: $arrow-head-width;
+          transition-delay: 0.1s;
+        }
+
+        &:before {
+          transform: rotate(40deg);
+        }
+
+        &:after {
+          transform: rotate(-40deg);
+        }
+      }
+    }
+
+    .nhs-arrow-btn__main {
+      transform: translateX($shaft-width + $text-arrow-space);
+    }
+
+    .nhs-arrow-btn__arrow--right {
+      .nhs-arrow-btn__shaft {
+        width: 0;
+        transform: translateX(200%);
+        transition-delay: 0s;
+
+        &:before,
+        &:after {
+          width: 0;
+          transition-delay: 0s;
+          transition: all 0.1s;
+        }
+
+        &:before {
+          transform: rotate(0);
+        }
+
+        &:after {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+}
+
+.nhs-arrow-btn__arrow {
+  position: relative;
+  width: $shaft-width;
+  transition: all 0.2s;
+}
+
+.nhs-arrow-btn__arrow--left {
+  position: absolute;
+  top: calc(50% - #{$shaft-thickness / 2});
+  left: 0;
+}
+
+.nhs-arrow-btn__shaft {
+  background-color: $arrow-color;
+  display: block;
+  height: $shaft-thickness;
+  position: relative;
+  transition: all 0.2s;
+  transition-delay: 0s;
+  will-change: transform;
+  width: 0;
+
+  .related--stories &,
+  .grey-theme & {
+    background-color: $color-white;
+  }
+
+  &:before,
+  &:after {
+    background-color: $arrow-color;
+    content: '';
+    display: block;
+    height: $arrow-head-thickness;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+    transition-delay: 0s;
+
+    .related--stories &,
+    .grey-theme & {
+      background-color: $color-white;
+    }
+  }
+
+  &:before {
+    transform-origin: top right;
+    transform: rotate(40deg);
+  }
+
+  &:after {
+    transform-origin: bottom right;
+    transform: rotate(-40deg);
+  }
+
+  .nhs-arrow-btn__arrow--left & {
+    &:before,
+    &:after {
+      width: 0;
+      transform: rotate(0);
+    }
+  }
+
+  .nhs-arrow-btn__arrow--right & {
+    width: $shaft-width;
+    transition-delay: 0.2s;
+
+    &:before,
+    &:after {
+      width: $arrow-head-width;
+      transition-delay: 0.3s;
+      transition: all 0.5s;
+    }
+  }
+
+}
+
+.nhs-arrow-btn__main {
+  transition: all 0.2s;
+  @include flexbox(row, wrap, center, center);
+}
+
+.nhs-arrow-btn__text {
+  margin: 0 $text-arrow-space 0 0;
+  line-height: 1;
+}
+
+.nhs-arrow-btn__arrow--right {
+}

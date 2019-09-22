@@ -1,0 +1,42 @@
+.post-list {
+  @include xl-min{
+    @include ld-margin-bottom($gutter*10, '.newsletter-box');
+  }
+}
+
+.ns-lead {
+  @include ld-margin-bottom($gutter, '.filter');
+
+  @include md-min{
+    @include ld-margin-bottom($gutter*2, '.filter');
+  }
+
+  @include xl-min{
+    @include ld-margin-bottom($gutter*3, '.filter');
+    @include ld-margin-bottom($gutter*6, '.post-list');
+  }
+}
+
+.nhs-big-btn {
+  @include ld-margin-bottom($gutter*5, '.ns-big-title');
+
+  @include md-min {
+    @include ld-margin-bottom($gutter*10, '.ns-big-title');
+  }
+
+  @include xl-min{
+    @include ld-margin-bottom($gutter*16, '.ns-big-title');
+  }
+}
+
+.wp-block-image {
+  @include ld-margin-bottom($gutter*2, '.nhs-big-btn');
+
+  @include md-min {
+    @include ld-margin-bottom($gutter*4, '.nhs-big-btn');
+  }
+
+  @include xl-min {
+    @include ld-margin-bottom($gutter*6, '.nhs-big-btn');
+  }
+}

@@ -1,0 +1,244 @@
+.employees {
+  @include flexbox(row, wrap, space-between, flex-start);
+  @include full-width();
+
+  @include md-min{
+    padding-top: $gutter * 8;
+  }
+
+  @include xl-min{
+    padding-top: 0;
+  }
+
+  + .load-more {
+    margin-top: 0;
+  }
+
+  .employees__employee {
+    opacity: 0;
+
+    @include xl-min {
+      display: none;
+    }
+
+    // small
+    &:nth-of-type(3n + 3) {
+      @include xl-min {
+        align-items: center;
+      }
+    }
+
+    // medium
+    &:nth-of-type(3n + 1):not(:nth-of-type(odd)) {
+      @include xl-min {
+        align-items: flex-end;
+      }
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      &:nth-of-type(odd) {
+        margin-top: -200px;
+      }
+    }
+
+    &:nth-of-type(6n + 1) {
+      @include xl-min {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-of-type(6n + 2) {
+      @include xl-min {
+        margin-top: 150px;
+      }
+    }
+
+    &:nth-of-type(6n + 3) {
+      @include xl-min {
+        margin-top: -450px;
+      }
+    }
+
+    &:nth-of-type(6n + 4) {
+      @include xl-min {
+        marign-top: 150px;
+      }
+    }
+
+    &:nth-of-type(6n + 5) {
+      @include xl-min {
+        margin-top: -550px;
+      }
+    }
+
+    &:nth-of-type(6n + 6) {
+      @include xl-min {
+        margin-top: 150px;
+      }
+    }
+  }
+}
+
+.employees__employee {
+  margin-bottom: $gutter * 6;
+  width: 100%;
+  @include flexbox(column, wrap, flex-start, flex-start);
+  display: none;
+  transition: .3s all ease;
+  transform: translateY(100px);
+  opacity: 0;
+
+  .popup__member & {
+    margin-bottom: $gutter * 3;
+
+    @include md-min {
+      margin-bottom: $gutter * 6;
+    }
+  }
+
+  &.visible {
+    display: flex;
+  }
+
+  &.fade-in-up {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  @include md-min {
+    .employees & {
+      width: 50%;
+    }
+  }
+}
+
+.employees__employee-image {
+  background: rgba(black, 0.3);
+  position: relative;
+  display: block;
+  width: 100%;
+  @include responsive-ratio(100%, 4, 5.6, 'img');
+
+  .employees & {
+    @include responsive-ratio(100%, 4, 5.6, 'img');
+
+    @include md-min {
+      width: (100% / 3 * 2);
+      @include responsive-ratio((100% / 3 * 2), 4, 5.6, 'img');
+    }
+  }
+
+  // small
+  .employees .employees__employee:nth-of-type(3n + 3) & {
+    @include xl-min {
+      width: 50%;
+      @include responsive-ratio(50%, 4, 5.6, 'img');
+    }
+  }
+
+  // medium
+  .employees .employees__employee:nth-of-type(3n + 1) & {
+    @include xl-min {
+      width: (100% / 3 * 2);
+      @include responsive-ratio((100% / 3 * 2), 4, 5.6, 'img');
+    }
+  }
+
+  // large
+  .employees .employees__employee:nth-of-type(3n + 2) & {
+    @include xl-min {
+      width: 100%;
+      @include responsive-ratio(100%, 4, 5.6, 'img');
+    }
+  }
+}
+
+.employees__employee-department,
+.employees__employee-name,
+.employees__employee-function,
+.employees__employee-email,
+.employees__employee-phone,
+.employees__employee-projects {
+  // margin: 0 auto;
+  @include font-size($font-settings-text-sm);
+
+  .employees & {
+    width: 100%;
+  }
+
+  @include md-min {
+    .employees & {
+      width: (100% / 3 * 2);
+    }
+  }
+
+  // small
+  .employees .employees__employee:nth-of-type(3n + 3) & {
+    @include xl-min {
+      width: 50%;
+    }
+  }
+
+  // medium
+  .employees .employees__employee:nth-of-type(3n + 1) & {
+    @include xl-min {
+      width: (100% / 3 * 2);
+    }
+  }
+
+  // large
+  .employees .employees__employee:nth-of-type(3n + 2) & {
+    @include xl-min {
+      width: 100%;
+    }
+  }
+}
+
+.employees__employee-department {
+  @include font-size($font-settings-text-xs);
+  margin-bottom: $gutter;
+}
+
+.employees__employee-name {
+  margin-top: $gutter;
+}
+
+.employees__employee-title {
+  @include font-size($font-settings-text-lg);
+}
+
+.employees__employee-email {
+  margin-top: $gutter;
+}
+
+.employees__employee-link {
+  color: $color-main-text;
+
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+.employees__employee-projects {
+  margin-top: $gutter;
+}
+
+.employees__employee-linkedin {
+  color: $color-main-text;
+  width: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: $color-white;
+  border-top: 10px solid $color-white;
+  border-right: 10px solid $color-white;
+  box-sizing: content-box;
+
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+.employees__load-more-container {
+  width: 100%;
+}

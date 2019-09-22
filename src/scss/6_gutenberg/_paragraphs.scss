@@ -1,0 +1,10 @@
+.wp-block-paragraph{
+  font-size: .5rem;
+  opacity: .5;
+}
+
+.ns-paragraph {
+  @include content-width();
+  @include font-size($font-settings-text-md);
+  @include ld-margin-bottom($gutter*2);
+}

@@ -1,0 +1,13 @@
+.ns-mood-title {
+  @include screen-width();
+  padding: $gutter*6 0;
+}
+
+.ns-mood-title__animation {
+  @include screen-width();
+}
+
+.ns-mood-title__title {
+  @include content-width();
+  @include font-size($font-settings-title-xl);
+}

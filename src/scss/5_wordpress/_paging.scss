@@ -1,0 +1,81 @@
+.paging {
+  margin: $gutter * 10 0;
+  @include full-width();
+  @include flexbox($justify-content: space-between, $align-content: center);
+}
+
+.paging__back,
+.paging__forward {
+  @include font-size($font-settings-text-sm);
+  @include flexbox($align-content: center);
+
+  a {
+    color: $color-white;
+
+    &:focus,
+    &:hover {
+      color: $color-orange;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    color: $color-orange;
+  }
+}
+
+.paging__back {
+  a {
+    margin-left: 35px;
+  }
+
+  &:focus,
+  &:hover {
+    .icon {
+      animation: bounce-left 2s infinite;
+    }
+  }
+}
+
+.paging__forward {
+  a {
+    margin-right: 35px;
+  }
+
+  &:focus,
+  &:hover {
+    .icon {
+      animation: bounce-right 2s infinite;
+    }
+  }
+}
+
+ul.page-numbers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  @include flexbox($justify-content: center, $align-content: center);
+}
+
+span,
+a {
+  &.page-numbers {
+    display: block;
+    padding: $gutter/2;
+    color: $color-white;
+    @include font-size($font-settings-text-sm);
+
+    &.current {
+      @include font-size($font-settings-btn-lg);
+    }
+  }
+}
+
+a {
+  &.page-numbers {
+    &:focus,
+    &:hover {
+      color: $color-orange;
+    }
+  }
+}

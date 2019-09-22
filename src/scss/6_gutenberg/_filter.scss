@@ -1,0 +1,52 @@
+.filter {
+  @include content-width();
+  padding: $gutter 0;
+  border-top: 1px solid black;
+  @include ld-margin-bottom($gutter * 2);
+  @include flexbox();
+
+  @include xl-min {
+    @include ld-margin-bottom($gutter * 6);
+  }
+}
+
+.filter__button {
+  text-align: left;
+  width: 100%;
+  transition: all .2s;
+  @include font-size($font-settings-text-sm);
+
+  @include sm-min {
+    width: 50%;
+  }
+
+  @include lg-min{
+    margin-right: $gutter*2;
+    width: auto;
+  }
+
+  &:nth-child(odd) {
+    @include sm-min {
+      padding-right: $gutter;
+    }
+
+    @include lg-min{
+      padding-right: 0;
+    }
+  }
+
+  &:nth-child(even) {
+    @include sm-min {
+      padding-left: $gutter;
+    }
+
+    @include lg-min{
+      padding-left: 0;
+    }
+  }
+
+  &.active,
+  &:hover{
+    color: $color-orange;
+  }
+}

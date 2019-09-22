@@ -1,0 +1,18 @@
+.wp-block-quote,
+.quote {
+  @include content-width(); 
+  @include ld-margin-bottom($gutter*5);
+
+  p,
+  .quote__text {
+    @include font-size($font-settings-text-xl);
+  }
+
+  cite,
+  .quote__author {
+    @include font-size($font-settings-text-md);
+    margin-top: $gutter;
+    display: block;
+    font-style: normal;
+  }
+}

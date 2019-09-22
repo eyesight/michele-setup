@@ -1,0 +1,53 @@
+.ns-horizontal-left {
+  text-align: left;
+}
+
+.ns-horizontal-center {
+  text-align: center;
+}
+
+.ns-horizontal-right {
+  text-align: right;
+}
+
+.ns-vertical-top {
+  vertical-align: top;
+}
+
+.ns-vertical-bottom {
+  vertical-align: bottom;
+}
+
+.superscript,
+sup,
+sub,
+.subscript,
+.ns-superscript,
+.ns-subscript{
+  font-size: 60%;
+  line-height: 0;
+  vertical-align: baseline;
+  position: relative;
+  padding: 0 1px;
+  top: -0.6em;
+}
+
+sub,
+.subscript,
+.ns-subscript {
+  top: 0.4em;
+}
+table {
+  width: 100%;
+
+  .subscript,
+  .superscript,
+  .ns-superscript,
+  .ns-subscript{
+    left: -4px;
+  }
+}
+
+.noline{
+  border-bottom: 0;
+}

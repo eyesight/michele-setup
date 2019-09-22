@@ -1,0 +1,10 @@
+button,
+input[type="button"]{
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding: 0;
+  @include type-face($type-face, $font-weight);
+  color: $color-main-text;
+}

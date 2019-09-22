@@ -1,0 +1,63 @@
+.jobs--with-zigzag {
+  background: $color-yellow;
+  position: relative;
+  padding: $gutter*6 0;
+
+  @include md-min{
+    padding: $gutter*8 0;
+  }
+
+  @include ld-margin-bottom($gutter * 6);
+
+  @include xl-min {
+    @include ld-margin-bottom($gutter * 10);
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 140px;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+    $triangle-color: encodecolor($color-white);
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='zigzag' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='141.6' height='70.6' viewBox='0 0 141.6 70.6' style='enable-background:new 0 0 141.6 70.6;' xml:space='preserve'%3E%3Cpath style='fill:#{$triangle-color};' d='M141.6,70.6L70.8,0L0,70.6H141.6z'/%3E%3C/svg%3E ");
+    background-position: bottom;
+
+    background-size: 90px 90px;
+
+    @include md-min{
+      background-size: auto;
+    }
+  }
+
+  &:before {
+    bottom: -23px;
+    @include md-min{
+      bottom: -1px;
+    }
+  }
+
+  &:after {
+    transform: rotate(180deg);
+    top: -23px;
+
+    @include md-min{
+      top: -1px;
+    }
+  }
+}
+
+.jobs__title {
+  @include content-width();
+  @include font-size($font-settings-title-xl);
+  margin-bottom: $gutter*8;
+}
+
+.jobs__lead {
+  @include content-width();
+  @include font-size($font-settings-text-lg);
+  margin-bottom: $gutter*3;
+}

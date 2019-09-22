@@ -1,0 +1,40 @@
+.load-more__button,
+.filter__button,
+.nhs-btn,
+.nhs-arrow-btn{
+  background: none;
+  border: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.post-list__post {
+  .story-list &,
+  .cases-list & {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.employees__employee {
+  .employees & {
+    display: flex;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.nhs-fancy-btn {
+  br {
+    display: none !important;
+  }
+}
+
+.wp-block-image {
+  text-align: center;
+
+  img {
+    display: inline-block;
+  }
+}

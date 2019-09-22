@@ -1,0 +1,59 @@
+.nhs-fancy-btn {  display: inline-block;
+	color: #ffffff;
+  position: relative;
+  z-index: 1;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		height: 40px;
+		position: absolute;
+    bottom: -5px;
+    left: -5px;
+    right: 15px;
+		z-index: -1;
+		border-radius: 2em;
+		filter: blur(14px) brightness(0.9);
+		transform-style: preserve-3d;
+    transition: all 0.3s ease-out;
+    background: rgba(black, 0.3)
+	}
+
+  .nhs-fancy-btn__inside,
+  a,
+  span {
+    display: inline-block;
+		padding: 13px 40px;
+		border-radius: 50em;
+		position: relative;
+		z-index: 2;
+		will-change: transform, filter;
+		transform-style: preserve-3d;
+    transition: all 0.3s ease-out;
+    background: $color-white;
+    color: $color-main-text;
+    @include font-size($font-settings-btn-sm);
+  }
+  
+  &:focus{
+		color: #ffffff;
+	}
+	&:hover {
+		color: #ffffff;
+		
+    .nhs-fancy-btn__inside,
+    a,
+    span {
+			// filter: brightness(.9) contrast(1.2);
+			transform: scale(0.96);
+		}
+		&:before {
+      bottom: 2px;
+      left: 2px;
+      height: 37px;
+      // right: 0;
+			filter: blur(8px) brightness(0.8);
+		}
+  }
+      
+}

@@ -1,0 +1,5 @@
+.ns-spacer {
+  display: block;
+  height: $gutter*3;
+  @include full-width();
+}

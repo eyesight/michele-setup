@@ -1,0 +1,233 @@
+.header {
+  color: $color-main-text;
+  background: $color-white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  transition: 0.3s all ease;
+  transform: translateY(0);
+  box-shadow: none;
+  @include flexbox(row, wrap, space-between, center);
+  @include screen-width;
+  @include font-size($font-settings-navigation-main);
+  @include body-backgrounds;
+
+  &.js-header--full {
+    box-shadow: none;
+  }
+
+  &.js-header--show {
+    box-shadow: 0 0 20px rgba(black, 0.15);
+  }
+
+  &.js-header--hide {
+    transform: translateY(-100%);
+    box-shadow: none;
+
+    .header__section.navigation--in {
+      transform: translateY(-100%);
+
+      @include md-min {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  a {
+    color: $color-main-text;
+
+    .grey-theme & {
+      color: $color-white;
+    }
+  }
+}
+
+.header__inner {
+  padding: $gutter;
+  background: $color-white;
+  @include flexbox(row, nowrap, space-between, center);
+  @include body-backgrounds;
+  @include full-width;
+  padding-left: 0;
+  padding-right: 0;
+
+  .js-header--show & {
+    padding-top: $gutter/2;
+    padding-bottom: $gutter/2;
+  }
+}
+
+.header__logo {
+  display: block;
+  padding-right: $gutter;
+  position: relative;
+
+  @include md-min {
+    padding-right: $gutter * 2;
+  }
+
+  @include xl-min {
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.header__logolink {
+  width: 75px;
+  display: block;
+  transition: 0.3s all ease;
+
+  .js-header--show & {
+    width: 55px;
+  }
+
+  .nhs-icon {
+    width: 100%;
+    display: block;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.header__mobile {
+  width: auto;
+  @include flexbox(row, nowrap, space-between, center);
+
+  @include md-min {
+    display: none;
+  }
+}
+
+.header__section {
+  width: 100vw;
+  overflow: hidden;
+  transition: 0.5s all ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateY(-100%);
+  background: $color-white;
+  padding: 120px 0 $gutter;
+  height: 100vh;
+  margin: 0 $gutter * -1;
+  @include flexbox(row, wrap, flex-start, flex-start);
+  @include body-backgrounds;
+
+  @include sm-min {
+    padding-left: $gutter * 2;
+    padding-right: $gutter * 2;
+    margin: 0 $gutter * -2;
+  }
+
+  @include md-min {
+    padding: 0;
+    transform: translateY(0);
+    position: relative;
+    top: auto;
+    left: auto;
+    display: flex !important;
+    z-index: 1;
+    height: auto;
+    background: transparent;
+    overflow: initial;
+    width: 100%;
+    margin: 0;
+    @include flexbox(row, nowrap, space-between, center);
+  }
+
+  &.navigation--in {
+    transform: translateY(0);
+  }
+
+  &.navigation--out {
+    transform: translateY(-100%);
+
+    @include md-min {
+      transform: translateY(0);
+    }
+  }
+}
+
+.header__meta {
+  align-self: flex-end;
+  width: 100%;
+  @include flexbox(row, nowrap, flex-start, center);
+
+  @include md-min {
+    align-self: unset;
+    width: auto;
+    margin-right: ($gutter / 2) * -1;
+    @include flexbox(row, nowrap, flex-start, center);
+  }
+
+  @include xl-min {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.header__language {
+  list-style-type: none;
+  @include flexbox(row, nowrap, flex-start);
+
+  li {
+    a {
+      position: relative;
+      display: block;
+
+      &:after {
+        content: "";
+        width: calc(100% - #{$gutter} );
+        height: 1px;
+        position: absolute;
+        left: $gutter / 2;
+        bottom: 10px;
+        background: $color-main-text;
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+
+      &:hover {
+        color: $color-main-text;
+
+        &:after {
+          opacity: 1;
+          bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+.header__linkedin-link {
+  padding: 0 $gutter;
+
+  @include md-min {
+    padding: 10px $gutter / 2;
+  }
+}
+
+.header__searchlink {
+  padding: $gutter;
+
+  &:not(.header__searchlink--mobile) {
+    display: none;
+
+    @include md-min {
+      display: block;
+      padding: 10px $gutter / 2;
+    }
+  }
+}

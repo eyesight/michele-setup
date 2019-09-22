@@ -1,0 +1,24 @@
+.nhs-icon {
+  display: inline-block;
+}
+
+.icon-arrow-link-left,
+.icon-arrow-link-right {
+  width: 35px;
+  height: 19px;
+}
+
+.icon-arrow-link-down {
+  height: 98px * .6;
+  width: 52px * .6;
+
+  @include xl-min{
+    height: 98px;
+    width: 52px;
+  }
+}
+
+.icon-linkedin {
+  width: 20px;
+  height: 20px;
+}

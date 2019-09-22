@@ -1,0 +1,134 @@
+html {
+  font-size: 62.5%;
+  width: 100%;
+}
+
+body {
+  @include type-face($type-face, $font-weight);
+  color: $color-main-text;
+  overflow-x: hidden;
+
+  &.pink-theme {
+    background: $color-pink;
+  }
+
+  &.blue-theme {
+    background: $color-blue;
+  }
+
+  &.yellow-theme {
+    background: $color-yellow;
+  }
+
+  &.grey-theme {
+    background: $color-dark-gray;
+    color: $color-white;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  @include type-face($type-face, $font-weight);
+}
+
+h1 {
+  @include font-size($font-settings-h1);
+}
+
+h2 {
+  @include font-size($font-settings-h2);
+}
+
+h3 {
+  @include font-size($font-settings-h3);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+
+  &.lazy {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease;
+  }
+
+  &.loaded {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.content {
+  padding: $gutter*2 0 $gutter*5;
+
+  @include md-min{
+    padding: $gutter*3 0 $gutter*7;
+  }
+
+  @include xl-min {
+    padding: $gutter*4 0 $gutter*11;
+  }
+
+  .home & {
+    padding-top: 0;
+  }
+
+  .single & {
+    padding-bottom: 0;
+  }
+}
+
+a {
+  color: $color-orange;
+  text-decoration: none;
+  transition: 0.3s all ease;
+
+  .pink-theme &,
+  .blue-theme &,
+  .yellow-theme & {
+    color: $color-main-text;
+  }
+
+  .grey-theme & {
+    color: $color-white;
+  }
+
+  &:hover {
+
+    color: $color-main-text;
+
+    .pink-theme &,
+    .blue-theme &,
+    .yellow-theme & {
+      color: $color-white;
+    }
+  }
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+
+.no-focus {
+  *:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
