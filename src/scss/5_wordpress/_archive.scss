@@ -1,9 +1,0 @@
-.archive__title {
-  @include font-size($font-settings-btn-lg);
-  @include full-width();
-  @include ld-margin-bottom($gutter * 2);
-
-  @include md-min {
-    @include ld-margin-bottom($gutter * 5);
-  }
-}

@@ -6,24 +6,8 @@ html {
 body {
   @include type-face($type-face, $font-weight);
   color: $color-main-text;
+  background-color: $color-primary;
   overflow-x: hidden;
-
-  &.pink-theme {
-    background: $color-pink;
-  }
-
-  &.blue-theme {
-    background: $color-blue;
-  }
-
-  &.yellow-theme {
-    background: $color-yellow;
-  }
-
-  &.grey-theme {
-    background: $color-dark-gray;
-    color: $color-white;
-  }
 }
 
 *, *:before, *:after {
@@ -65,51 +49,8 @@ img {
   }
 }
 
-.content {
-  padding: $gutter*2 0 $gutter*5;
-
-  @include md-min{
-    padding: $gutter*3 0 $gutter*7;
-  }
-
-  @include xl-min {
-    padding: $gutter*4 0 $gutter*11;
-  }
-
-  .home & {
-    padding-top: 0;
-  }
-
-  .single & {
-    padding-bottom: 0;
-  }
-}
-
 a {
-  color: $color-orange;
   text-decoration: none;
-  transition: 0.3s all ease;
-
-  .pink-theme &,
-  .blue-theme &,
-  .yellow-theme & {
-    color: $color-main-text;
-  }
-
-  .grey-theme & {
-    color: $color-white;
-  }
-
-  &:hover {
-
-    color: $color-main-text;
-
-    .pink-theme &,
-    .blue-theme &,
-    .yellow-theme & {
-      color: $color-white;
-    }
-  }
 }
 
 .screen-reader-text {

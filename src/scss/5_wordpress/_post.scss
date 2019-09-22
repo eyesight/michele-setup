@@ -1,9 +1,0 @@
-.post__footer {
-  @include full-width();
-  @include font-size($font-settings-h1);
-  @include ld-margin-bottom($gutter * 12);
-}
-
-.post__footer-button {
-  margin-top: $gutter;
-}

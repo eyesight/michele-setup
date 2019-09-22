@@ -1,18 +1,3 @@
 .navigation {
-  @include flexbox(column, nowrap, flex-start, flex-start);
-  width: 100%;
-  align-self: center;
-
-  @include sm-min {
-    margin: 0 $gutter * -1;
-  }
-
-  @include md-min {
-    align-self: unset;
-    margin: 0;
-  }
-
-  @include xl-min {
-    @include content-width();
-  }
+  
 }
