@@ -3,22 +3,34 @@
     padding-top: 5px;
     padding-bottom: 5px;
     border-bottom: $border-default;
-    @include ld-margin-bottom($spacing-between-sections);
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000;
     background-color: $color-primary;
+    @include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        background-color: transparent;
+    }
 
     &__container{
         @include make-grid-container(); 
     }
 
     &__logo{
+        a{
+            border-bottom: none;
+        }
         @include make-grid-item($col-span-tile, $margin-bottom: 0); 
         @include type-face($type-face-serif, $font-weight-bold);
         @include font-size($font-settings-logo);
+
+        @include sm-max(){
+            position: absolute;
+            @include make-grid-item($col-count, $margin-bottom: 0); 
+            background-color: $color-primary;
+        }
     }
     
     &__text{
@@ -39,6 +51,11 @@
     @include font-size($font-settings-header);
     color: $color-main-text;
 
+    @include sm-max(){
+        @include flexbox(column, wrap, flex-start, center);
+        @include make-grid-item($col-count, $margin-bottom: 0);
+    }
+
     a{
         color: $color-main-text;
         padding-bottom: 1px;
@@ -52,9 +69,93 @@
 
     &__ul{
         @include flexbox(row, wrap, flex-end, center);
+
+        @include sm-max(){
+            @include flexbox(column, wrap, flex-start, center);
+            height: 100vh;
+            width: 100%;
+            background-color: $color-primary;
+            transition: .5s all ease-in-out;
+            padding-top: $spacing-between-sections;
+            transform: translateY(-100%);
+            z-index: -1;
+        }
         li{
             list-style: none;
             margin-left: $gutter*2;
+            @include sm-max(){
+                margin-left: 0;
+            }
+        }
+
+        &.navigation--in{ 
+            transform: translateY(0); 
+        }
+
+        &.navigation--out{
+            transform: translateY(-100%);
+        }
+    }
+
+    &__burger{
+        width: 30px;
+        height: 18px;
+        position: relative;
+        cursor: pointer;
+        margin-top: $gutter;
+    }
+
+    &__line{
+        width: 30px;
+        height: 2px;
+        background: $color-black;
+        display: block;
+        position: absolute;
+        transition: .2s all ease;
+    }
+
+    &__line-1{
+        top: 0;
+        left: 0;
+
+        .animate--in &{
+            animation: line-1 .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .animate--out &{
+            animation: line-1-reverse .3s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &__line-2{
+        top: calc(50% - 1px);
+        left: 0;
+
+        .animate--in &{
+            animation: line-2 .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .animate--out &{
+            animation: line-2-reverse .3s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &__line-3{
+        left: 0;
+        bottom: 0;
+
+        .animate--in &{
+            animation: line-3 .3s;
+            animation-fill-mode: forwards;
+        }
+
+        .animate--out &{
+            animation: line-3-reverse .3s;
+            animation-fill-mode: forwards;
         }
     }
 }

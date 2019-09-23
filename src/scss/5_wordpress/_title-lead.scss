@@ -1,0 +1,18 @@
+.title-lead{
+    @include ld-margin-bottom($spacing-between-sections);
+    &__title{
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-h2);
+    }
+
+    &__categories{
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-categories-post);
+        @include ld-margin-bottom($gutter);
+    }
+
+    &__lead{
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-lead);
+    }
+}

@@ -5,11 +5,14 @@
 
     @include type-face($type-face, $font-weight);
     @include font-size($font-settings-footer);
-    @include flexbox(row, wrap, space-between, flex-start);
-
-    @include md-max(){
-        @include flexbox(row, wrap, flex-start, flex-start);  
-      }
+    @include full-width();
+    &__container{
+        @include flexbox(row, wrap, space-between, flex-start);
+    
+        @include md-max(){
+            @include flexbox(row, wrap, flex-start, flex-start);  
+          }
+    }
 
     &__left{
         width: auto;  

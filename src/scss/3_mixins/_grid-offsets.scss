@@ -31,15 +31,6 @@
       margin-right: 100% - ($width) - ($m-left);
     }
   }
-  
-  @media print {
-    padding-right: 0;
-    padding-left: 0;
-    margin-left: 0;
-    margin-right: 0;
-    max-width: 100%;
-    width: $content-width;
-  }
 }
 
 /*

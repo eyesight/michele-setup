@@ -27,8 +27,8 @@ $font-settings-h1: (
 ) !default;
 
 $font-settings-h2: (
-  null: (3.5rem, 1.1),
-  lg: (3.5rem, 1.1)
+  null: (2.6rem, 2.8rem),
+  lg: (6.0rem, 6.6rem)
 ) !default;
 
 $font-settings-h3: (
@@ -43,17 +43,17 @@ $font-settings-logo: (
 
 $font-settings-header: (
   null: (2.6rem, 2.8),
-  lg: (1.8rem, 2)
+  sm: (1.8rem, 2)
 ) !default;
 
 $font-settings-pre-title: (
   null: (1.4rem, 1.1),
-  lg: (3.0rem, 1.7)
+  xl: (3.0rem, 1.7)
 ) !default;
 
 $font-settings-filter: (
   null: (2.6rem, 1.2),
-  lg: (6rem, 1.4)
+  xl: (6rem, 1.4)
 ) !default;
 
 $font-settings-tiles-title: (
@@ -67,4 +67,14 @@ $font-settings-tiles-categories: (
 $font-settings-footer: (
   null: (1.4rem, 1.6rem),
   lg: (2.0rem, 2.6rem)
+) !default;
+
+$font-settings-categories-post: (
+  null: (1.0rem, 1.0rem),
+  lg: (1.5rem, 2.0rem)
+) !default;
+
+$font-settings-lead: (
+  null: (1.3rem, 1.6rem),
+  lg: (2.4rem, 3.2rem)
 ) !default;

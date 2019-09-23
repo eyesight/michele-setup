@@ -1,0 +1,28 @@
+.image {
+    @include ld-margin-bottom($spacing-between-sections);
+    img{
+        width: 100%;
+    }
+}
+
+.image--content-with{
+    @include full-width();
+}
+
+img.image__col-ten{
+    @include make-grid-item(10, $margin-bottom: 0);
+    margin: auto;
+}
+
+.image-with-text{
+    @include ld-margin-bottom($spacing-between-sections);
+
+    &__img{
+        @include make-grid-item(8, $margin-bottom: $spacing-between-sections/2);
+    }
+
+    &__text{
+        @include make-grid-item(3, $margin-bottom: $spacing-between-sections/2);
+        margin-left: 100% / 12 * 1; //100% / $cols-per-row * $item-col-spread;
+    }
+}

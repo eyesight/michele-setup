@@ -8,6 +8,7 @@ body {
   color: $color-main-text;
   background-color: $color-primary;
   overflow-x: hidden;
+  padding-top: 45px;
 }
 
 *, *:before, *:after {
@@ -101,10 +102,21 @@ button:focus {
   @include make-grid-container();
 }
 
+.grid-offset-container{
+  @include make-offset-grid-container();
+}
+
 .grid-half{
   @include make-grid-item($col-span-content, $margin-bottom: 0);
   
   @include sm-max(){
     @include make-grid-item($col-count);
+  }
+}
+
+.mobile-only{
+  display: none;
+  @include sm-max(){
+    display: block;
   }
 }
