@@ -1,0 +1,5 @@
+
+.pre-title {
+    @include type-face($type-face, $font-weight);
+    @include font-size($font-settings-pre-title);
+}

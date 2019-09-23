@@ -1,3 +1,54 @@
 .header {
-  
+    @include full-width();
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-black;
+    @include ld-margin-bottom($spacing-between-sections);
+
+    &__container{
+        @include make-grid-container(); 
+    }
+
+    &__logo{
+        @include make-grid-item($col-span-tile, $margin-bottom: 0); 
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-logo);
+    }
+    
+    &__text{
+        text-decoration: none;
+        color: $color-main-text;
+
+        &:hover,
+        &:focus{
+            text-decoration: none;
+            color: $color-main-text;  
+        }
+    }
+}
+
+.main-navigation{
+    @include make-grid-item($col-span-tile-large, $margin-bottom: 0); 
+    @include type-face($type-face, $font-weight);
+    @include font-size($font-settings-header);
+    color: $color-main-text;
+
+    a{
+        color: $color-main-text;
+        padding-bottom: 1px;
+
+        &:hover,
+        &:focus{
+            color: $color-main-text;
+            border-bottom: 1px solid $color-black;
+        }
+    }
+
+    &__ul{
+        @include flexbox(row, wrap, flex-end, center);
+        li{
+            list-style: none;
+            margin-left: $gutter*2;
+        }
+    }
 }

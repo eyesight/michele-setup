@@ -1,0 +1,57 @@
+
+.tiles {
+    @include ld-margin-bottom($spacing-between-sections);
+
+    &__item{
+        @include make-grid-item($col-span-tile); 
+        &:hover .tiles__text-wrapper{
+            opacity: 1;
+            transition: all 0.2s linear;
+        }
+
+        @include md-max(){
+            @include make-grid-item($col-span-content);
+        }
+
+        @include sm-max(){
+            @include make-grid-item($col-count);
+        }
+    }
+
+    &__img-wrapper{
+        z-index: 100;
+    }
+
+    &__item-link{
+        display: block;
+    }
+
+    &__img-wrapper,
+    &__img-wrapper img{
+        width: 100%;
+    }
+
+    &__text-wrapper{
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 80%;
+        height: 80%;
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        opacity: 0;
+        z-index: 1000;
+        color: $color-white;
+        @include flexbox(column, wrap, center, flex-start);
+        padding: $gutter*2;
+    }
+
+    &__item-title{
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-tiles-title);
+    }
+
+    &__item-categories{
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-tiles-categories);
+    }
+}

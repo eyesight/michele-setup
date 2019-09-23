@@ -12,25 +12,54 @@
 // TYPE-FACE SETTINGS
 $type-face-serif: 'Bree Serif', serif !default;
 $type-face: 'Open Sans', sans-serif !default;
-$font-weight: 600 !default;
+$font-weight: 300 !default;
+$font-weight-bold: 600 !default;
 
 // FONT-SIZE SETTINGS
 $font-settings-body: (
   null: (2rem, 1.1),
-  md: (2.5rem, 1.1),
+  lg: (2.5rem, 1.1),
 ) !default;
 
 $font-settings-h1: (
   null: (5rem, 1.1),
-  md: (5rem, 1.1)
+  lg: (5rem, 1.1)
 ) !default;
 
 $font-settings-h2: (
-null: (3.5rem, 1.1),
-md: (3.5rem, 1.1)
+  null: (3.5rem, 1.1),
+  lg: (3.5rem, 1.1)
 ) !default;
 
 $font-settings-h3: (
   null: (2.5rem, 1.54),
-  md: (2.5rem, 1.54)
+  lg: (2.5rem, 1.54)
+) !default;
+
+$font-settings-logo: (
+  null: (1.5rem, 2),
+  lg: (1.8rem, 2)
+) !default;
+
+$font-settings-header: (
+  null: (2.6rem, 2.8),
+  lg: (1.8rem, 2)
+) !default;
+
+$font-settings-pre-title: (
+  null: (1.4rem, 1.1),
+  lg: (3.0rem, 1.7)
+) !default;
+
+$font-settings-filter: (
+  null: (2.6rem, 1.2),
+  lg: (6rem, 1.4)
+) !default;
+
+$font-settings-tiles-title: (
+  null: (2.6rem, 2.8rem)
+) !default;
+
+$font-settings-tiles-categories: (
+  null: (1.5rem, 2rem)
 ) !default;

@@ -1,0 +1,20 @@
+
+.filter {
+    @include ld-margin-bottom($spacing-between-sections);
+
+    &__button,
+    &__text{
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-filter); 
+        display: inline;
+        white-space: nowrap;
+    }
+
+    &__button{
+        cursor: pointer;
+        
+        &:hover span{
+            border-bottom: 1px solid $color-black;
+        }
+    }
+}

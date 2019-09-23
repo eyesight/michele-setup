@@ -73,3 +73,27 @@ a {
     box-shadow: none;
   }
 }
+button{
+  border: none;
+  background: none;
+}
+button:focus { 
+  outline: none; 
+}
+
+
+.content{
+  @include full-width();
+}
+
+.grid-container{
+  @include make-grid-container();
+}
+
+.grid-half{
+  @include make-grid-item($col-span-content, $margin-bottom: 0);
+  
+  @include sm-max(){
+    @include make-grid-item($col-count);
+  }
+}

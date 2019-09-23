@@ -15,11 +15,11 @@ $layout-breakpoint: map-get($layout-breakpoints, 'lg');
 
 // for 3 cols in row
 $col-span-tile: 4; // relates to col-count
-$col-span-tile-large: 6; // relates to col-count
+$col-span-tile-large: 8; // relates to col-count 
 
 // for 4 cols in row
-$col-span-tile: 3; // relates to col-count
-$col-span-tile-large: 12; // relates to col-count
+$col-span-tile-4: 3; // relates to col-count
+$col-span-tile-large-4: 12; // relates to col-count
 
 $max-width-full: 1440px !default;
 $max-width-content: 1280px !default;
