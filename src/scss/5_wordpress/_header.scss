@@ -4,6 +4,12 @@
     padding-bottom: 5px;
     border-bottom: $border-default;
     @include ld-margin-bottom($spacing-between-sections);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    background-color: $color-primary;
 
     &__container{
         @include make-grid-container(); 
