@@ -14,7 +14,7 @@
         cursor: pointer;
         
         &:hover span{
-            border-bottom: 1px solid $color-black;
+            border-bottom: $border-default;
         }
     }
 }

@@ -51,6 +51,17 @@ img {
 
 a {
   text-decoration: none;
+  color: $color-main-text;
+
+  &:hover,
+  &:focus{
+    color: $color-main-text;
+    border-bottom: $border-default;
+  }
+}
+
+li{
+  list-style: none;
 }
 
 .screen-reader-text {

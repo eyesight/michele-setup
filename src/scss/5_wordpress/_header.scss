@@ -2,7 +2,7 @@
     @include full-width();
     padding-top: 5px;
     padding-bottom: 5px;
-    border-bottom: 1px solid $color-black;
+    border-bottom: $border-default;
     @include ld-margin-bottom($spacing-between-sections);
 
     &__container{
@@ -40,7 +40,7 @@
         &:hover,
         &:focus{
             color: $color-main-text;
-            border-bottom: 1px solid $color-black;
+            border-bottom: $border-default;
         }
     }
 
