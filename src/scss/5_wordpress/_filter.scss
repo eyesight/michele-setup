@@ -1,6 +1,17 @@
 
 .filter {
     @include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        @include ld-margin-bottom($col-count);
+    }
+
+    &__wrapper{
+        @include make-grid-item($col-span-tile-8);
+        
+        @include sm-max(){
+            @include make-grid-item($col-count);
+        }
+    }
 
     &__button,
     &__text{
@@ -12,9 +23,8 @@
 
     &__button{
         cursor: pointer;
-        
-        &:hover span{
-            border-bottom: $border-default;
+        span{
+            text-decoration: underline;
         }
     }
 }

@@ -1,18 +1,44 @@
 .title-lead{
     @include ld-margin-bottom($spacing-between-sections);
+    &__categories-wrapper{
+        @include make-grid-item($col-span-marginal, $margin-bottom: 0);
+        
+        @include sm-max(){
+            @include make-grid-item($col-span-tile-3, $margin-bottom: 0);
+        }
+    }
+
+    &__wrapper{
+        @include make-grid-item($col-span-tile-8);
+        
+        @include sm-max(){
+            @include make-grid-item($col-span-tile-9);
+        }
+    }
+
     &__title{
         @include type-face($type-face-serif, $font-weight-bold);
         @include font-size($font-settings-h2);
+        @include ld-margin-bottom($spacing-between-sections/2);
+        @include sm-max(){
+            @include ld-margin-bottom($gutter);
+        }
     }
-
+    
     &__categories{
-        @include type-face($type-face, $font-weight);
+        @include type-face($type-face-serif, $font-weight);
         @include font-size($font-settings-categories-post);
         @include ld-margin-bottom($gutter);
+        @include ld-margin-bottom(0, '.title-lead__categories');
     }
 
     &__lead{
         @include type-face($type-face, $font-weight);
         @include font-size($font-settings-lead);
+        @include make-grid-item($col-span-content);
+        
+        @include sm-max(){
+            @include make-grid-item($col-count);
+        }
     }
 }

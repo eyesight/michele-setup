@@ -2,4 +2,11 @@
 .pre-title {
     @include type-face($type-face, $font-weight);
     @include font-size($font-settings-pre-title);
+    margin-top: 20px;
+    @include make-grid-item($col-span-marginal, $margin-bottom: 0);
+        
+    @include sm-max(){
+        margin-top: 0;
+        @include make-grid-item($col-count);
+    }
 }

@@ -51,13 +51,14 @@ img {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  cursor: pointer;
   color: $color-main-text;
 
   &:hover,
   &:focus{
     color: $color-main-text;
-    border-bottom: $border-default;
+    text-decoration: none;
   }
 }
 

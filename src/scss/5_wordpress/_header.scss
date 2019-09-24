@@ -1,35 +1,40 @@
 .header {
-    @include full-width();
+    width: 100%;    
     padding-top: 5px;
     padding-bottom: 5px;
-    border-bottom: $border-default;
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000;
-    background-color: $color-primary;
+    background-color: $color-white;
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
-        background-color: transparent;
+        height: 45px;
+        transition: .5s all ease-in-out;
+    }
+
+    .menu-open &{
+        @include sm-max(){
+            height: 100vh;
+            transition: .5s all ease-in-out;
+        }
     }
 
     &__container{
-        @include make-grid-container(); 
+        @include full-width();
+        @include flexbox(row, wrap, space-between, flex-start);
     }
 
     &__logo{
         a{
             border-bottom: none;
         }
-        @include make-grid-item($col-span-tile, $margin-bottom: 0); 
         @include type-face($type-face-serif, $font-weight-bold);
         @include font-size($font-settings-logo);
 
         @include sm-max(){
             position: absolute;
-            @include make-grid-item($col-count, $margin-bottom: 0); 
-            background-color: $color-primary;
         }
     }
     
@@ -52,8 +57,9 @@
     color: $color-main-text;
 
     @include sm-max(){
-        @include flexbox(column, wrap, flex-start, center);
+        @include flexbox(column, wrap, flex-start, flex-end);
         @include make-grid-item($col-count, $margin-bottom: 0);
+        z-index: -1;
     }
 
     a{
@@ -74,11 +80,9 @@
             @include flexbox(column, wrap, flex-start, center);
             height: 100vh;
             width: 100%;
-            background-color: $color-primary;
-            transition: .5s all ease-in-out;
+            transition: .5s transform ease-in-out;
             padding-top: $spacing-between-sections;
             transform: translateY(-100%);
-            z-index: -1;
         }
         li{
             list-style: none;
@@ -90,6 +94,7 @@
 
         &.navigation--in{ 
             transform: translateY(0); 
+            background-color: $color-white;
         }
 
         &.navigation--out{
@@ -100,9 +105,10 @@
     &__burger{
         width: 30px;
         height: 18px;
-        position: relative;
+        position: absolute;
+        right: 0;    
         cursor: pointer;
-        margin-top: $gutter;
+        margin-top: $gutter/2;
     }
 
     &__line{

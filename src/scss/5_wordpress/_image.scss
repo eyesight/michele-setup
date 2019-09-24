@@ -5,6 +5,10 @@
     }
 }
 
+.image--full-with{
+    width: 100%;
+}
+
 .image--content-with{
     @include full-width();
 }
@@ -17,12 +21,36 @@ img.image__col-ten{
 .image-with-text{
     @include ld-margin-bottom($spacing-between-sections);
 
+    &__container{
+        @include flexbox(row, wrap, flex-start, center);
+    }
+
     &__img{
-        @include make-grid-item(8, $margin-bottom: $spacing-between-sections/2);
+        @include make-grid-item(9, $margin-bottom: $spacing-between-sections/2);
+        
+        @include md-max(){
+            @include make-grid-item(12, $margin-bottom: $spacing-between-sections/2);
+        }
     }
 
     &__text{
-        @include make-grid-item(3, $margin-bottom: $spacing-between-sections/2);
+        @include make-grid-item(2, $margin-bottom: $spacing-between-sections/2);
         margin-left: 100% / 12 * 1; //100% / $cols-per-row * $item-col-spread;
+        
+        @include md-max(){
+            @include make-grid-item(9, $margin-bottom: $spacing-between-sections/2);
+            margin-left: 100% / 12 * 3; //100% / $cols-per-row * $item-col-spread;
+        }
+    }
+
+    &__cat{
+        @include type-face($type-face-serif, $font-weight);
+        @include font-size($font-settings-image-text-cat);
+        @include ld-margin-bottom($gutter);
+    }
+
+    &__txt{
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-image-text);
     }
 }

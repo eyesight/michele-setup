@@ -18,7 +18,6 @@ class Menu {
   toggleHamburger(burger) {
 		console.log(burger);
     let toggleContainer = burger.getAttribute('data-toggles-nav');
-    console.log(toggleContainer);
     let menu = document.querySelector(`.${toggleContainer}`);
 
     if (Helper.hasClass(burger, 'animate--in')) {
@@ -29,7 +28,6 @@ class Menu {
       Helper.removeClass(burger, 'animate--in');
       Helper.addClass(burger, 'animate--out');
     } else {
-      console.log(menu);
       Helper.addClass(document.querySelector('body'), 'menu-open');
       Helper.addClass(menu, 'navigation--in');
       Helper.removeClass(menu, 'navigation--out');
