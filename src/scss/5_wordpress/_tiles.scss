@@ -47,12 +47,7 @@
     }
 
     &__item-title{
-        @include type-face($type-face-serif, $font-weight-bold);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-tiles-title);
-    }
-
-    &__item-categories{
-        @include type-face($type-face-serif, $font-weight-bold);
-        @include font-size($font-settings-tiles-categories);
     }
 }

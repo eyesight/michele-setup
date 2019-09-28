@@ -1,0 +1,13 @@
+.list{
+    &__wrapper{
+        @include make-grid-item($col-span-tile-3);
+        
+        @include sm-max(){
+            @include make-grid-item($col-span-content);
+        }
+    }
+    &__title{
+        @include font-size($font-settings-image-text-cat);
+        @include type-face($type-face-serif, $font-weight-bold);
+    }
+}

@@ -28,18 +28,77 @@
     &__center ul{
         @include flexbox(column, wrap, flex-start, flex-start);
         @include md-max(){
-            @include flexbox(row, wrap, flex-start, flex-start);
+            @include flexbox(row, wrap, flex-start, center);
+            width: 100%;
         }
 
         li{
-            margin-right: $gutter*2;
+            margin-right: calc(25% - 35px);
         }
     }
 
-    &__center,
+    &__center{
+        @include md-max(){
+            margin-top: $spacing-between-sections/2;
+            width: 100%;
+        }
+    }
+
     &__right{
         @include md-max(){
-            margin-top: $spacing-between-sections/2;  
-          }
+            display: none;
+        }
+    }
+
+    li{
+        margin-bottom: 10px;
+        @include md-max(){
+            margin-bottom: 0;  
+        }
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    .linkedin{
+        a{
+            background: url(../svg/in.min.svg) no-repeat center center;
+            background-size: 35px auto;
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+        }
+    }
+    .mail{
+        a{
+            background: url(../svg/mail.min.svg) no-repeat center center;
+            background-size: 35px auto;
+            width: 35px;
+            height: 25px;
+            display: inline-block;
+        }
+    }
+    .instagram{
+        a{
+            background: url(../svg/instagram.min.svg) no-repeat center center;
+            background-size: 35px auto;
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+        }
+    }
+    .logo{
+        a{
+            background: url(../svg/logo.min.svg) no-repeat center center;
+            background-size: 35px auto;
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+        }
+    }
+
+    a span{
+        display: none;
     }
 }

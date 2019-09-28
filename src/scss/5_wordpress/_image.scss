@@ -1,5 +1,9 @@
 .image {
     @include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections/4);
+        @include ld-margin-bottom($spacing-between-sections/2, '.footer');
+    }
     img{
         width: 100%;
     }
@@ -20,6 +24,9 @@ img.image__col-ten{
 
 .image-with-text{
     @include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections/4);
+    }
 
     &__container{
         @include flexbox(row, wrap, flex-start, center);

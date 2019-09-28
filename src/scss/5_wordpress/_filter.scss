@@ -2,14 +2,15 @@
 .filter {
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
-        @include ld-margin-bottom($col-count);
+        @include ld-margin-bottom($spacing-between-sections/4);
     }
 
     &__wrapper{
         @include make-grid-item($col-span-tile-8);
-        
+        column-count: 2;
+        column-gap: $gutter;
         @include sm-max(){
-            @include make-grid-item($col-count);
+            @include make-grid-item($col-count, $margin-bottom: 0);
         }
     }
 
@@ -17,14 +18,21 @@
     &__text{
         @include type-face($type-face-serif, $font-weight-bold);
         @include font-size($font-settings-filter); 
-        display: inline;
-        white-space: nowrap;
+        display: block;
+        //white-space: nowrap;
     }
 
     &__button{
         cursor: pointer;
+        text-align: left;
+        padding-left: 0;
         span{
             text-decoration: underline;
+        }
+        &:hover,
+        &:active,
+        &:focus{
+            color: $color-blue;
         }
     }
 }

@@ -12,6 +12,7 @@
     @include sm-max(){
         height: 45px;
         transition: .5s all ease-in-out;
+        @include ld-margin-bottom($spacing-between-sections/2);
     }
 
     .menu-open &{
@@ -27,11 +28,11 @@
     }
 
     &__logo{
-        a{
-            border-bottom: none;
-        }
-        @include type-face($type-face-serif, $font-weight-bold);
-        @include font-size($font-settings-logo);
+        border-bottom: none;
+        background: url(../svg/logo.min.svg) no-repeat center center;
+        background-size: 35px auto;
+        width: 35px;
+        height: 35px;
 
         @include sm-max(){
             position: absolute;

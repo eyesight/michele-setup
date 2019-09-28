@@ -17,8 +17,8 @@ $font-weight-bold: 600 !default;
 
 // FONT-SIZE SETTINGS
 $font-settings-body: (
-  null: (2rem, 1.1),
-  lg: (2.5rem, 1.1),
+  null: (1.3rem, 1.7rem),
+  lg: (2rem, 2.6rem),
 ) !default;
 
 $font-settings-h1: (
@@ -34,11 +34,6 @@ $font-settings-h2: (
 $font-settings-h3: (
   null: (2.5rem, 1.54),
   lg: (2.5rem, 1.54)
-) !default;
-
-$font-settings-logo: (
-  null: (1.5rem, 2),
-  lg: (1.8rem, 2)
 ) !default;
 
 $font-settings-header: (
@@ -57,11 +52,8 @@ $font-settings-filter: (
 ) !default;
 
 $font-settings-tiles-title: (
-  null: (2.6rem, 2.8rem)
-) !default;
-
-$font-settings-tiles-categories: (
-  null: (1.5rem, 2rem)
+  null: (1.4rem, 1.6rem),
+  xl: (3.0rem, 3.2rem)
 ) !default;
 
 $font-settings-footer: (
@@ -87,4 +79,9 @@ $font-settings-image-text: (
 $font-settings-image-text-cat: (
   null: (1.2rem, 2.0rem),
   lg: (1.5rem, 2.0rem)
+) !default;
+
+$font-settings-infotext: ( 
+  null: (1.0rem, 1.4rem),
+  lg: (1.6rem, 1.8rem) 
 ) !default;

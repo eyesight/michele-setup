@@ -1,0 +1,46 @@
+.title-image{
+    @include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections / 2); 
+    }
+
+    &__wrapper{
+        @include make-grid-item($col-span-tile-8);
+        @include ld-margin-bottom($spacing-between-sections/4);
+        
+        @include sm-max(){
+            @include make-grid-item($col-count);
+        }
+    }
+
+    &__title{
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-h2);
+    }
+
+    &__lead{
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-lead);
+        @include make-grid-item($col-span-content);
+        
+        @include sm-max(){
+            @include make-grid-item($col-count);
+        }
+    }
+
+    &__image{
+        margin-right: (100% / 12);
+        @include make-grid-item($col-span-tile-3, $margin-bottom: 0);
+        @include ld-margin-bottom(0); 
+            
+        @include sm-max(){
+            margin-right: 0; 
+            @include make-grid-item($col-count, $margin-bottom: 0);
+            @include ld-margin-bottom($spacing-between-sections / 2); 
+        }
+    }
+
+    &__img{
+        width: 100%;
+    }
+}

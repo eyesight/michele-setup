@@ -5,6 +5,7 @@ html {
 
 body {
   @include type-face($type-face, $font-weight);
+  @include font-size($font-settings-body);
   color: $color-main-text;
   background-color: $color-primary;
   overflow-x: hidden;
