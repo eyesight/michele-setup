@@ -9,11 +9,31 @@
   font-style: normal;
 } */
 
+@font-face {
+  font-family: 'Lausanne';
+  src: url("#{$font-path}Lausanne-300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lausanne';
+  src: url("#{$font-path}Lausanne-500.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu Trial';
+  src: url("#{$font-path}value-serif-bold-trial.otf")
+  format("opentype");
+}
+
 // TYPE-FACE SETTINGS
-$type-face-serif: 'Bree Serif', serif !default;
-$type-face: 'Open Sans', sans-serif !default;
+$type-face-serif: 'Apercu Trial', serif !default;
+$type-face: 'Lausanne', sans-serif !default;
 $font-weight: 300 !default;
-$font-weight-bold: 600 !default;
+$font-weight-bold: 500 !default;
 
 // FONT-SIZE SETTINGS
 $font-settings-body: (
@@ -42,7 +62,7 @@ $font-settings-header: (
 ) !default;
 
 $font-settings-pre-title: (
-  null: (1.4rem, 1.6rem),
+  null: (1.4rem, 1.8rem),
   xl: (2.6rem, 3.0rem)
 ) !default;
 
