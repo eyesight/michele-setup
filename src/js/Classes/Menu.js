@@ -5,8 +5,9 @@ class Menu {
     console.log('menu');
     this.hamburger = document.querySelector('.main-navigation__burger');
     this.removeClassResponsively('navigation--in', window.matchMedia('(min-width: 768px)'), window);
-    this.bindEvents();
-
+    if(this.hamburger){
+      this.bindEvents();
+    }
   }
 
   bindEvents() {
@@ -20,7 +21,7 @@ class Menu {
     let toggleContainer = burger.getAttribute('data-toggles-nav');
     let menu = document.querySelector(`.${toggleContainer}`);
 
-    if (Helper.hasClass(burger, 'animate--in')) {
+    if (Helper.hasClass(burger, 'animate--in')) { 
       Helper.removeClass(document.querySelector('body'), 'menu-open');
       // Helper.slideUp(menu);
       Helper.removeClass(menu, 'navigation--in');
