@@ -12,16 +12,21 @@
         @include make-grid-item($col-count, $margin-bottom: 0);
         @include ld-margin-bottom($spacing-between-sections/4);
     }
-    svg{
+    span{
+        display: inline-block;
+        margin-top: 5px;
+        margin-left: 10px;
+        background: url(../svg/arrow_r.min.svg) no-repeat center center;
+        background-size: 10px auto;
         height: 20px;
-        width: 10px;
-        display: inline;
-        padding-top: 5px;
+        width: 10px; 
+        position: absolute;
 
         @include lg-max(){
             height: 10px;
-            width: 5px;
-            padding-top: 2px;
-        }
+            width: 10px;
+            margin-top: 2px;
+            margin-left: 5px;
+        } 
     }
 }
