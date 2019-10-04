@@ -14,7 +14,7 @@
 }
 
 .image--content-with{
-    @include full-width();
+    @include full-width(); 
 }
 
 img.image__col-ten{
@@ -38,10 +38,14 @@ img.image__col-ten{
         @include md-max(){
             @include make-grid-item(12, $margin-bottom: $spacing-between-sections/2);
         }
+
+        img{
+            width: 100%;
+        }
     }
 
     &__text{
-        @include make-grid-item(2, $margin-bottom: $spacing-between-sections/2);
+        @include make-grid-item(2, $margin-bottom: $spacing-between-sections/2); 
         margin-left: 100% / 12 * 1; //100% / $cols-per-row * $item-col-spread;
         
         @include md-max(){

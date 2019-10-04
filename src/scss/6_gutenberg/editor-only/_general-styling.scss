@@ -10,7 +10,7 @@
 
 .post-list__post {
   .story-list &,
-  .cases-list & {
+  .cases-list & { 
     display: flex;
     transform: translateY(0);
     opacity: 1;
@@ -18,7 +18,7 @@
 }
 
 .employees__employee {
-  .employees & {
+  .employees & { 
     display: flex;
     transform: translateY(0px);
     opacity: 1;
@@ -37,4 +37,8 @@
   img {
     display: inline-block;
   }
+}
+
+.editor-block-list__layout{
+  display: flex;
 }

@@ -28,7 +28,7 @@
         }
     }
     
-    &__categories{
+    &__categories{ 
         @include type-face($type-face-serif, $font-weight);
         @include font-size($font-settings-categories-post);
         @include ld-margin-bottom($gutter);
