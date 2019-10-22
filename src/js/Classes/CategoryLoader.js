@@ -52,7 +52,7 @@ class CategoryLoader {
         Helper.addClass(item, 'hide-animation');
         setTimeout(()=>{
           Helper.addClass(item, 'hidden');
-        }, this.timeOutTime);
+        }, this.timeOutTime); 
       }
       allFilters.forEach(filter =>{
         let filterName = `tiles__filter--${filter}`;
