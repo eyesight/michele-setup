@@ -77,8 +77,6 @@ class Helper {
   }
 
   static addClass(el, className) {
-    console.log(el); 
-    console.log(className);
     if (el.classList) el.classList.add(className);
     else if (!hasClass(el, className)) el.className += " " + className;
   }

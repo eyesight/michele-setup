@@ -26,13 +26,32 @@
         cursor: pointer;
         text-align: left;
         padding-left: 0;
+        white-space: nowrap;
         span{
             text-decoration: underline;
         }
         &:hover,
-        &:active,
-        &:focus{
+        &.active{
             color: $color-blue;
+        }
+
+        &:focus{
+            color: $color-black;
+        }
+        
+        &.active{
+            color: $color-blue;
+        }
+    }
+
+    &__x{
+        width: 25px;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        display: none;
+
+        .active &{
+            display: inline;
         }
     }
 }

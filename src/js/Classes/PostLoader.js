@@ -25,7 +25,7 @@ class PostLoader {
 		this.postBoxCount = postBoxCount || 6,
 		this.type = type || 'posts',
 		this.layoutArray = Array.prototype.slice.call(document.querySelectorAll('.post-list__layout'));
-
+		console.log('dfdf');
 		this.pageNumber = 2;
 		if(this.postContainer && this.filterButtonArray.length != 0){
 

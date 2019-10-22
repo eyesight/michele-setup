@@ -6,6 +6,8 @@
         }
     }
     &__item{
+        opacity: 1;
+        transition: all 0.3s;
         @include make-grid-item($col-span-tile); 
         &:hover .tiles__text-wrapper{
             opacity: 1;
@@ -16,6 +18,10 @@
             @include make-grid-item($col-span-content);
         }
 
+        &.hide-animation{
+            opacity: 0;
+            transition: all 0.3s;
+        }
     }
 
     &__img-wrapper{
