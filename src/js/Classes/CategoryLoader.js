@@ -19,6 +19,7 @@ class CategoryLoader {
   }
 
   bindEvents() {
+    this.showAllitems();
     this.buttonClicketArray.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault();
@@ -30,6 +31,15 @@ class CategoryLoader {
         this.hideItems(this.filteredItemsArray, this.filterArr);
 			});
 		});
+  }
+
+  showAllitems(){
+    this.filteredItemsArray.forEach((item)=>{
+      Helper.addClass(item, 'show');
+      setTimeout(()=>{
+        Helper.addClass(item, 'fade-in');
+      }, this.timeOutTime);
+    });
   }
 
   setActiveButton(clickedButton){ 
@@ -44,23 +54,14 @@ class CategoryLoader {
     filteredItems.forEach(item =>{
       //when all filters are removed, then remove all classes hidden
       if(allFilters.length === 0){
-        Helper.removeClass(item, 'hide-animation');
-        setTimeout(()=>{ 
-          Helper.removeClass(item, 'hidden');
-        }, this.timeOutTime);
+        Helper.removeClass(item, 'hidden'); 
       }else{
-        Helper.addClass(item, 'hide-animation');
-        setTimeout(()=>{
-          Helper.addClass(item, 'hidden');
-        }, this.timeOutTime); 
+        Helper.addClass(item, 'hidden');
       }
       allFilters.forEach(filter =>{
         let filterName = `tiles__filter--${filter}`;
         if(item.classList.contains(filterName)){
-          Helper.removeClass(item, 'hide-animation');
-          setTimeout(()=>{ 
-            Helper.removeClass(item, 'hidden');
-          }, this.timeOutTime);
+          Helper.removeClass(item, 'hidden');
         }
       });
     });
