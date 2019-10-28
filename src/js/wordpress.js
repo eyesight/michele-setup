@@ -2,14 +2,16 @@
 import LazyLoad from './lib/lazyload';
 import Menu from './Classes/Menu';
 import CategoryLoader from './Classes/CategoryLoader';
+import VideoPlay from './Classes/VideoPlay';
 
 (function() {
   document.addEventListener('DOMContentLoaded', function() {
-    console.log('test');
 		new LazyLoad();
 	const navigation = new Menu();
 	
-	const categoriesLoader = new CategoryLoader();
+  const categoriesLoader = new CategoryLoader();
+  
+  const  videoPlay = new VideoPlay();
 
   });
 })();   

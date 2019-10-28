@@ -1,3 +1,31 @@
 .site-404{
-  @include content-width;
+  @include full-width;
+  @include flexbox(row, wrap, center, center);
+  @include md-max(){
+    @include flexbox(column, wrap, center, center);
+  }
+
+  .title-h1{
+    @include make-grid-item($col-span-tile-2, $margin-bottom: 0);
+    @include md-max(){
+      @include make-grid-item($col-span-tile-4, $margin-bottom: 0);
+    }
+    @include sm-max(){
+      @include make-grid-item($col-span-content, $margin-bottom: 0); 
+    }
+    text-align: center;
+  }
+
+  .video{
+    position: absolute;
+    right: 0;
+    display: none;
+    @include md-max(){  
+      position: relative;
+    }
+
+    &.active{
+      display: block;
+    }
+  }
 }

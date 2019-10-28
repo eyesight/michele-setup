@@ -61,6 +61,7 @@
         @include flexbox(column, wrap, flex-start, flex-end);
         @include make-grid-item($col-count, $margin-bottom: 0);
         z-index: -1;
+        height: 0;
     }
 
     a{
