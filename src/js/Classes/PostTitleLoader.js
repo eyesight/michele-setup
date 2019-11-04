@@ -16,7 +16,8 @@ class PostTitleLoader {
 		this.allPostSelectorArray = Array.prototype.slice.call(this.allPostSelector);
 		this.allPostData = [];
 		this.postId = postId;
-		this.reg = '<h1 class=\"title-lead__title\" placeholder=\"Title\">(.*?)<\/h1>';
+		
+		this.reg = 'placeholder="Titel">(.*?)<\/h1>';
 		if(this.postContainer && this.allPostSelectorArray.length != 0){
 			this.postsPerPage = 100;
 			this.bindEvents();
