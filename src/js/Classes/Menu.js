@@ -2,7 +2,6 @@ import Helper from './Helper';
 
 class Menu {
   constructor() {
-    console.log('menu');
     this.hamburger = document.querySelector('.main-navigation__burger');
     this.removeClassResponsively('navigation--in', window.matchMedia('(min-width: 768px)'), window);
     if(this.hamburger){
@@ -17,13 +16,11 @@ class Menu {
   }
 
   toggleHamburger(burger) {
-		console.log(burger);
     let toggleContainer = burger.getAttribute('data-toggles-nav');
     let menu = document.querySelector(`.${toggleContainer}`);
 
     if (Helper.hasClass(burger, 'animate--in')) { 
       Helper.removeClass(document.querySelector('body'), 'menu-open');
-      // Helper.slideUp(menu);
       Helper.removeClass(menu, 'navigation--in');
       Helper.addClass(menu, 'navigation--out');
       Helper.removeClass(burger, 'animate--in');
@@ -32,7 +29,6 @@ class Menu {
       Helper.addClass(document.querySelector('body'), 'menu-open');
       Helper.addClass(menu, 'navigation--in');
       Helper.removeClass(menu, 'navigation--out');
-      // Helper.slideDown(menu);
       Helper.addClass(burger, 'animate--in');
       Helper.removeClass(burger, 'animate--out');
     }

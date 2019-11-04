@@ -38,7 +38,15 @@
     display: inline-block;
   }
 }
+//adapt block list in editor
+.list__container > .editor-inner-blocks > .editor-block-list__layout{ 
+  display: flex; 
 
-.editor-block-list__layout{
-  display: flex;
+  >.editor-block-list__block{
+    width: 25%;
+  }
+
+  .list__wrapper{
+    width: 100%;
+  }
 }

@@ -25,18 +25,27 @@
     &__container{
         @include full-width();
         @include flexbox(row, wrap, space-between, flex-start);
+        overflow: hidden;
+        @include sm-max(){
+            overflow: visible;
+        }
     }
 
     &__logo{
-        border-bottom: none;
-        background: url(../svg/logo.min.svg) no-repeat center center;
-        background-size: 35px auto;
-        width: 35px;
-        height: 35px;
-
-        @include sm-max(){
-            position: absolute;
+        .home &{
+            background: url(../svg/logo.min.svg) no-repeat left center;
+            background-size: 35px auto;
+            background-color: $color-white;
+            z-index: 10;
+            padding-right: 45px;
         }
+        border-bottom: none;
+        background: url(../svg/arrow_l.min.svg) no-repeat left center;
+        background-size: 15px auto;
+        background-color: $color-white;
+        width: 100% / $col-count * 1;
+        height: 35px;
+        padding-right: 45px;
     }
     
     &__text{
@@ -56,6 +65,7 @@
     @include type-face($type-face, $font-weight);
     @include font-size($font-settings-header);
     color: $color-main-text;
+    display: none;
 
     @include sm-max(){
         @include flexbox(column, wrap, flex-start, flex-end);
@@ -84,7 +94,7 @@
             width: 100%;
             transition: .5s transform ease-in-out;
             padding-top: $spacing-between-sections;
-            transform: translateY(-100%);
+            transform: translateY(-150%);
         }
         li{
             list-style: none;
@@ -100,7 +110,7 @@
         }
 
         &.navigation--out{
-            transform: translateY(-100%);
+            transform: translateY(-150%);
         }
     }
 
@@ -166,4 +176,30 @@
             animation-fill-mode: forwards;
         }
     }
+}
+
+.animated-text{
+    display: block;
+    @include font-size($font-settings-header);
+    white-space: nowrap;
+    position: absolute;
+    padding-top: 2px; 
+    margin-left: 100% / $col-count * 1; 
+    @include sm-max(){
+        display: none;
+    }
+    p{
+        animation: 20s slide-right linear;
+    }
+
+    a{
+        margin-right: 30px;
+    }
+}
+
+@keyframes slide-right { 
+    0% {margin-left: 100%; opacity: 0;}
+    1% {margin-left: 100%; opacity: 1;}
+   99% {margin-left: -100%; opacity: 1;} 
+  100% {margin-left: -100%; opacity: 0;} 
 }
