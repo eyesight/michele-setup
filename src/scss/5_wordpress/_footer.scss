@@ -2,10 +2,6 @@
     border-top: $border-default;
     padding-top: $spacing-between-sections/2;
     padding-bottom: $spacing-between-sections;
-    margin-top: $spacing-between-sections;
-    @include sm-max(){
-        margin-top: $spacing-between-sections/2;
-    }
 
     @include type-face($type-face, $font-weight);
     @include font-size($font-settings-footer);

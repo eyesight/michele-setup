@@ -1,0 +1,49 @@
+.prevNext{
+    @include flexbox(row, wrap, space-between, flex-start);
+    @include ld-margin-bottom(10px);
+    @include font-size($font-settings-header);
+    &__left{
+        background: url(../svg/arrow_l.min.svg) no-repeat left center;
+        a{
+            padding-left: 35px;
+        }
+
+        &:hover{
+            span{
+                opacity: 1;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+
+    &__right{
+        background: url(../svg/arrow_r.min.svg) no-repeat right center;
+        a{
+            padding-right: 35px;
+        }
+
+        &:hover{
+            span{
+                opacity: 1;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+
+    &__arrow{
+        background-size: 15px auto;
+        height: 35px;
+        display: pointer;
+    }
+
+    span{
+        opacity: 0;
+        display: block;
+    }
+
+    a{
+        display: block;
+        height: 100%;
+        text-decoration: none;
+    }
+}
