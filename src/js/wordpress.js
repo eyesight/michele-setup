@@ -14,12 +14,12 @@ import PostTitleLoader from './Classes/PostTitleLoader';
   
   const  videoPlay = new VideoPlay(); 
 
-  const postTitleLoader = new PostTitleLoader({
+ /*  const postTitleLoader = new PostTitleLoader({
     postContainerSelector: '.tiles',
     postSelector: '.tiles__item',
     titleSelector: '.tiles__item-title', 
     postId: 'data-id'
-  });
+  }); */ 
 
   });
 })();   

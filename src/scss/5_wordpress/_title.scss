@@ -1,0 +1,20 @@
+.title{
+    @include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections / 2); 
+    }
+
+    &__wrapper{
+        @include make-grid-item($col-span-tile-8);
+        @include ld-margin-bottom($spacing-between-sections/4);
+        
+        @include sm-max(){
+            @include make-grid-item($col-count);
+        }
+    }
+
+    &__text{
+        @include type-face($type-face-serif, $font-weight-bold);
+        @include font-size($font-settings-h2);
+    }
+}
