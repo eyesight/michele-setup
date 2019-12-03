@@ -6,9 +6,8 @@
     }
 
     &__wrapper{
-        @include make-grid-item($col-span-tile-8, $margin-bottom: 0);
-        column-count: 2;
-        column-gap: $gutter; 
+        @include make-grid-item($col-span-tile-8, $margin-bottom: 0); 
+        @include flexbox();
         @include sm-max(){
             @include make-grid-item($col-count, $margin-bottom: 0);
         }
@@ -25,8 +24,15 @@
     &__button{
         cursor: pointer;
         text-align: left;
-        padding-left: 0;
+        padding-left: 15px;
+        padding-right: 10px;
         white-space: nowrap;
+
+        @include lg-min{
+            padding-left: 30px;
+            padding-right: 15px;
+        } 
+        
         span{
             text-decoration: underline;
         }
@@ -41,17 +47,51 @@
         
         &.active{
             color: $color-blue;
+            .filter__arrow{
+                display: none;
+            }
+        }
+    }
+
+    &__arrow{
+        position: absolute;
+        left: 0px;
+        height: 12px; 
+        width: 12px;
+        bottom: 10px;
+    
+        @include lg-min{
+            height: 24px;
+            width: 24px;   
+            bottom: 24px;
+        }
+
+        .st0{
+            fill:none;
+            stroke:$color-black;
+            stroke-width:2;
+            stroke-miterlimit:10;
         }
     }
 
     &__x{
         width: 25px;
-        margin-left: 10px;
-        margin-bottom: 5px;
         display: none;
+        position: absolute;
+        height: 12px; 
+        width: 12px;
+        bottom: 10px;
+        left: 0;
 
         .active &{
             display: inline;
+        }
+
+        @include lg-min{
+            margin-right: 10px;  
+            height: 20px;
+            width: 20px;   
+            bottom: 28px;
         }
     }
 }
