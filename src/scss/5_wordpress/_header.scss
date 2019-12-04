@@ -15,6 +15,12 @@
         @include ld-margin-bottom($spacing-between-sections/2);
     }
 
+    .home &{
+        @include sm-max(){
+            background-color: $color-gray;
+        }
+    }
+
     .menu-open &{
         @include sm-max(){
             height: 100vh;
@@ -26,6 +32,7 @@
         @include full-width();
         @include flexbox(row, wrap, space-between, flex-start);
         overflow: hidden;
+        min-height: 35px;
         @include sm-max(){
             overflow: visible;
         }
@@ -38,6 +45,7 @@
             background-color: $color-white;
             z-index: 10;
             padding-right: 45px;
+            display: none;
         }
         border-bottom: none;
         background: url(../svg/arrow_l.min.svg) no-repeat left center;
@@ -184,8 +192,10 @@
     @include font-size($font-settings-header);
     white-space: nowrap;
     position: absolute;
+    right: 0;
     padding-top: 2px; 
-    margin-left: 100% / $col-count * 1; 
+    width: 99.5% / $col-count * 8;  
+    overflow: hidden;
     @include sm-max(){
         display: none;
     }
