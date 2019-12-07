@@ -33,6 +33,14 @@
 
     &__img-wrapper{
         z-index: 100;
+        @include responsive-ratio-center($c: 'img');
+        height: auto;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__item-link{
