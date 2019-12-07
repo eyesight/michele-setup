@@ -9,6 +9,8 @@
         position: fixed;
         top: 5px;
         z-index: 10000;
+        opacity: 1;
+        transition: opacity 0.3s linear;
     }
  
     &__link{
@@ -22,5 +24,12 @@
 
     &__img{
         width: 100%; 
+    }
+
+    .menu-open &{
+        @include sm-max(){
+            opacity: 0;
+            transition: opacity 0.3s linear;
+        }
     }
 }

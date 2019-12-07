@@ -25,6 +25,7 @@
         @include sm-max(){
             height: 100vh;
             transition: .5s all ease-in-out;
+            background-color: $color-blue;
         }
     }
 
@@ -67,6 +68,27 @@
             color: $color-main-text;  
         }
     }
+
+    &__navigation{
+        @include flexbox();
+        @include font-size($font-settings-header);
+        position: absolute;
+        top: 2px;
+
+        li{
+            padding-right: $gutter;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+        a{
+            text-decoration: none;
+        }
+        @include sm-max(){
+            display: none;
+        }
+    }
 }
 
 .main-navigation{
@@ -75,22 +97,43 @@
     @include font-size($font-settings-header);
     color: $color-main-text;
     display: none;
-
+    
     @include sm-max(){
         @include flexbox(column, wrap, flex-start, flex-end);
         @include make-grid-item($col-count, $margin-bottom: 0);
         z-index: -1;
         height: 0;
+        transition: height 0.5s linear;
+    }
+    
+    .menu-open &{
+        @include sm-max(){
+            height: 70vh;
+            transition: height 0.5s linear;
+            color: $color-white;
+            z-index: 1000000;
+        }
     }
 
     a{
         color: $color-main-text;
+        text-decoration: none;
         padding-bottom: 1px;
 
         &:hover,
         &:focus{
-            color: $color-main-text;
             border-bottom: $border-default;
+        }
+
+        .menu-open &{
+            @include sm-max(){
+                color: $color-white;
+
+                &:hover,
+                &:focus{
+                    border-bottom: $border-default-white;
+                }
+            }
         }
     }
 
@@ -98,11 +141,11 @@
         @include flexbox(row, wrap, flex-end, center);
 
         @include sm-max(){
-            @include flexbox(column, wrap, flex-start, center);
+            @include flexbox(column, wrap, center, center);
             height: 100vh;
             width: 100%;
             transition: .5s transform ease-in-out;
-            padding-top: $spacing-between-sections;
+            padding-top: 0;
             transform: translateY(-150%);
         }
         li{
@@ -115,7 +158,7 @@
 
         &.navigation--in{ 
             transform: translateY(0); 
-            background-color: $color-white;
+            background-color: transparent;
         }
 
         &.navigation--out{
@@ -130,6 +173,15 @@
         right: 0;    
         cursor: pointer;
         margin-top: $gutter/2;
+        z-index: 10000000;
+        
+        &.animate--in{
+            height: 30px;            
+        }
+
+        &.animate--out{
+            height: 18px;            
+        }
     }
 
     &__line{
@@ -139,6 +191,12 @@
         display: block;
         position: absolute;
         transition: .2s all ease;
+        
+        .menu-open &{
+            @include sm-max(){
+                background: $color-white;
+            }
+        }
     }
 
     &__line-1{
