@@ -51,12 +51,17 @@
         border-bottom: none;
         background: url(../svg/logo.min.svg) no-repeat left center;
         background-size: 20px auto;
-        background-color: $color-white; 
+        background-color: transparent; 
         width: auto;
         height: 35px;
         z-index: 10;
         padding-right: $gutter * 4;
         display: block;
+        .menu-open &{
+            @include sm-max(){
+                display: none;
+            }
+        }
     }
     
     &__text{
