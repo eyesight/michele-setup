@@ -1,0 +1,8 @@
+.paragraph{
+    @include ld-margin-bottom();
+    @include ld-margin-bottom($gutter*3, '.title-h3');
+    @include ld-margin-bottom($gutter*3, '.prev-next');
+    @include ld-margin-bottom($gutter*3, '.footer');
+    @include type-face($type-face, $font-weight);
+    @include font-size($font-settings-body);
+}

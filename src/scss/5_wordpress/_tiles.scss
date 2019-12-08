@@ -33,7 +33,7 @@
 
     &__img-wrapper{
         z-index: 100;
-        @include responsive-ratio-center($c: 'img');
+        @include responsive-ratio-center(100%, 412, 287, 'img');
         height: auto;
         overflow: hidden;
 
@@ -71,4 +71,9 @@
         @include type-face($type-face, $font-weight);
         @include font-size($font-settings-tiles-title);
     }
+}
+
+.title-h3{
+    @include type-face($type-face, $font-weight-bold);
+    @include font-size($font-settings-body);
 }

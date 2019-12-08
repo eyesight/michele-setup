@@ -1,9 +1,9 @@
-.prevNext{
+.prev-next{
     @include flexbox(row, wrap, space-between, flex-start);
-    @include ld-margin-bottom(10px);
+    @include ld-margin-bottom(0px);
     @include font-size($font-settings-header);
     &__left{
-        background: url(../svg/arrow_l.min.svg) no-repeat left center;
+        background: url(../svg/Pfeil_links_2px.min.svg) no-repeat left center;
         a{
             padding-left: 35px;
         }
@@ -17,7 +17,7 @@
     }
 
     &__right{
-        background: url(../svg/arrow_r.min.svg) no-repeat right center;
+        background: url(../svg/Pfeil_rechts_2px.min.svg) no-repeat right center;
         a{
             padding-right: 35px;
         }

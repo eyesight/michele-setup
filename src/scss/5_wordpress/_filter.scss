@@ -18,6 +18,7 @@
         @include type-face($type-face-serif, $font-weight-bold);
         @include font-size($font-settings-filter); 
         display: block;
+        background: transparent;
     }
 
     &__button{
