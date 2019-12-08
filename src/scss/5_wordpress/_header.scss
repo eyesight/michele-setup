@@ -251,7 +251,6 @@
 }
 
 .animated-text{
-    display: block;
     @include font-size($font-settings-header);
     white-space: nowrap;
     position: absolute;
@@ -259,21 +258,24 @@
     padding-top: 4px; 
     width: 99.5% / $col-count * 8;  
     overflow: hidden;
-    @include sm-max(){
-        display: none;
-    }
-    p{
-        animation: 20s slide-right linear;
+    
+    &__inner{
+        @include flexbox($wrap: nowrap);
+        animation: 50s slide-right linear infinite;
     }
 
-    a{
+    &__item{
         margin-right: 30px;
+    }
+
+    @include sm-max(){
+        display: none;
     }
 }
 
 @keyframes slide-right { 
     0% {margin-left: 100%; opacity: 0;}
     1% {margin-left: 100%; opacity: 1;}
-   99% {margin-left: -100%; opacity: 1;} 
-  100% {margin-left: -100%; opacity: 0;} 
+   99% {margin-left: -300%; opacity: 1;} 
+  100% {margin-left: -300%; opacity: 0;} 
 }
