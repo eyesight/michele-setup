@@ -155,6 +155,21 @@
             }
         }
     }
+
+    .mobile{
+        a{
+            background: url(../svg/phone.min.svg) no-repeat center center;
+            background-size: 35px auto;
+            width: 35px;
+            height: 35px;
+            display: inline-block;
+            .menu-open &{
+                @include sm-max(){
+                    background: url(../svg/logo-white.min.svg) no-repeat center center;
+                }
+            }
+        }
+    }
     
     a span{
         display: none;

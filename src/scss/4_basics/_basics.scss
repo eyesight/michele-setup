@@ -123,6 +123,13 @@ button:focus {
   }
 }
 
+.desktop-only{
+  display: block;
+  @include sm-max(){
+    display: none;
+  }
+}
+
 .home{
   background-color: $color-beige;
 }
