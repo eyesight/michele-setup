@@ -83,8 +83,15 @@ $font-settings-filter: (
 ) !default;
 
 $font-settings-tiles-title: (
-  null: (1.4rem, 1.6rem),
+  null: (2.0rem, 2.2rem),
+  md: (3.0rem, 3.2rem)
+  lg: (2.0rem, 2.2rem)
   xl: (3.0rem, 3.2rem)
+) !default;
+
+$font-settings-tiles-copyright: ( 
+  null: (1.2rem, 1.4rem),
+  lg: (1.4rem, 3.2rem) 
 ) !default;
 
 $font-settings-footer: (

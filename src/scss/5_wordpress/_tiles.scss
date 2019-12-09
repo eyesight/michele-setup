@@ -63,13 +63,21 @@
         opacity: 0;
         z-index: 1000;
         color: $color-white;
-        @include flexbox(column, wrap, center, center);
+        @include flexbox(column, wrap, flex-start, flex-start);
         padding: $gutter*2;
     }
 
     &__item-title{
-        @include type-face($type-face, $font-weight);
+        @include type-face($type-face-serif, $font-weight);
         @include font-size($font-settings-tiles-title);
+    }
+    
+    &__item-copyright{
+        position: absolute;
+        bottom: $gutter * 2;
+        left: $gutter * 2;
+        @include type-face($type-face-serif, $font-weight);
+        @include font-size($font-settings-tiles-copyright);
     }
 }
 
