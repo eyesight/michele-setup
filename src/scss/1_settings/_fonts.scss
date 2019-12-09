@@ -24,15 +24,26 @@
 }
 
 @font-face {
-  font-family: 'Apercu Trial';
-  src: url("#{$font-path}value-serif-bold-trial.otf")
+  font-family: 'Reckless Neue TRIAL';
+  src: url("#{$font-path}RecklessNeueTRIAL-SemiBold.otf")
   format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Reckless Neue TRIAL';
+  src: url("#{$font-path}RecklessNeueTRIAL-Bold.otf")
+  format("opentype");
+  font-weight: 500;
+  font-style: normal;
 }
 
 // TYPE-FACE SETTINGS
-$type-face-serif: 'Apercu Trial', serif !default;
+$type-face-serif: 'Reckless Neue TRIAL', serif !default;
 $type-face: 'Lausanne', sans-serif !default;
 $font-weight: 300 !default;
+$font-weight-semibold: 300 !default;
 $font-weight-bold: 500 !default;
 
 // FONT-SIZE SETTINGS
@@ -47,8 +58,8 @@ $font-settings-h1: (
 ) !default;
 
 $font-settings-h2: (
-  null: (2.0rem, 2.2rem),
-  lg: (5.0rem, 5.4rem)
+  null: (2.5rem, 2.6rem),
+  lg: (5.0rem, 5.0rem)
 ) !default;
 
 $font-settings-h3: (
@@ -57,8 +68,8 @@ $font-settings-h3: (
 ) !default;
 
 $font-settings-header: (
-  null: (2.6rem, 2.8),
-  sm: (1.8rem, 2)
+  null: (1.6rem, 1.8rem),
+  lg: (1.6rem, 1.8rem)
 ) !default;
 
 $font-settings-pre-title: (
@@ -77,8 +88,8 @@ $font-settings-tiles-title: (
 ) !default;
 
 $font-settings-footer: (
-  null: (1.4rem, 1.6rem),
-  lg: (2.0rem, 2.6rem)
+  null: (1.3rem, 1.7rem),
+  lg: (1.6rem, 2.0rem)
 ) !default;
 
 $font-settings-categories-post: (
@@ -86,15 +97,9 @@ $font-settings-categories-post: (
   lg: (2.6rem, 3.0rem)
 ) !default;
 
-$font-settings-lead: (
-  null: (1.3rem, 1.7rem),
-  lg: (2.0rem, 2.6rem)
-) !default;
+$font-settings-lead: $font-settings-body !default;
 
-$font-settings-image-text: (
-  null: (1.3rem, 1.7rem),
-  lg: (2.0rem, 2.6rem)
-) !default;
+$font-settings-image-text: $font-settings-body !default;
 
 $font-settings-image-text-cat: (
   null: (1.2rem, 2.0rem),
@@ -104,4 +109,8 @@ $font-settings-image-text-cat: (
 $font-settings-infotext: ( 
   null: (1.0rem, 1.4rem),
   lg: (1.6rem, 1.8rem) 
+) !default;
+
+$font-settings-mobile-navigation: ( 
+  null: (2.6rem, 3.2rem)
 ) !default;

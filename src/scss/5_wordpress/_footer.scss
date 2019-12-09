@@ -16,7 +16,7 @@
     @include full-width();
 
     &__container{
-        @include flexbox(row, wrap, space-between, flex-start);
+        @include flexbox(row, wrap, flex-start, flex-start);
         
         @include md-max(){
             @include flexbox(row, wrap, flex-start, flex-start);  
@@ -24,7 +24,7 @@
     }
     
     &__left{
-        width: auto;  
+        width: calc(100% / 3);  
         @include md-max(){
             width: 100%;  
         }
@@ -45,16 +45,23 @@
     }
     
     &__center{
+        width: calc(100% / 3);
+        @include flexbox(column, wrap, flex-start, center);
         @include md-max(){
+            @include flexbox(column, wrap, flex-start, flex-start);
+            width: 70%;
             margin-top: $spacing-between-sections/2;
         }
     }
     
     &__right{
+        width: calc(100% / 3);
+        text-align: right;
         @include md-max(){
-            position: absolute;
-            bottom: 0;
-            right: 0;
+            width: 30%;
+            margin-top: $spacing-between-sections/2;
+            height: 40px;
+            @include flexbox(column, wrap, center, flex-end);
         }
 
         a{

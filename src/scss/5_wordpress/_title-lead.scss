@@ -29,7 +29,7 @@
     }
     
     &__categories{ 
-        @include type-face($type-face-serif, $font-weight);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-categories-post);
         @include ld-margin-bottom($gutter);
         @include ld-margin-bottom(0, '.title-lead__categories');

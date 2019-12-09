@@ -79,7 +79,7 @@
         @include flexbox();
         @include font-size($font-settings-header);
         position: relative;
-        top: 4px;
+        top: 12px;
 
         li{
             padding-right: $gutter;
@@ -103,9 +103,8 @@
 
 .main-navigation{
     @include make-grid-item($col-span-tile-large, $margin-bottom: 0); 
-    @include type-face($type-face, $font-weight);
-    @include font-size($font-settings-header);
-    color: $color-main-text;
+    @include type-face($type-face-serif, $font-weight);
+    @include font-size($font-settings-mobile-navigation);
     display: none;
     
     @include sm-max(){
@@ -126,7 +125,7 @@
     }
 
     a{
-        color: $color-main-text;
+        color: $color-white;
         text-decoration: none;
         padding-bottom: 1px;
 
@@ -156,7 +155,7 @@
             width: 100%;
             transition: .5s transform ease-in-out;
             padding-top: 0;
-            transform: translateY(-150%);
+            transform: translateY(-160%);
         }
         li{
             list-style: none;
@@ -172,7 +171,7 @@
         }
 
         &.navigation--out{
-            transform: translateY(-150%);
+            transform: translateY(-160%);
         }
     }
 
@@ -260,7 +259,7 @@
     white-space: nowrap;
     position: absolute;
     right: 0;
-    padding-top: 4px; 
+    padding-top: 12px;
     width: 99.5% / $col-count * 8;  
     overflow: hidden;
     

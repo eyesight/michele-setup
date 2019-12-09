@@ -1,7 +1,7 @@
 .prev-next{
     @include flexbox(row, wrap, space-between, flex-start);
     @include ld-margin-bottom(0px);
-    @include font-size($font-settings-header);
+    @include font-size($font-settings-body);
     &__left{
         background: url(../svg/Pfeil_links_2px.min.svg) no-repeat left center;
         a{
@@ -33,7 +33,14 @@
     &__arrow{
         background-size: 15px auto;
         height: 35px;
+        @include flexbox(column, wrap, center, flex-start);
         display: pointer;
+
+        span{
+            @include md-max(){
+                margin-top: 5px;
+            }
+        }
     }
 
     span{
