@@ -86,6 +86,16 @@
             }
         }
     }
+
+    &__right{
+        a{
+            text-decoration: none;
+        }
+
+        li:hover a{
+            text-decoration: underline;
+        }
+    }
     
     li{
         margin-bottom: 10px;

@@ -1,0 +1,12 @@
+.wp-block-embed {
+    @include ld-margin-bottom($spacing-between-sections);
+    @include full-width();
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections/4);
+        @include ld-margin-bottom($spacing-between-sections/2, '.footer');
+    }
+
+    &__wrapper{
+        @include responsive-ratio();
+    }
+}
