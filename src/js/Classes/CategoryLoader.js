@@ -5,6 +5,8 @@ class CategoryLoader {
     this.filterButtonSelector = '.filter__button';
     this.buttonClicket = document.querySelectorAll('.filter__button');
     this.buttonClicketArray = Array.prototype.slice.call(this.buttonClicket);
+    
+    this.categoryPage = document.querySelector('.category');
 
     this.filteredItems = document.querySelectorAll('.tiles__item');
     this.filteredItemsArray = Array.prototype.slice.call(this.filteredItems);
@@ -19,12 +21,18 @@ class CategoryLoader {
   }
 
   bindEvents() {
+    //if user is on category-page, show only the elements of the category in the beginning
+    if(this.categoryPage){
+      let cat = this.getCurrentCategory(this.buttonClicketArray);
+      this.togglePresent(this.filterArr, cat);
+      this.hideItems(this.filteredItemsArray, this.filterArr);
+    }
+    
     this.showAllitems();
     this.buttonClicketArray.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault();
         const clickedButton = e.currentTarget;
-        //const dataValue = button.dataset.filterTarget;   
         let currentCategory = clickedButton.getAttribute('data-filter-target');
         this.setActiveButton(clickedButton); 
         this.togglePresent(this.filterArr, currentCategory);
@@ -74,6 +82,16 @@ class CategoryLoader {
     } else {
       arr.push(el);
     }
+  }
+
+  getCurrentCategory(buttons){
+    let categoryName = '';
+    buttons.forEach((name)=>{
+        if(name.classList.contains('active')){
+          categoryName = name.getAttribute('data-filter-target')
+        }
+    });
+    return categoryName;
   }
 }
 
