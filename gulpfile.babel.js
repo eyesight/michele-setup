@@ -34,9 +34,3 @@ gulp.task('default',
     gulp.parallel('styles', 'scripts', 'fonts', 'favicons', 'img', 'svg'), 'watch'
   )
 );
-
-// gulp.task('default',
-// 	gulp.series(
-// 		'styles', 'scripts', 'fonts', 'favicons', 'img', 'svg', 'watch'
-// 	)
-// );

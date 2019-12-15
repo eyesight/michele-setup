@@ -11,15 +11,6 @@ import PostTitleLoader from './Classes/PostTitleLoader';
 	const navigation = new Menu();
 	
   const categoriesLoader = new CategoryLoader();
-  
-  const  videoPlay = new VideoPlay(); 
-
- /*  const postTitleLoader = new PostTitleLoader({
-    postContainerSelector: '.tiles',
-    postSelector: '.tiles__item',
-    titleSelector: '.tiles__item-title', 
-    postId: 'data-id'
-  }); */ 
 
   });
 })();   
