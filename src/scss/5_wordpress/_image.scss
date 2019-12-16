@@ -1,4 +1,5 @@
-.image {
+.image,
+.wp-block-image {
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/4);
@@ -7,13 +8,18 @@
     img{
         width: 100%;
     }
+
+    figcaption{
+        display: none;
+    }
 }
 
 .image--full-with{
     width: 100%;
 }
 
-.image--content-with{
+.image--content-with,
+.wp-block-image{
     @include full-width(); 
 }
 

@@ -50,3 +50,10 @@
     width: 100%;
   }
 }
+
+.image-with-text__container{
+  align-items: stretch;
+}
+.image-with-text__text{
+  @include flexbox(column, wrap, center, flex-start)
+}

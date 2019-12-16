@@ -95,6 +95,10 @@ button:focus {
   outline: none; 
 }
 
+figure{
+  margin: 0;
+}
+
 
 .content{
   @include full-width();
