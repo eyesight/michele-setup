@@ -5,6 +5,7 @@ class CategoryLoader {
     this.filterButtonSelector = '.filter__button';
     this.buttonClicket = document.querySelectorAll('.filter__button');
     this.buttonClicketArray = Array.prototype.slice.call(this.buttonClicket);
+    this.bodyEl = document.querySelector('body');
     
     this.categoryPage = document.querySelector('.category');
 
@@ -15,6 +16,7 @@ class CategoryLoader {
     
     this.filterArr = [];
     this.timeOutTime = 300;
+    this.timeOutTime2 = 1000;
     if(this.buttonClicket && this.buttonClicket.length > 0){
       this.bindEvents();
     }
@@ -35,10 +37,25 @@ class CategoryLoader {
         const clickedButton = e.currentTarget;
         let currentCategory = clickedButton.getAttribute('data-filter-target');
         this.setActiveButton(clickedButton); 
+        this.animateFilteredItems(this.filterArr);
         this.togglePresent(this.filterArr, currentCategory);
-        this.hideItems(this.filteredItemsArray, this.filterArr);
+        setTimeout(()=>{
+          this.hideItems(this.filteredItemsArray, this.filterArr);
+        }, this.timeOutTime);
 			});
 		});
+  }
+
+  animateFilteredItems(arr){
+    Helper.addClass(this.bodyEl, 'filter-hidden');
+    console.log(arr.length);
+      setTimeout(()=>{
+        Helper.addClass(this.bodyEl, 'filter-active');
+        Helper.removeClass(this.bodyEl, 'filter-hidden');
+        if(arr.length === 0){
+          Helper.removeClass(this.bodyEl, 'filter-active');
+        }
+      }, this.timeOutTime);
   }
 
   showAllitems(){

@@ -32,7 +32,7 @@
 
     &__text-bold{
         @include type-face($type-face, $font-weight-bold);
-        margin-right: $gutter;
+        margin-right: 8px;
     }
 
     &__wrapper{
@@ -55,6 +55,12 @@
     &__categories{ 
         @include ld-margin-bottom($gutter);
         @include ld-margin-bottom(0, '.title-lead__categories');
+        @include type-face($type-face, $font-weight-bold);
+        padding-left: 8px;
+
+        &:first-of-type{
+            padding-left:0;
+        }
     }
 
     &__lead{

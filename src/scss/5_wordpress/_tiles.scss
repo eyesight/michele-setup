@@ -1,5 +1,8 @@
 
 .tiles {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 0.3s linear 0.5s;
     a{
         &:hover{
             border-bottom: none;
@@ -27,7 +30,7 @@
         &.fade-in{
             opacity: 1;
             transform: translateY(0);
-            transition: all 0.3s;
+            transition: all 0.2s;
         }
     }
 
@@ -78,6 +81,12 @@
         left: $gutter * 2;
         @include type-face($type-face-serif, $font-weight);
         @include font-size($font-settings-tiles-copyright);
+    }
+
+    .filter-hidden &{
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.3s linear;
     }
 }
 
