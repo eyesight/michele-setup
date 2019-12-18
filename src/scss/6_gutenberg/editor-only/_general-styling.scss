@@ -51,9 +51,16 @@
   }
 }
 
-.image-with-text__container{
-  align-items: stretch;
-}
-.image-with-text__text{
-  @include flexbox(column, wrap, center, flex-start)
+.image-with-text{
+  &__container{
+    align-items: stretch;
+  }
+  &__text{
+    @include flexbox(column, wrap, center, flex-start);
+
+    .editor-rich-text p{
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }

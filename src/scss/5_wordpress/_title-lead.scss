@@ -5,10 +5,34 @@
     }
     &__categories-wrapper{
         @include make-grid-item($col-span-marginal, $margin-bottom: 0);
+        @include font-size($font-settings-infotext);
         
         @include sm-max(){
             @include make-grid-item($col-span-tile-3, $margin-bottom: 0);
         }
+    }
+
+    &__categories-container{
+        @include flexbox();
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-infotext);
+        @include ld-margin-bottom($gutter);
+        a{
+            @include font-size($font-settings-infotext);
+        }
+    }
+
+    &__credits-container{
+        @include ld-margin-bottom($gutter);
+    }
+
+    &__credit-item{
+        @include flexbox();
+    }
+
+    &__text-bold{
+        @include type-face($type-face, $font-weight-bold);
+        margin-right: $gutter;
     }
 
     &__wrapper{
@@ -29,8 +53,6 @@
     }
     
     &__categories{ 
-        @include type-face($type-face, $font-weight);
-        @include font-size($font-settings-categories-post);
         @include ld-margin-bottom($gutter);
         @include ld-margin-bottom(0, '.title-lead__categories');
     }
