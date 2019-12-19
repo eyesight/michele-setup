@@ -2,7 +2,7 @@
 .tiles {
     opacity: 1;
     transform: translateY(0px);
-    transition: opacity 0.3s linear 0.5s;
+    transition: all 0.5s ease-out;
     a{
         &:hover{
             border-bottom: none;
@@ -11,8 +11,8 @@
     &__item{
         opacity: 0;
         display: none;
-        transform: translateY(50px);
-        transition: all 0.3s;
+        transform: translateY(20px);
+        transition: all 0.2s ease-out;
         @include make-grid-item($col-span-tile); 
         &:hover .tiles__text-wrapper{
             opacity: 1;
@@ -30,7 +30,7 @@
         &.fade-in{
             opacity: 1;
             transform: translateY(0);
-            transition: all 0.2s;
+            transition: all 0.5s ease-out;
         }
     }
 
@@ -85,8 +85,9 @@
 
     .filter-hidden &{
         opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.3s linear;
+        transform: translateY(20px);
+        transition: opacity 0.1s linear;
+        transition: transform 0.1s linear 0.2s;
     }
 }
 
