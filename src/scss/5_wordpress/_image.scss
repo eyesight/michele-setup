@@ -14,11 +14,12 @@
     }
 }
 
-.image--full-with{
+.image--full-with,
+.is-style-image--full-with{
     width: 100%;
 }
 
-.image--content-with,
+.image--content-with:not(.is-style-image--full-with),
 .wp-block-image{
     @include full-width(); 
 }
