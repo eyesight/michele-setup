@@ -66,9 +66,9 @@
         @include flexbox();
         @include font-size($font-settings-header);
         position: relative;
-        top: 10px;
+        top: 9px;
         
-        @include sm-max(){
+        @include md-max(){
             right: 0;
             top: 13px;
         }
@@ -101,7 +101,7 @@
     white-space: nowrap;
     position: absolute;
     right: 0;
-    padding-top: 10px;
+    padding-top: 9px;
     width: 99.5% / $col-count * 8;  
     overflow: hidden;
     
@@ -112,6 +112,10 @@
 
     &__item{
         margin-right: 30px;
+    }
+
+    @include md-max(){
+        padding-top: 13px;
     }
 
     @include sm-max(){
