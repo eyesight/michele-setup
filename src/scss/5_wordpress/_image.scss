@@ -1,6 +1,6 @@
 .image,
 .wp-block-image {
-    @include ld-margin-bottom($spacing-between-sections);
+    @include ld-margin-bottom($spacing-between-sections/2);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/4);
         @include ld-margin-bottom($spacing-between-sections/2, '.footer');
@@ -30,7 +30,7 @@ img.image__col-ten{
 }
 
 .image-with-text{
-    @include ld-margin-bottom($spacing-between-sections);
+    @include ld-margin-bottom($spacing-between-sections/2);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/4);
     }
