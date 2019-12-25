@@ -42,7 +42,7 @@
         }
         border-bottom: none;
         background: url(../svg/logo.min.svg) no-repeat left center;
-        background-size: 25px auto;
+        background-size: 27px auto;
         background-color: transparent; 
         width: auto;
         height: 30px;
@@ -69,7 +69,7 @@
         top: 9px;
         
         @include md-max(){
-            right: 0;
+            left: 0px;
             top: 13px;
         }
 
@@ -77,9 +77,7 @@
             padding-right: $gutter;
 
             @include sm-max(){
-                text-align: right;
                 padding-right: 0;
-                padding-left: $gutter;
             }
 
             &:hover{
@@ -92,6 +90,10 @@
 
         .home &{
             position: absolute;
+
+            @include sm-max(){
+                padding-left: 60px;
+            }
         }
     }
 }
