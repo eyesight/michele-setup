@@ -64,12 +64,12 @@
         left: 0px;
         height: 12px; 
         width: 12px;
-        bottom: 8px;
+        bottom: 4px;
     
         @include lg-min{
             height: 24px;
             width: 24px;   
-            bottom: 12px;
+            bottom: 5px;
         }
 
         .st0{

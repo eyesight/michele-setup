@@ -1,10 +1,10 @@
 .footer{
     border-top: $border-default;
-    padding-top: $spacing-between-sections/2;
-    padding-bottom: $spacing-between-sections;
+    padding-top: $gutter*2;
+    padding-bottom: $gutter*2;
     margin-top: $spacing-between-sections;
     @include sm-max(){
-        margin-top: $spacing-between-sections/2;
+        margin-top: $gutter*2;
     }
     
     .prevNext + &{
@@ -26,7 +26,8 @@
     &__left{
         width: calc(100% / 3);  
         @include md-max(){
-            width: 100%;  
+            width: 70%;  
+            order: 1;
         }
     }
     
@@ -49,8 +50,9 @@
         @include flexbox(column, wrap, flex-start, center);
         @include md-max(){
             @include flexbox(column, wrap, flex-start, flex-start);
-            width: 70%;
+            width: 100%;
             margin-top: $spacing-between-sections/2;
+            order: 3;
         }
     }
     
@@ -58,10 +60,9 @@
         width: calc(100% / 3);
         text-align: right;
         @include md-max(){
-            width: 30%;
-            margin-top: $spacing-between-sections/2;
-            height: 40px;
+            width: 30%; 
             @include flexbox(column, wrap, center, flex-end);
+            order: 2;
         }
     }
     

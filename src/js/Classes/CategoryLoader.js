@@ -16,7 +16,6 @@ class CategoryLoader {
     
     this.filterArr = [];
     this.timeOutTime = 300;
-    this.timeOutTime2 = 1000;
     if(this.buttonClicket && this.buttonClicket.length > 0){
       this.bindEvents();
     }
@@ -48,7 +47,6 @@ class CategoryLoader {
 
   animateFilteredItems(arr){
     Helper.addClass(this.bodyEl, 'filter-hidden');
-    console.log(arr.length);
       setTimeout(()=>{
         Helper.addClass(this.bodyEl, 'filter-active');
         Helper.removeClass(this.bodyEl, 'filter-hidden');
