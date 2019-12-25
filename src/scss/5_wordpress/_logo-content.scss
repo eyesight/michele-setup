@@ -25,11 +25,4 @@
     &__img{
         width: 100%; 
     }
-
-    .menu-open &{
-        @include sm-max(){
-            opacity: 0;
-            transition: opacity 0.3s linear;
-        }
-    }
 }

@@ -63,14 +63,6 @@
             height: 40px;
             @include flexbox(column, wrap, center, flex-end);
         }
-
-        a{
-            @include md-max(){
-                .menu-open &{
-                    color: $color-white;
-                }
-            }
-        }
     }
     
     &__anchor{
@@ -79,11 +71,6 @@
         &:hover,
         &:active{
             text-decoration: underline;
-        }
-        .menu-open &{
-            @include sm-max(){
-                color: $color-white;
-            }
         }
     }
 
@@ -115,12 +102,6 @@
             width: 35px;
             height: 35px;
             display: inline-block;
-            
-            .menu-open &{
-                @include sm-max(){
-                    background: url(../svg/in-white.min.svg) no-repeat center center;
-                }
-            }
         }
     }
     .mail{
@@ -130,11 +111,6 @@
             width: 35px;
             height: 25px;
             display: inline-block;
-            .menu-open &{
-                @include sm-max(){
-                    background: url(../svg/mail-white.min.svg) no-repeat center center;
-                }
-            }
         }
     }
     .instagram{
@@ -144,11 +120,6 @@
             width: 35px;
             height: 35px;
             display: inline-block;
-            .menu-open &{
-                @include sm-max(){
-                    background: url(../svg/instagram-white.min.svg) no-repeat center center;
-                }
-            }
         }
     }
     .logo{
@@ -158,11 +129,6 @@
             width: 35px;
             height: 35px;
             display: inline-block;
-            .menu-open &{
-                @include sm-max(){
-                    background: url(../svg/logo-white.min.svg) no-repeat center center;
-                }
-            }
         }
     }
 
@@ -173,26 +139,10 @@
             width: 35px;
             height: 35px;
             display: inline-block;
-            .menu-open &{
-                @include sm-max(){
-                    background: url(../svg/logo-white.min.svg) no-repeat center center;
-                }
-            }
         }
     }
     
     a span{
         display: none;
-    }
-    
-    .menu-open &{
-        @include sm-max(){
-            z-index: 10000;
-            color: $color-white;
-            border-top: $border-default-white;
-            position: fixed;
-            bottom: 0;
-            left: $gutter * 2;
-        }
     }
 }
