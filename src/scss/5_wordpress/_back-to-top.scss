@@ -6,6 +6,7 @@
     margin: auto;
     left: 50%;
     padding: 0;
+    z-index: 1000;
     transform: translateX(-50%) rotate(-90deg);
     cursor: pointer;
     background: url(../svg/Pfeil_rechts_2px.min.svg) no-repeat right center;

@@ -80,11 +80,6 @@
             top: 13px;
         }
 
-        @include sm-max(){
-            left: 0px;
-            top: 14px;
-        }
-
         li{
             padding-right: $gutter;
 
