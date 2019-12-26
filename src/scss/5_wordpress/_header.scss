@@ -12,10 +12,11 @@
     @include sm-max(){
         height: 45px;
         transition: .5s all ease-in-out;
-        @include ld-margin-bottom($spacing-between-sections/2);
+        @include ld-margin-bottom($spacing-between-sections/4);
     }
 
-    .home &{
+    .home &,
+    .category &{
         @include sm-max(){
             background-color: $color-beige;
         }
@@ -27,19 +28,25 @@
         overflow: hidden;
         min-height: 35px;
         @include sm-max(){
-            overflow: visible;
+            overflow: hidden;
         }
     }
 
     &__logo{
-        .home &{
-            background: url(../svg/logo.min.svg) no-repeat left center;
-            background-size: 20px auto;
-            background-color: $color-white;
-            z-index: 10;
-            padding-right: $gutter * 3; 
-            display: none;
+        .home &,
+        .category &{
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
         }
+        
+        .logo-shrink &{
+            transition: all 0.5s ease-in-out 0.2s;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        z-index: 10;
         border-bottom: none;
         background: url(../svg/logo.min.svg) no-repeat left center;
         background-size: 27px auto;
@@ -66,11 +73,16 @@
         @include flexbox();
         @include font-size($font-settings-header);
         position: relative;
-        top: 9px;
+        top: 10px;
         
         @include md-max(){
             left: 0px;
             top: 13px;
+        }
+
+        @include sm-max(){
+            left: 0px;
+            top: 14px;
         }
 
         li{
@@ -88,12 +100,18 @@
             text-decoration: none;
         }
 
-        .home &{
+        .home &,
+        .category &{
             position: absolute;
+            left: 0px;
+            transition: left 0.2s linear 0.2s;
+        }
 
-            @include sm-max(){
-                padding-left: 60px;
-            }
+        .home.logo-shrink &,
+        .category.logo-shrink &{
+            position: absolute;
+            left: 60px;
+            transition: left 0.2s linear;
         }
     }
 }
@@ -103,7 +121,7 @@
     white-space: nowrap;
     position: absolute;
     right: 0;
-    padding-top: 9px;
+    padding-top: 10px;
     width: 99.5% / $col-count * 8;  
     overflow: hidden;
     

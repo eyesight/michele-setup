@@ -2,20 +2,29 @@
     @include make-grid-item($col-span-tile-4, $margin-bottom: 0);
     position: relative;
     z-index: 10;
-        
+
     @include sm-max(){
-        @include make-grid-item($col-span-tile-4, $margin-bottom: 0);
         @include ld-margin-bottom($spacing-between-sections/4);
-        position: fixed;
-        top: 8px;
-        z-index: 10000;
-        opacity: 1;
-        transition: opacity 0.3s linear;
+        @include make-grid-item($col-span-tile-4, $margin-bottom: 0);
+    }
+    
+    @include xs-max(){
+        @include make-grid-item($col-span-tile-6, $margin-bottom: 0);
+        @include ld-margin-bottom($spacing-between-sections/4);
     }
  
     &__link{
         display: block; 
         width: 100% / 4 * 2;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.5s ease-in-out; 
+
+        .logo-shrink &{
+            opacity: 0;
+            transform: translateY(-50px);
+            transition: all 0.5s ease-in-out;
+        }
 
         @include sm-max(){
             width: 100%;

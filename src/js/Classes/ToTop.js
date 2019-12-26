@@ -1,5 +1,3 @@
-import Helper from './Helper';
-
 class ToTop {
   constructor() {
     this.totopButton = document.querySelector('.totop');
