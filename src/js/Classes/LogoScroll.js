@@ -7,33 +7,28 @@ class LogoScroll {
     this.categoryPage = document.querySelector('.category');
     this.header = document.querySelector('.header');
     this.logo = document.querySelector('.logo-content');
-    this.logobox = this.logo.getBoundingClientRect();
-    this.logowidth = this.logo.clientWidth;
-
+    
     this.scrollFunction = this.scrollFunction.bind(this);
     this.bindEvents = this.bindEvents.bind(this);
     
     if(this.home || this.categoryPage){
       this.bindEvents();
+      this.logobox = this.logo.getBoundingClientRect();
+      this.logowidth = this.logo.clientWidth;
     }
   }
   
   bindEvents() {
     window.addEventListener("scroll", (e) => {
-      //let xx = headerHeight + this.logobox.height;
-      //console.log(xx);
       this.scrollFunction(this.header.clientHeight);
    });
   }
 
   scrollFunction(headerHeight) {
     const yposition = headerHeight + 20;
-    console.log(headerHeight);
     if (this.isElementinViewport(this.logo, yposition)) {
       Helper.removeClass(this.body, 'logo-shrink');
-      console.log('ss');
     } else {
-      console.log('tt');
       Helper.addClass(this.body, 'logo-shrink');
     } 
   }
