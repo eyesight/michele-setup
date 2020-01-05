@@ -17,13 +17,13 @@
         display: block; 
         width: 100% / 4 * 2;
         opacity: 1;
-        transform: translateY(0);
-        transition: all 0.2s ease-in-out; 
+        //transform: translateY(0);
+        transition: all 0.3s ease-in-out; 
 
         .logo-shrink &{
             opacity: 0;
-            transform: translateY(-50px);
-            transition: all 0.2s ease-in-out;
+            //transform: translateY(-50px);
+            transition: all 0.3s ease-in-out;
         }
 
         @include sm-max(){
