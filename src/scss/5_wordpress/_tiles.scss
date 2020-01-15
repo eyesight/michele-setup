@@ -74,7 +74,7 @@
     }
 
     &__item-title{
-        @include type-face($type-face-serif, $font-weight);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-tiles-title);
     }
     
@@ -83,7 +83,7 @@
         bottom: $gutter * 2;
         left: $gutter * 2;
         right: $gutter * 2;
-        @include type-face($type-face-serif, $font-weight);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-tiles-copyright);
     }
 
