@@ -30,7 +30,7 @@
             transition: all 0.3s ease-in-out;
         }
         
-        @include md-max(){
+        @include sm-max(){
             transition: all 0.3s ease-in-out 0.3s; 
             width: 100%;
         }

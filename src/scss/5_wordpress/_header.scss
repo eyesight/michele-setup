@@ -99,7 +99,7 @@
             left: 0px;
             transition: left 0.2s linear 0.2s;
             
-            @include md-max(){
+            @include sm-max(){
                 left: 150px;
                 transition: left 0.3s linear 0.1s;
             }
