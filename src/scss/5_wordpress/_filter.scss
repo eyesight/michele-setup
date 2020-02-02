@@ -64,18 +64,17 @@
         left: 0px;
         height: 12px; 
         width: 12px;
-        bottom: 4px;
+        bottom: 7px;
     
         @include lg-min{
-            height: 24px;
-            width: 24px;   
-            bottom: 5px;
+            height: 25px;
+            width: 25px;   
+            bottom: 10px;
         }
 
         .st0{
             fill:none;
             stroke:$color-black;
-            stroke-width:2;
             stroke-miterlimit:10;
         }
     }

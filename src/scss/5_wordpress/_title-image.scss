@@ -15,7 +15,12 @@
 
     &__title{
         @include type-face($type-face-serif, $font-weight-bold);
-        @include font-size($font-settings-h2);
+        @include font-size($font-settings-h3);
+        margin-top: -8px;
+        
+        .title-image__wrapper--big &{
+            @include font-size($font-settings-h2);
+        }
     }
 
     &__lead{ 

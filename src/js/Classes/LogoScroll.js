@@ -10,17 +10,29 @@ class LogoScroll {
     
     this.scrollFunction = this.scrollFunction.bind(this);
     this.bindEvents = this.bindEvents.bind(this);
+
+    this.isHomeOrCategory = this.home || this.categoryPage;
     
-    if(this.home || this.categoryPage){
+    if(this.isHomeOrCategory){
       this.bindEvents();
       this.logobox = this.logo.getBoundingClientRect();
       this.logowidth = this.logo.clientWidth;
     }
+
+    document.addEventListener('resize', function() {
+      if(this.isHomeOrCategory){
+        this.bindEvents();
+      }
+    });
   }
   
   bindEvents() {
     window.addEventListener("scroll", (e) => {
-      this.scrollFunction(this.header.clientHeight);
+      if(window.matchMedia("(min-width: 769px)").matches){
+        this.scrollFunction(this.header.clientHeight);
+      }else{
+          this.scrollFunctionMobile(this.header.clientHeight);
+      }
    });
   }
 
@@ -31,6 +43,17 @@ class LogoScroll {
     } else {
       Helper.addClass(this.body, 'logo-shrink');
     } 
+  }
+
+  scrollFunctionMobile(headerHeight) {
+    const elem = document.querySelector('body');
+    const el = elem.getBoundingClientRect();
+    console.log(headerHeight);
+    if (el.top <= -headerHeight){
+      Helper.addClass(this.body, 'logo-shrink');
+    }else{
+      Helper.removeClass(this.body, 'logo-shrink');
+    }
   }
 
   isElementinViewport(elem, positionTop = 0, positionLeft = 0){

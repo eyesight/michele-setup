@@ -19,13 +19,23 @@
   .video{
     position: absolute;
     right: 0;
-    display: none;
-    @include md-max(){  
-      position: relative;
+    height: auto;
+    bottom: -100px;  
+    left: 0px; 
+    width: 300px;
+    min-width: 300px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    
+    @media screen and (max-width: 600px) {
+      width: 200px;  
+      bottom: -100px;  
+      left: -50px; 
     }
-
-    &.active{
-      display: block;
-    }
+  }
+  
+  .title-h1__button:hover .video{
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
   }
 }

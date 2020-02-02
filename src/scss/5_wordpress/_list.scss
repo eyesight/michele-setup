@@ -7,7 +7,7 @@
         }
     }
     &__title{
-        @include font-size($font-settings-image-text-cat);
+        @include font-size($font-settings-body);
         @include type-face($type-face-serif, $font-weight-bold);
     }
 }

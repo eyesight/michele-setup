@@ -1,3 +1,6 @@
+$var1: 100% / 12 * 4;
+$var2: $gutter * 5;
+
 html {
   font-size: 62.5%;
   width: 100%;
@@ -102,6 +105,11 @@ figure{
 
 .content{
   @include full-width();
+
+  .content-left-indent &{
+    @include make-grid-item($col-count);
+    padding-left: calc(#{$var1} - #{$var2});
+  }
 }
 
 .grid-container{
@@ -137,4 +145,8 @@ figure{
 .home,
 .category{
   background-color: $color-beige;
+}
+
+strong{
+  font-weight: 700;
 }
