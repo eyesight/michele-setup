@@ -128,7 +128,7 @@
     
     &__inner{
         @include flexbox($wrap: nowrap);
-        animation: 40s slide-right linear infinite;
+        animation: 20s slide-right linear infinite;
     }
 
     &__item{
@@ -145,8 +145,6 @@
 }
 
 @keyframes slide-right { 
-    0% {margin-left: 0%; opacity: 0;}
-    1% {margin-left: 0%; opacity: 1;}
-   99% {margin-left: -200%; opacity: 1;} 
-  100% {margin-left: -200%; opacity: 0;} 
+    0%   { transform: translate(0%, 0); }
+    100% { transform: translate(-100%, 0); }
 }

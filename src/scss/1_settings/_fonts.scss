@@ -1,128 +1,76 @@
 // FONT-FACE SETTINGS HERE
-/* @font-face {
-  font-family:"Circular Std";
-  src: url("#{$font-path}lineto-circular-medium.eot");
-  src: url("#{$font-path}lineto-circular-medium.eot?#iefix") format("embedded-opentype"),
-       url("#{$font-path}lineto-circular-medium.woff2") format("woff2"),
-       url("#{$font-path}lineto-circular-medium.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-} */
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3afa97");
 
 @font-face {
-  font-family: 'Matter';
-  src: url("#{$font-path}MatterTRIAL-Regular.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
+    font-family: 'Mirador';
+    src: url("#{$font-path}3AFA97_0_0.eot");
+    src: url("#{$font-path}3AFA97_0_0.eot?#iefix") format("embedded-opentype"), 
+    url("#{$font-path}3AFA97_0_0.woff2") format("woff2"), 
+    url("#{$font-path}3AFA97_0_0.woff") format("woff"), 
+    url("#{$font-path}3AFA97_0_0.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Matter';
-  src: url("#{$font-path}MatterTRIAL-Medium.otf") format("opentype");
+    font-family: 'Matter';    
+    src: url("#{$font-path}Matter-Regular.eot");
+    src: url("#{$font-path}Matter-Regular?#iefix") format("embedded-opentype"), 
+    url("#{$font-path}Matter-Regular.woff2") format("woff2"), 
+    url("#{$font-path}Matter-Regular.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'Matter';    
+  src: url("#{$font-path}Matter-Medium.eot");
+  src: url("#{$font-path}Matter-Medium?#iefix") format("embedded-opentype"), 
+  url("#{$font-path}Matter-Medium.woff2") format("woff2"), 
+  url("#{$font-path}Matter-Medium.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Mirador';
-  src: url("#{$font-path}MiradorTest-SemiBold.otf")
-  format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mirador';
-  src: url("#{$font-path}MiradorTest-SemiBold.otf")
-  format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-
 // TYPE-FACE SETTINGS
-$type-face-serif: 'Mirador', serif !default;
-$type-face: 'Matter', sans-serif !default;
+$type-face-serif: "Mirador", serif !default;
+$type-face: "Matter", sans-serif !default;
 $font-weight: 300 !default;
 $font-weight-semibold: 300 !default;
 $font-weight-bold: 700 !default;
 
 // FONT-SIZE SETTINGS
-$font-settings-body: (
-  null: (1.6rem, 2rem),
-  lg: (1.8rem, 2.4rem)
-) !default;
+$font-settings-body: (null: (1.6rem, 2rem), lg: (1.8rem, 2.4rem)) !default;
 
-$font-settings-h1: (
-  null: (5rem, 1.1),
-  lg: (5rem, 1.1)
-) !default;
+$font-settings-h1: (null: (5rem, 1.1), lg: (5rem, 1.1)) !default;
 
-$font-settings-h2: (
-  null: (2.5rem, 2.6rem),
-  lg: (5.0rem, 5.0rem)
-) !default;
+$font-settings-h2: (null: (2.5rem, 2.6rem), lg: (5rem, 5rem)) !default;
 
-$font-settings-h3: (
-  null: (2.5rem, 1.54),
-  lg: (2.5rem, 1.54)
-) !default;
+$font-settings-h3: (null: (2.5rem, 1.54), lg: (2.5rem, 1.54)) !default;
 
-$font-settings-image-title: (
-  null: (2.5rem, 1.54),
-  lg: (3rem, 3.2rem)
-) !default;
+$font-settings-image-title: (null: (2.5rem, 1.54), lg: (3rem, 3.5rem)) !default;
 
-$font-settings-header: (
-  null: (1.8rem, 2.4rem),
-  lg: (1.8rem, 2.4rem)
-) !default;
+$font-settings-header: (null: (1.8rem, 2.4rem), lg: (1.8rem, 2.4rem)) !default;
 
-$font-settings-pre-title: (
-  null: (1.4rem, 1.8rem),
-  lg: (2.6rem, 3.0rem)
-) !default;
+$font-settings-pre-title: (null: (1.4rem, 1.8rem), lg: (2.6rem, 3rem)) !default;
 
-$font-settings-filter: (
-  null: (2.6rem, 1),
-  lg: (5rem, 1)
-) !default;
+$font-settings-filter: (null: (2.6rem, 1), lg: (5rem, 1)) !default;
 
-$font-settings-tiles-title: (
-  null: (2.0rem, 2.2rem),
-  md: (3.0rem, 3.2rem),
-  lg: (2.0rem, 2.2rem),
-  xl: (3.0rem, 3.2rem)
-) !default;
+$font-settings-tiles-title: (null: (2rem, 2.2rem), md: (3rem, 3.2rem), lg: (2rem, 2.2rem), xl: (3rem, 3.2rem)) !default;
 
-$font-settings-tiles-copyright: ( 
-  null: (1.2rem, 1.4rem),
-  lg: (1.4rem, 1.8rem) 
-) !default;
+$font-settings-tiles-copyright: (null: (1.2rem, 1.4rem), lg: (1.4rem, 1.8rem)) !default;
 
-$font-settings-footer: (
-  null: (1.3rem, 1.7rem),
-  lg: (1.6rem, 2.0rem)
-) !default;
+$font-settings-footer: (null: (1.3rem, 1.7rem), lg: (1.6rem, 2rem)) !default;
 
-$font-settings-categories-post: (
-  null: (1.2rem, 1.4rem),
-  lg: (2.6rem, 3.0rem)
-) !default;
+$font-settings-categories-post: (null: (1.2rem, 1.4rem), lg: (2.6rem, 3rem)) !default;
 
 $font-settings-lead: $font-settings-body !default;
 
 $font-settings-image-text: $font-settings-body !default;
 
-$font-settings-image-text-cat: (
-  null: (1.2rem, 2.0rem),
-  lg: (1.5rem, 2.0rem)
-) !default;
+$font-settings-image-text-cat: (null: (1.2rem, 2rem), lg: (1.5rem, 2rem)) !default;
 
-$font-settings-infotext: ( 
-  null: (1.3rem, 1.6rem),
-  lg: (1.6rem, 1.8rem) 
-) !default;
+$font-settings-infotext: (null: (1.3rem, 1.6rem), lg: (1.6rem, 1.8rem)) !default;
 
-$font-settings-mobile-navigation: ( 
-  null: (2.6rem, 3.2rem)
-) !default;
+$font-settings-mobile-navigation: (null: (2.6rem, 3.2rem)) !default;
