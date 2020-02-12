@@ -46,11 +46,12 @@
 
         z-index: 10;
         border-bottom: none;
-        background: url(../svg/logo.min.svg) no-repeat left center;
+        background: url(../svg/mi_Logo_RGB_kl.min.svg) no-repeat left center;
         background-size: 25px auto;
         background-color: transparent; 
         width: auto;
-        height: 30px;
+        height: 25px;
+        top: 4px;
         z-index: 10;
         padding-right: $gutter * 4;
         display: block;
@@ -128,15 +129,11 @@
     
     &__inner{
         @include flexbox($wrap: nowrap);
-        animation: 20s slide-right linear infinite;
+        //animation: 20s slide-right linear infinite;
     }
 
     &__item{
         margin-right: 30px;
-    }
-
-    @include md-max(){
-        padding-top: 12px;
     }
  
     @include sm-max(){
