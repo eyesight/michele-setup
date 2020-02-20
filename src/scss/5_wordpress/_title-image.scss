@@ -14,7 +14,7 @@
     }
 
     &__title{
-        @include type-face($type-face-serif, $font-weight-bold);
+        @include type-face($type-face-serif, $font-weight);
         @include font-size($font-settings-image-title);
         
         .title-image__wrapper--big &{
