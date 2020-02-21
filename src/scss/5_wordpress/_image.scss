@@ -62,7 +62,7 @@ img.image__col-ten{
     }
 
     &__cat{
-        @include type-face($type-face-serif, $font-weight);
+        @include type-face($type-face, $font-weight-bold);
         @include font-size($font-settings-image-text-cat);
         @include ld-margin-bottom($gutter);
     }
