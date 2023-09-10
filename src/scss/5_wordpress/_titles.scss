@@ -1,4 +1,4 @@
-.title-h1{
+l.title-h1 {
     @include type-face($type-face-serif, $font-weight-bold);
     @include font-size($font-settings-h1);
 
@@ -11,7 +11,7 @@
     }
 }
 
-.title-h2{
+.title-h2 {
     @include type-face($type-face-serif, $font-weight-bold);
     @include font-size($font-settings-h2);
 }

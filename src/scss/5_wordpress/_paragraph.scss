@@ -1,6 +1,8 @@
-.paragraph{
+.paragraph,
+p {
     @include ld-margin-bottom();
     @include ld-margin-bottom($gutter*3, '.title-h3');
+    @include ld-margin-bottom($gutter*3, 'h3.wp-block-heading');
     @include ld-margin-bottom($gutter*3, '.prev-next');
     @include ld-margin-bottom($gutter*3, '.footer');
     @include type-face($type-face, $font-weight);

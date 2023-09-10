@@ -1,6 +1,6 @@
 /*
   Usage:
-  Livingdocs component margin-bottom 
+  fake margin-bottom 
 */
 @mixin ld-margin-bottom($margin: $gutter, $selector: '*'){
   & + #{$selector}{

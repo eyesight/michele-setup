@@ -33,8 +33,29 @@ h2 {
   @include font-size($font-settings-h2);
 }
 
+h2.wp-block-heading {
+  @include font-size($font-settings-tiles-title);
+}
+
 h3 {
   @include font-size($font-settings-h3);
+}
+
+h4.wp-block-heading,
+h5.wp-block-heading,
+h6.wp-block-heading {
+  @include font-size($font-settings-body);
+  @include type-face($type-face, $font-weight-bold);
+}
+
+h2.wp-block-heading,
+h3.wp-block-heading,
+h4.wp-block-heading {
+  @include ld-margin-bottom($gutter);
+}
+
+* {
+  @include ld-margin-bottom($gutter*3, 'h2.wp-block-heading');
 }
 
 img {
@@ -103,13 +124,18 @@ figure{
 }
 
 
-.content{
+.content,
+.wp-block-heading,
+.page > p {
   @include full-width();
+}
 
-  .content-left-indent &{
-    @include make-grid-item($col-count);
-    padding-left: calc(#{$var1} - #{$var2});
-  }
+.content-left-indent .content,
+.content-left-indent > * {
+  @include full-width();
+  @include make-grid-item($col-count);
+  padding-left: calc(#{$var1} - #{$var2});
+  margin-bottom: 0;
 }
 
 .grid-container{
