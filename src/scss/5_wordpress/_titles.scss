@@ -15,3 +15,9 @@
     @include type-face($type-face-serif, $font-weight-bold);
     @include font-size($font-settings-h2);
 }
+
+.title-h3{
+    @include type-face($type-face, $font-weight-bold);
+    @include font-size($font-settings-body);
+    @include ld-margin-bottom($gutter);
+}

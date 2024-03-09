@@ -41,6 +41,7 @@
 
     &__text-bold{
         @include type-face($type-face, $font-weight-bold);
+        @include ld-margin-bottom(0);
         margin-right: 8px;
     }
 
