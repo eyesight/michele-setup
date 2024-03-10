@@ -64,3 +64,9 @@
     }
   }
 }
+
+.image-container,
+.embedVideo {
+  border: 1px solid $color-backend;
+  min-height: 100px;
+}

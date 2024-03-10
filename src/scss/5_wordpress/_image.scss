@@ -8,15 +8,86 @@
     img{
         width: 100%;
     }
-
+    
     figcaption{
         display: none;
+    }
+    
+    .image-container & {
+        @include ld-margin-bottom(0);
     }
 }
 
 .image--full-with,
 .is-style-image--full-with{
     width: 100%;
+}
+
+.image--col-3 {
+    @include make-grid-item(3);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-4 {
+    @include make-grid-item(4);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-5 {
+    @include make-grid-item(5);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-6 {
+    @include make-grid-item(6);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-7 {
+    @include make-grid-item(7);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-8 {
+    @include make-grid-item(8);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-9 {
+    @include make-grid-item(9);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-10 {
+    @include make-grid-item(10);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-11 {
+    @include make-grid-item(11);
+    @include sm-max(){
+        @include make-grid-item(12);
+    }
+}
+
+.image--col-12 {
+    @include make-grid-item(12);
 }
 
 .image--content-with:not(.is-style-image--full-with),

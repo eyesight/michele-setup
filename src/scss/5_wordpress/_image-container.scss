@@ -1,0 +1,12 @@
+.image-container {
+    @include flexbox();
+    @include ld-margin-bottom($spacing-between-sections/2);
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections/4);
+        @include ld-margin-bottom($spacing-between-sections/2, '.footer');
+    }
+}
+
+.image-container--center-items {
+    justify-content: space-between;
+}
