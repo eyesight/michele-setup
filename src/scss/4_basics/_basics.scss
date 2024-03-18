@@ -9,10 +9,10 @@ html {
 body {
   @include type-face($type-face, $font-weight);
   @include font-size($font-settings-body);
-  color: $color-main-text;
-  background-color: $color-primary;
+  color: var(--mim-text-color);
+  background-color: var(--mim-background-color);
   overflow-x: hidden;
-  padding-top: 45px;
+  padding-top: 75px;
 }
 
 *, *:before, *:after {
@@ -78,11 +78,11 @@ img {
 a {
   text-decoration: underline;
   cursor: pointer;
-  color: $color-main-text;
+  color: var(--mim-text-color);
 
   &:hover,
   &:focus{
-    color: $color-main-text;
+    color: var(--mim-text-color);
     text-decoration: none;
   }
 }
@@ -139,7 +139,7 @@ figure{
 }
 
 .grid-container{
-  @include make-grid-container();
+  @include make-grid-container($justify-content: flex-end);
 }
 
 .grid-offset-container{
@@ -170,7 +170,7 @@ figure{
 
 .home,
 .category{
-  background-color: $color-beige;
+  background-color: var(--mim-background-color);
 }
 
 strong{

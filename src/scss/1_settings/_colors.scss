@@ -6,5 +6,11 @@ $color-blue-90: rgba($color-blue, 0.9) !default;
 $color-beige: #F1EBE6;
 
 $color-gray: #E9E9E9 !default;
-$color-main-text: $color-black !default;
-$color-primary: $color-gray !default;
+
+:root {
+    --mim-text-color: #fff;
+    --mim-background-color: #0D0D14;
+}
+
+$color-main-text: var(--mim-text-color) !default;
+$color-primary: var(--mim-background-color) !default;

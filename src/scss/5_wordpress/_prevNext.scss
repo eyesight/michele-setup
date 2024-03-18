@@ -3,9 +3,22 @@
     @include ld-margin-bottom(0px);
     @include font-size($font-settings-footer);
     &__left{
-        background: url(../svg/Pfeil_links_2px.min.svg) no-repeat left center;
+        svg {
+            height: 15px;
+        }
+
+        span {
+            padding-bottom: 5px;
+        }
+
+        .st0 {
+            fill: none;
+            stroke: var(--mim-text-color);
+            stroke-width: 2;
+            stroke-miterlimit: 10;
+        }
         a{
-            padding-left: 35px;
+            padding-left: 15px;
         }
 
         &:hover{
@@ -17,13 +30,24 @@
     }
 
     &__right{
-        background: url(../svg/Pfeil_rechts_2px.min.svg) no-repeat right center;
         align-items: flex-end;
         a{
-            padding-right: 35px;
+            padding-right: 15px;
         }
         span{
             text-align: right;
+            padding-bottom: 5px;
+        }
+
+        svg {
+            height: 15px;
+        }
+
+        .st0 {
+            fill:none;
+            stroke: var(--mim-text-color);
+            stroke-width:2;
+            stroke-miterlimit:10;
         }
 
         &:hover{
@@ -39,12 +63,8 @@
         height: 35px;
         @include flexbox(column, wrap, center, flex-start);
         display: pointer;
-        @include md-max(){
-            width: 47.5%;
-        }
 
         span{
-            width: 100%;
             @include md-max(){
                 margin-top: 2px;
             }

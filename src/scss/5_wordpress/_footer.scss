@@ -1,7 +1,7 @@
 .footer{
     border-top: $border-default;
-    padding-top: $gutter*2;
-    padding-bottom: $gutter*2;
+    padding-top: $spacing-between-sections/2;
+    padding-bottom: $spacing-between-sections/2;
     margin-top: $spacing-between-sections;
     @include sm-max(){
         margin-top: $gutter*2;
@@ -12,11 +12,10 @@
     }
     
     @include type-face($type-face, $font-weight);
-    @include font-size($font-settings-footer);
     @include full-width();
 
     &__container{
-        @include flexbox(row, wrap, flex-start, flex-start);
+        @include flexbox(row, wrap, space-between, flex-start);
         
         @include md-max(){
             @include flexbox(row, wrap, flex-start, flex-start);  
@@ -24,54 +23,25 @@
     }
     
     &__left{
-        width: calc(100% / 3);  
+        flex-basis: 50%;
+        @include flexbox(row, wrap, space-between, flex-start);
+        
         @include md-max(){
-            width: 70%;  
+            @include flexbox(column, wrap, space-between, flex-start);
+            flex-basis: 70%;  
             order: 1;
         }
     }
-    
-    &__center ul{
-        @include flexbox(column, wrap, flex-start, flex-start);
-        @include md-max(){
-            @include flexbox(row, wrap, flex-start, center);
-        }
-        
-        li{
-            margin-right: calc(25% - 35px);
-            @include md-max(){
-                margin-right: $gutter;
-            }
-        }
-    }
-    
-    &__center{
-        width: calc(100% / 3);
-        @include flexbox(column, wrap, flex-start, center);
-        @include md-max(){
-            @include flexbox(column, wrap, flex-start, flex-start);
-            width: 100%;
-            margin-top: $spacing-between-sections/2;
-            order: 3;
-        }
-    }
+
     
     &__right{
-        width: calc(100% / 3);
+        flex-basis: 50%;
         text-align: right;
+        @include font-size($font-settings-footer);
         @include md-max(){
-            width: 30%; 
             @include flexbox(column, wrap, center, flex-end);
+            flex-basis: 30%; 
             order: 2;
-        }
-    }
-    
-    &__anchor{
-        text-decoration: none;
-
-        &:hover,
-        &:active{
-            text-decoration: underline;
         }
     }
 
@@ -84,66 +54,35 @@
             text-decoration: underline;
         }
     }
-    
-    li{
-        margin-bottom: 10px;
+
+    &__menu-right {
+        @include flexbox(row, wrap, flex-end, flex-start);
         @include md-max(){
-            margin-bottom: 0;  
+            @include flexbox(column, wrap, flex-end, flex-end);
+            margin-left: 0;
         }
-        
-        &:last-child{
-            margin-bottom: 0;
-        }
-    }
-    
-    .linkedin{
-        a{
-            background: url(../svg/in.min.svg) no-repeat center center;
-            background-size: 35px auto;
-            width: 35px;
-            height: 35px;
-            display: inline-block;
-        }
-    }
-    .mail{
-        a{
-            background: url(../svg/mail.min.svg) no-repeat center center;
-            background-size: 35px auto;
-            width: 35px;
-            height: 25px;
-            display: inline-block;
-        }
-    }
-    .instagram{
-        a{
-            background: url(../svg/instagram.min.svg) no-repeat center center;
-            background-size: 35px auto;
-            width: 35px;
-            height: 35px;
-            display: inline-block;
-        }
-    }
-    .logo{
-        a{
-            background: url(../svg/mi_Logo_RGB_kl.min.svg) no-repeat center center;
-            background-size: 35px auto;
-            width: 35px;
-            height: 35px;
-            display: inline-block;
+        li{
+            margin-left: 25px;
+            @include md-max(){
+                margin-left: 0;
+                margin-bottom: 5px;
+            }
         }
     }
 
-    .mobile{
-        a{
-            background: url(../svg/phone.min.svg) no-repeat center center;
-            background-size: 35px auto;
-            width: 35px;
-            height: 35px;
-            display: inline-block;
+    a {
+        text-decoration: none;
+
+        &:hover,
+        &:active{
+            text-decoration: underline;
         }
     }
-    
-    a span{
-        display: none;
+
+    &__menu {
+        margin-top: 0;
+        @include md-max(){
+            margin-top: 15px;
+        }
     }
 }

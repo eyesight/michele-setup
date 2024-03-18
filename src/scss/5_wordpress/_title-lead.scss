@@ -1,3 +1,5 @@
+$space-between-title-lead: 30px;
+
 .title-lead{
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
@@ -34,15 +36,18 @@
     &__credits-container{
         @include ld-margin-bottom($gutter);
     }
-
+    
     &__credit-item{
         @include flexbox();
     }
+    
+    &__text{
+        @include font-size($font-settings-infotext);
 
-    &__text-bold{
-        @include type-face($type-face, $font-weight-bold);
-        @include ld-margin-bottom(0);
-        margin-right: 8px;
+        &:first-child {
+            @include ld-margin-bottom(0);
+            margin-right: 8px;
+        }
     }
 
     &__wrapper{
@@ -55,9 +60,9 @@
     }
 
     &__title{
-        @include type-face($type-face-serif, $font-weight-bold);
+        @include type-face($type-face, $font-weight-bold);
         @include font-size($font-settings-h2);
-        @include ld-margin-bottom($spacing-between-sections/2);
+        @include ld-margin-bottom($space-between-title-lead);
         @include sm-max(){
             @include ld-margin-bottom($gutter);
         }
@@ -66,7 +71,8 @@
     &__categories{ 
         @include ld-margin-bottom($gutter);
         @include ld-margin-bottom(0, '.title-lead__categories');
-        @include type-face($type-face, $font-weight-bold);
+        @include font-size($font-settings-infotext);
+
         padding-left: 8px;
 
         &:first-of-type{

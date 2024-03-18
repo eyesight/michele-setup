@@ -19,6 +19,7 @@
         @include font-size($font-settings-filter); 
         display: block;
         background: transparent;
+        color: var(--mim-text-color);
     }
 
     &__button{
@@ -42,7 +43,7 @@
         }
 
         &:focus{
-            color: $color-black;
+            color: var(--mim-text-color);
         }
 
         &:hover{
@@ -74,7 +75,7 @@
 
         .st0{
             fill:none;
-            stroke:$color-black;
+            stroke: var(--mim-text-color);
             stroke-miterlimit:10;
         }
     }

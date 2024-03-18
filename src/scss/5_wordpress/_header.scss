@@ -1,30 +1,24 @@
 .header {
     width: 100%;    
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 60px;
+    padding-bottom: 20px;
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000;
-    background-color: $color-white;
+    background-color: var(--mim-background-color);
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
         height: 45px;
+        padding-top: 20px;
         transition: .5s all ease-in-out;
         @include ld-margin-bottom($spacing-between-sections/4);
     }
 
-    .home &,
-    .category &{
-        @include sm-max(){
-            background-color: $color-beige;
-        }
-    }
-
     &__container{
         @include full-width();
-        @include flexbox(row, wrap, flex-start, flex-start);
+        @include flexbox(row, wrap, space-between, flex-start);
         overflow: hidden;
         min-height: 35px;
         @include sm-max(){
@@ -32,29 +26,19 @@
         }
     }
 
-    &__logo{
-        .home &,
-        .category &{
-            opacity: 0;
-            transition: opacity 0.2s ease-in-out;
-        }
-        
-        .logo-shrink &{
-            transition: all 0.2s ease-in-out 0.3s;
-            opacity: 1;
-        }
-
+    &__logo{        
+        width: 50%;
         z-index: 10;
         border-bottom: none;
-        background: url(../svg/mi_Logo_RGB_kl.min.svg) no-repeat left center;
-        background-size: 27px auto;
-        background-color: transparent; 
-        width: auto;
         height: 25px; 
         top: 4px;
         z-index: 10;
         padding-right: $gutter * 4;
         display: block;
+    }
+
+    .mi-logo path {
+        fill: var(--mim-text-color);
     }
     
     &__text{
@@ -74,46 +58,22 @@
         position: relative;
         top: 7px;
         z-index: 999;
-        
-        @include md-max(){
-            left: 0px;
-        }
 
         li{
-            padding-right: $gutter;
-
+            padding-left: $gutter;
+            
             @include sm-max(){
-                padding-right: 0;
+                padding-left: 0;
             }
-
+            
             &:hover{
                 text-decoration: underline;
             }
         }
+
         a{
+            text-align: right;
             text-decoration: none;
-        }
-
-        .home &,
-        .category &{
-            position: absolute;
-            left: 0px;
-            transition: left 0.2s linear 0.2s;
-            
-            @include sm-max(){
-                left: 150px;
-                transition: left 0.3s linear 0.1s;
-            }
-        }
-
-        .home.logo-shrink &,
-        .category.logo-shrink &{
-            position: absolute;
-            left: 60px;
-            transition: left 0.2s linear;
-            @include md-max(){
-                transition: left 0.3s linear 0.2s;
-            }
         }
     }
 }
