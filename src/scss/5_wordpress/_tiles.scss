@@ -7,12 +7,25 @@
             border-bottom: none;
         }
     }
+
+    &__cats-wrapper {
+        @include flexbox();
+        margin-bottom: $gutter;
+    }
+
+    &__cat-text {
+        margin-top: 0;
+        margin-right: 2*$gutter;
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-tiles-copyright);
+    }
+
     &__item{
         opacity: 0;
         display: none;
         transform: translateY(30px);
         transition: all 0.2s ease-out;
-        @include make-grid-item($col-span-tile); 
+        @include make-grid-item($col-span-tile, $margin-bottom: 150px); 
         &:hover .tiles__text-wrapper{
             opacity: 1;
             transition: all 0.2s linear;
@@ -93,9 +106,4 @@
         transition: opacity 0.1s ease-out;
         transition: transform 0.2s ease-out;
     }
-}
-
-.title-h3{
-    @include type-face($type-face, $font-weight-bold);
-    @include font-size($font-settings-body);
 }
