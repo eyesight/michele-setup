@@ -142,6 +142,10 @@ figure{
   @include make-grid-container($justify-content: flex-end);
 }
 
+.grid-container-space-between {
+  @include make-grid-container($justify-content: space-between);
+}
+
 .grid-offset-container{
   @include make-offset-grid-container();
 }
