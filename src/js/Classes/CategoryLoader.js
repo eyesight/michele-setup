@@ -29,9 +29,15 @@ class CategoryLoader {
   bindEvents() {
     //if user is on category-page, show only the elements of the category in the beginning
     if(this.categoryPage){
-      let cat = this.getCurrentCategory(this.buttonClickedArray);
+      const cat = this.getCurrentCategory(this.buttonClickedArray);
       this.togglePresent(this.filterArr, cat);
       this.hideItems(this.filteredItemsArray, this.filterArr);
+
+      for (let i = 0; i < this.buttonClickedSmallArray.length; i++) {
+        if (cat === this.buttonClickedSmallArray[i].getAttribute('data-filter-target')) {
+            Helper.addClass(this.buttonClickedSmallArray[i], 'active');
+        }
+      }
     }
     
     this.showAllitems();
