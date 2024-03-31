@@ -32,7 +32,7 @@
 
         &:hover,
         &:active,
-        .active {
+        &.active {
             text-decoration: underline;
         }
     }
@@ -88,7 +88,6 @@
 
     &__img-wrapper{
         z-index: 100;
-        // @include responsive-ratio-center(100%, 412, 287, 'img');
         height: auto;
         overflow: hidden;
 
