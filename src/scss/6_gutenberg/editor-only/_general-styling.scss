@@ -70,3 +70,34 @@
   border: 1px solid $color-backend;
   min-height: 100px;
 }
+
+.image-container {
+    .block-editor-block-list__layout {
+    @include flexbox();
+
+    .block-editor-block-list__block {
+      width: 100%;
+    }
+
+  }
+
+  > .block-editor-inner-blocks {
+    width: 100%;
+  }
+
+  [class*="image--col-"]::before { 
+    display: none;
+  }
+}
+
+[class*="image--col-"]::before {
+    padding: 5px;
+    font-size: 14px;
+    content: 'bitte nur im Block "Bild-Container" benutzen';
+    color: $color-white;
+    background-color: $color-backend;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+}
