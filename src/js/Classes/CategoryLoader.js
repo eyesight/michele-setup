@@ -41,13 +41,17 @@ class CategoryLoader {
     }
     
     this.showAllitems();
+
     this.combinedButtonArray.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault();
+
         const clickedButton = e.currentTarget;
-        let currentCategory = clickedButton.getAttribute('data-filter-target');
-        this.setActiveButton(clickedButton, this.combinedButtonArray); 
+        const currentCategory = clickedButton.getAttribute('data-filter-target');
+
         this.togglePresent(this.filterArr, currentCategory);
+        console.log(this.filterArr);
+        this.setActiveButton(clickedButton, this.combinedButtonArray); 
         this.animateFilteredItems(this.filterArr);
         setTimeout(()=>{
           this.hideItems(this.filteredItemsArray, this.filterArr);
@@ -83,12 +87,12 @@ class CategoryLoader {
     
     if(clickedButton.classList.contains('active')){
       for (let i = 0; i < allButtons.length; i++) {
-        if (categoryOfClickedBtn === allButtons[i].getAttribute('data-filter-target')) {
-            Helper.removeClass(allButtons[i], 'active');
-        }
+          Helper.removeClass(allButtons[i], 'active');
       }
     } else {
       for (let i = 0; i < allButtons.length; i++) {
+        Helper.removeClass(allButtons[i], 'active');
+
         if (categoryOfClickedBtn === allButtons[i].getAttribute('data-filter-target')) {
             Helper.addClass(allButtons[i], 'active');
         }
@@ -99,6 +103,7 @@ class CategoryLoader {
   hideItems(filteredItems, allFilters){
     filteredItems.forEach(item =>{
       //when all filters are removed, then remove all classes hidden
+      console.log(allFilters);
       if(allFilters.length === 0){
         Helper.removeClass(item, 'hidden'); 
       }else{
@@ -114,11 +119,16 @@ class CategoryLoader {
   }
 
   togglePresent(arr, el) {
-    let idx = arr.indexOf(el);
-    if (idx >= 0) {
-      arr.splice(idx, 1);
+    const idx = arr.indexOf(el);
+
+    if (idx === -1) {
+        // If element not found, remove the first element if array is not empty
+        // and push the new element
+        arr.shift();
+        arr.push(el);
     } else {
-      arr.push(el);
+        // If element found, remove it from its current position
+        arr.splice(idx, 1);
     }
   }
 
