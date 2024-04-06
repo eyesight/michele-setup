@@ -51,7 +51,7 @@ h6.wp-block-heading {
 h2.wp-block-heading,
 h3.wp-block-heading,
 h4.wp-block-heading {
-  @include ld-margin-bottom($gutter);
+  @include ld-margin-bottom($spacing-titles);
 }
 
 * {

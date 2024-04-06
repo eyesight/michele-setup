@@ -23,73 +23,13 @@
     width: 100%;
 }
 
-.image--col-3 {
-    @include make-grid-item($item-col-spread: 3, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-4 {
-    @include make-grid-item($item-col-spread: 4, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-5 {
-    @include make-grid-item($item-col-spread: 5, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-6 {
-    @include make-grid-item($item-col-spread: 6, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-7 {
-    @include make-grid-item($item-col-spread: 7, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-8 {
-    @include make-grid-item($item-col-spread: 8, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-9 {
-    @include make-grid-item($item-col-spread: 9, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-10 {
-    @include make-grid-item($item-col-spread: 10, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-11 {
-    @include make-grid-item($item-col-spread: 11, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
-    }
-}
-
-.image--col-12 {
-    @include make-grid-item($item-col-spread: 12, $margin-bottom: 150px);
-    @include sm-max(){
-        @include make-grid-item(12);
+@for $i from 3 through 12 {
+    .image--col-#{$i} {
+        @include make-grid-item($item-col-spread: $i, $margin-bottom: $spacing-between-images);
+        
+        @include md-max(){
+            @include make-grid-item(12, $margin-bottom: $spacing-between-images-s);
+        }
     }
 }
 

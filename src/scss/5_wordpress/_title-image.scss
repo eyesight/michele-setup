@@ -5,17 +5,18 @@
     }
 
     &__wrapper{
-        @include make-grid-item($col-span-tile-8);
+        @include make-grid-item($col-span-tile-6);
         @include ld-margin-bottom($spacing-between-sections/4);
         
         @include sm-max(){
             @include make-grid-item($col-count);
         }
     }
-
+    
     &__title{
-        @include type-face($type-face-serif, $font-weight);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-image-title);
+        @include ld-margin-bottom($spacing-between-lead-content);
         
         .title-image__wrapper--big &{
             @include font-size($font-settings-h2);
@@ -33,9 +34,9 @@
     }
 
     &__image{
-        margin-right: (100% / 12);
-        @include make-grid-item($col-span-tile-3, $margin-bottom: 0);
+        @include make-grid-item($col-span-tile-6, $margin-bottom: 0);
         @include ld-margin-bottom(0); 
+        padding-right: 75px;
             
         @include sm-max(){
             margin-right: 0; 

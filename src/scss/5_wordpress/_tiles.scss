@@ -11,8 +11,6 @@
             border-bottom: none;
         }
     }
- 
-
 
     &__cats-wrapper {
         @include flexbox();
@@ -23,7 +21,7 @@
         margin-top: 0;
         margin-right: 2*$gutter;
         @include type-face($type-face, $font-weight);
-        @include font-size($font-settings-tiles-copyright);
+        @include font-size($font-settings-tiles-categories);
         color: var(--mim-text-color);
 
         &:hover {
@@ -34,6 +32,10 @@
         &:active,
         &.active {
             text-decoration: underline;
+        }
+
+        &:first-of-type {
+            padding-left: 0;
         }
     }
 
@@ -74,14 +76,14 @@
 
     @for $i from 1 through 12 {
         &__item--col-#{$i} {
-            @include make-grid-item($item-col-spread: $i, $margin-bottom: 150px);
+            @include make-grid-item($item-col-spread: $i, $margin-bottom: $spacing-between-images);
             
             @include md-max(){
-                @include make-grid-item($item-col-spread: $col-span-content, $margin-bottom: 50px, $margin-side: $gutter-tiles);
+                @include make-grid-item($item-col-spread: $col-span-content, $margin-bottom: $spacing-between-images-s, $margin-side: $gutter-tiles);
             }
 
             @include sm-max(){
-                @include make-grid-item($item-col-spread: $col-count, $margin-bottom: 50px, $margin-side: $gutter-tiles);
+                @include make-grid-item($item-col-spread: $col-count, $margin-bottom: $spacing-between-images-s, $margin-side: $gutter-tiles);
             }
         }
     }

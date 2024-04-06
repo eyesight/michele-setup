@@ -19,5 +19,5 @@
 .title-h3{
     @include type-face($type-face, $font-weight-bold);
     @include font-size($font-settings-body);
-    @include ld-margin-bottom($gutter);
+    @include ld-margin-bottom($spacing-titles);
 }

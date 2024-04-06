@@ -39,15 +39,32 @@
   }
 }
 //adapt block list in editor
-.list__container > .editor-inner-blocks > .editor-block-list__layout{ 
-  display: flex; 
+.list__container {
+  > .editor-inner-blocks,
+  > .block-editor-inner-blocks {
+    width: 100%;
+  }
 
-  >.editor-block-list__block{
-    width: 25%;
+  > .editor-inner-blocks > .block-editor-block-list__layout,
+  .block-editor-block-list__layout {
+    display: flex;
+
+    > .block-editor-block-list__block {
+      width: 25%;
+    }
   }
 
   .list__wrapper{
     width: 100%;
+  }
+
+  .list__wrapper .block-editor-block-list__layout {
+    display: block;
+    // flex-direction: column;
+
+    > .block-editor-block-list__block {
+      width: 100% !important;
+    }
   }
 }
 
@@ -66,7 +83,9 @@
 }
 
 .image-container,
-.embedVideo {
+.embedVideo,
+.list__container,
+.list__wrapper {
   border: 1px solid $color-backend;
   min-height: 100px;
 }
