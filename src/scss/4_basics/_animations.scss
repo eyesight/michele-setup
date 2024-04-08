@@ -79,3 +79,15 @@
       top: calc(50% - 2px);
     }
   }
+
+  // overwrite animation of plugin a3 Lazy Load
+  .lazy-hidden, .entry img.lazy-hidden, img.thumbnail.lazy-hidden {
+    transform: translateY(100px);
+    opacity: 0 !important;
+  }
+
+  .lazy-loaded {
+    transform: translateY(0);
+    opacity: 1;
+    transition: opacity 0.75s ease 0.5s, transform 0.75s ease 0.5s !important;
+  }

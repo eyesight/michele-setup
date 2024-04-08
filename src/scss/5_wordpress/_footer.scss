@@ -2,13 +2,13 @@
     border-top: $border-default;
     padding-top: $spacing-between-sections/2;
     padding-bottom: $spacing-between-sections/2;
-    margin-top: $spacing-between-sections;
-    @include sm-max(){
-        margin-top: $gutter*2;
-    }
-    
-    .prevNext + &{
-        margin-top: 0px;
+
+    .home &,
+    .category & {
+        margin-top: $spacing-between-sections;
+        @include sm-max(){
+            margin-top: $gutter*2;
+        }
     }
     
     @include type-face($type-face, $font-weight);
