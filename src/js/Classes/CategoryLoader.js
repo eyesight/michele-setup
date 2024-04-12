@@ -21,6 +21,9 @@ class CategoryLoader {
     
     this.filterArr = [];
     this.timeOutTime = 300;
+
+    this.handleScroll = this.handleScroll.bind(this);
+    
     if(this.buttonClicked && this.buttonClicked.length > 0){
       this.bindEvents();
     }
@@ -41,23 +44,28 @@ class CategoryLoader {
     }
     
     this.showAllitems();
-
+    
     this.combinedButtonArray.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault();
-
+        
         const clickedButton = e.currentTarget;
         const currentCategory = clickedButton.getAttribute('data-filter-target');
-
+        
         this.togglePresent(this.filterArr, currentCategory);
-        console.log(this.filterArr);
         this.setActiveButton(clickedButton, this.combinedButtonArray); 
         this.animateFilteredItems(this.filterArr);
         setTimeout(()=>{
           this.hideItems(this.filteredItemsArray, this.filterArr);
+          this.handleScroll();
         }, this.timeOutTime);
 			});
 		});
+    
+    this.handleScroll();
+
+    // Add scroll event listener to trigger animation
+    window.addEventListener('scroll', this.handleScroll);
   }
 
   animateFilteredItems(arr){
@@ -102,8 +110,8 @@ class CategoryLoader {
   
   hideItems(filteredItems, allFilters){
     filteredItems.forEach(item =>{
+      Helper.removeClass(item, 'fade-in-scroll');
       //when all filters are removed, then remove all classes hidden
-      console.log(allFilters);
       if(allFilters.length === 0){
         Helper.removeClass(item, 'hidden'); 
       }else{
@@ -140,6 +148,37 @@ class CategoryLoader {
         }
     });
     return categoryName;
+  }
+
+  // Function to check if an element is in the viewport
+  isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top + 50 <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+  }
+
+  // Function to handle scroll event
+  handleScroll() {
+    const boxes = document.querySelectorAll('.tiles__item');
+
+    let isAtEndOfPage = false;
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        isAtEndOfPage = true;
+    }
+
+    boxes.forEach(function(box) {
+        if (this.isInViewport(box)) {
+            Helper.addClass(box, 'fade-in-scroll');
+        }
+    }, this);
+
+    // Remove the scroll event listener only if not at the end of the page
+    if (!isAtEndOfPage) {
+        return;
+    }
+
+    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 
