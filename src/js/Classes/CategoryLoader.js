@@ -162,23 +162,11 @@ class CategoryLoader {
   handleScroll() {
     const boxes = document.querySelectorAll('.tiles__item');
 
-    let isAtEndOfPage = false;
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        isAtEndOfPage = true;
-    }
-
     boxes.forEach(function(box) {
         if (this.isInViewport(box)) {
             Helper.addClass(box, 'fade-in-scroll');
         }
     }, this);
-
-    // Remove the scroll event listener only if not at the end of the page
-    if (!isAtEndOfPage) {
-        return;
-    }
-
-    window.removeEventListener('scroll', this.handleScroll);
   }
 }
 
