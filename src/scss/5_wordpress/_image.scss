@@ -18,6 +18,17 @@
     }
 }
 
+.image .image__caption {
+    display: block;
+    color: var(--mim-text-color);
+    @include font-size($font-settings-caption);
+    margin-top: $spacing-between-sections/4;
+}
+
+.image--full-with .image__caption {
+    @include full-width(); 
+}
+
 .image--full-with,
 .is-style-image--full-with{
     width: 100%;

@@ -68,6 +68,10 @@
   }
 }
 
+.image .image__caption {
+  color: inherit;
+}
+
 .image-with-text{
   &__container{
     align-items: stretch;
