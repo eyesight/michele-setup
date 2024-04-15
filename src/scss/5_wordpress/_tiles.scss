@@ -13,8 +13,9 @@
     }
 
     &__cats-wrapper {
-        @include flexbox();
+        @include make-grid-container();
         margin-bottom: $gutter;
+        padding-left: 2px; //optical correction for alignment of text with image
     }
 
     &__cat-filter {
@@ -32,10 +33,6 @@
         &:active,
         &.active {
             text-decoration: underline;
-        }
-
-        &:first-of-type {
-            padding-left: 0;
         }
     }
 

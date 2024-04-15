@@ -22,7 +22,10 @@ class CategoryLoader {
     this.filterArr = [];
     this.timeOutTime = 300;
 
+    this.categoryPartOfTheTeam = 'part-of-the-team';
+
     this.handleScroll = this.handleScroll.bind(this);
+    this.hideItemWithSpecificCategory = this.hideItemWithSpecificCategory.bind(this);
     
     if(this.buttonClicked && this.buttonClicked.length > 0){
       this.bindEvents();
@@ -44,6 +47,11 @@ class CategoryLoader {
     }
     
     this.showAllitems();
+    // all tiles with category "part-of-the-team" on start; category-name is autmatically added and hart coded in functions.php
+    // they should only shown, when this category is active
+    this.filteredItemsArray.forEach(item => {
+      this.hideItemWithSpecificCategory(item, this.categoryPartOfTheTeam);
+    })
     
     this.combinedButtonArray.forEach(button => {
       button.addEventListener('click', e => {
@@ -108,16 +116,23 @@ class CategoryLoader {
     }
   }
   
-  hideItems(filteredItems, allFilters){
+  hideItems(filteredItems, filteredCategories){
     filteredItems.forEach(item =>{
       Helper.removeClass(item, 'fade-in-scroll');
-      //when all filters are removed, then remove all classes hidden
-      if(allFilters.length === 0){
+
+      //when all filters are removed, then remove all classes hidden,
+      //otherwise hide them first all
+      if(filteredCategories.length === 0){
         Helper.removeClass(item, 'hidden'); 
+        
+        //hide tiles with category part-of-the-team as they only show up, when this category is active
+        this.hideItemWithSpecificCategory(item, this.categoryPartOfTheTeam)
       }else{
         Helper.addClass(item, 'hidden');
       }
-      allFilters.forEach(filter =>{
+
+      //show all with filtered categories
+      filteredCategories.forEach(filter =>{
         let filterName = `tiles__filter--${filter}`;
         if(item.classList.contains(filterName)){
           Helper.removeClass(item, 'hidden');
@@ -167,6 +182,12 @@ class CategoryLoader {
             Helper.addClass(box, 'fade-in-scroll');
         }
     }, this);
+  }
+
+  hideItemWithSpecificCategory(item, categoryname) {
+    if(item.classList.contains(`tiles__filter--${categoryname}`)) {
+      Helper.addClass(item, 'hidden');
+    }
   }
 }
 
