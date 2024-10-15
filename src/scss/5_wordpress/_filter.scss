@@ -5,7 +5,9 @@
 }
 
 .filter {
-    @include ld-margin-bottom($spacing-between-sections);
+    max-width: 70%;
+    @include flexbox(row, nowrap, space-between, flex-start);
+    // @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/4);
     }
@@ -15,13 +17,25 @@
     }
 
     &__wrapper{
-        @include make-grid-item($col-count, $margin-bottom: 0); 
-        @include flexbox(row, wrap, flex-start, flex-start);
+        @include flexbox(row, wrap, flex-end, flex-start);
+        max-width: calc(100% - 56px);
+
+        opacity: 0;
+        visibility: hidden;
+        transition: all ease-in-out 0.75s;
+        text-shadow: 0 0 20px rgba($color-white,1);
+        
+        .nav-is-open & {
+            opacity: 1;
+            visibility: visible;
+            transition: all ease-in-out 0.75s;
+            text-shadow: none;
+        }
     }
 
     &__button,
     &__text{
-        @include type-face($type-face, $font-weight-bold);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-filter); 
         display: block;
         background: transparent;
@@ -29,26 +43,25 @@
     }
 
     &__button-wrapper {
-        @include make-grid-item(6);
-
-        @include xl-min{
-            @include make-grid-item(3);
-        } 
+        flex-shrink: 0;
     }
 
     &__button{
+        display: inline-block;
         cursor: pointer;
         text-align: left;
         white-space: nowrap;
-        padding-left: 30px;
-        padding-right: 10px;
+        padding-left: 23px;
+        padding-right: 15px;
+        position: relative;
+        text-decoration: none;
         
         span{
             text-decoration: underline;
         }
         &:hover,
         &.active,
-        &:focus{
+        &:focus-visible{
             color: $color-blue;
         }
 
@@ -64,45 +77,58 @@
                 display: none;
             }
         }
-    }
 
-    &__arrow {
-        position: absolute;
-        left: 0;
-        height: var(--mim-icon-arrowsize); 
-        width: var(--mim-icon-arrowsize);
-        bottom: var(--mim-icon-distance);
-
-        svg {
+        &::before {
+            content: '';
             position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: currentColor;
             left: 0;
-            height: var(--mim-icon-arrowsize); 
-            width: var(--mim-icon-arrowsize);
+            top: 50%;
+            transform: translateY(-29%);
         }
 
-        .st0{
-            fill:none;
-            stroke: var(--mim-text-color);
-            stroke-miterlimit:10;
+        .filter__button-wrapper:first-child &::before {
+            display: none;
         }
     }
 
-    &__x{
-        display: none;
-        position: absolute;
-        height: 12px; 
-        width: 12px;
-        left: 0;
-        bottom: var(--mim-icon-distance);
+    &__burger {
+        width: 26px;
+        height: 23px;
+        @include flexbox(column, wrap, space-between, center);
+        margin-left: 25px;
+        padding: 5px;
+        margin-top: 13px;
+        cursor: pointer;
 
-        .active &{
-            display: inline;
+        span {
+            width: 100%;
+            height: 1px;
+            background-color: $color-white;
+            display: block;
+            transform: rotate(0deg);
+            top: 0px;
+            transition: all ease-in-out 0.3s;
         }
 
-        @include lg-min{
-            margin-right: 10px;  
-            height: var(--mim-icon-arrowsize);
-            width: var(--mim-icon-arrowsize);   
+        .nav-is-open & {
+            span:nth-child(1) {
+                transform: rotate(45deg);
+                top: 5px;
+                transition: all ease-in-out 0.3s;
+            }
+            span:nth-child(2) {
+                opacity: 0;
+                transition: all ease-in-out 0.3s;
+            }
+            span:nth-child(3) {
+                transform: rotate(-45deg);
+                top: -7px;
+                transition: all ease-in-out 0.3s;
+            }
         }
     }
 }

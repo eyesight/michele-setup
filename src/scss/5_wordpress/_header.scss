@@ -21,16 +21,14 @@
         @include flexbox(row, wrap, space-between, flex-start);
         overflow: hidden;
         min-height: 35px;
-        @include sm-max(){
-            overflow: hidden;
-        }
     }
 
     &__logo{        
-        width: 50%;
+        width: 30%;
+        max-width: 342px;
         z-index: 10;
         border-bottom: none;
-        height: 25px; 
+        // height: 61px; 
         top: 4px;
         z-index: 10;
         padding-right: $gutter * 4;

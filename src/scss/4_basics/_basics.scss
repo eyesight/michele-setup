@@ -13,10 +13,11 @@ body {
   color: var(--mim-text-color);
   background-color: var(--mim-background-color);
   overflow-x: hidden;
-  padding-top: 75px;
+  padding-top: 150px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: url("#{$img-path}cursor.png"), default;
 
     main.content {
       flex: 1 0 auto;
