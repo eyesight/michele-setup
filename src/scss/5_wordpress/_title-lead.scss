@@ -1,16 +1,22 @@
-$space-between-title-lead: 30px;
+$space-between-title-lead: 115px;
 
-.title-lead{
+.title-lead {
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/2);
     }
 
+    background-color: rgba($color-blue, 0.9);
+    min-height: 100vh;
+
     &__container{
+        min-height: 100vh;
+        padding: $spacing-header-plus-space 0 $spacing-between-sections 0;
         @include sm-max(){
             @include flexbox(column, wrap, flex-start, flex-start);
         }
     }
+
     &__categories-wrapper{
         @include make-grid-item($col-span-marginal, $margin-bottom: 0);
         @include font-size($font-settings-infotext);
@@ -60,8 +66,8 @@ $space-between-title-lead: 30px;
     }
 
     &__title{
-        @include type-face($type-face, $font-weight-bold);
-        @include font-size($font-settings-h2);
+        @include type-face($type-face, $font-weight);
+        @include font-size($font-settings-h2-article);
         @include ld-margin-bottom($space-between-title-lead);
         @include sm-max(){
             @include ld-margin-bottom($gutter);
@@ -85,6 +91,10 @@ $space-between-title-lead: 30px;
         @include font-size($font-settings-lead);
         @include make-grid-item($col-span-tile-8);
         padding-left: 0;
+        
+        @include lg-max(){
+            @include make-grid-item($col-count);
+        }
         
         @include sm-max(){
             @include make-grid-item($col-count, $margin-bottom: 0);

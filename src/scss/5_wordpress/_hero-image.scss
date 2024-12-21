@@ -1,0 +1,15 @@
+
+.hero-image {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    &__image {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.hero-image--placeholder {
+    height: 100vh;
+}
+

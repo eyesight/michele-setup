@@ -6,6 +6,7 @@ class LogoScroll {
     this.home = document.querySelector('.home');
     this.categoryPage = document.querySelector('.category');
     this.header = document.querySelector('.header');
+    this.headerPlaceholder = document.querySelector('.header-placeholder');
     this.logo = document.querySelector('.logo-content');
     
     this.scrollFunction = this.scrollFunction.bind(this);
@@ -34,6 +35,8 @@ class LogoScroll {
           this.scrollFunctionMobile(this.header.clientHeight);
       }
    });
+
+   this.addHeaderHeightToPlaceholder(this.header, this.headerPlaceholder);
   }
 
   scrollFunction(headerHeight) {
@@ -48,7 +51,6 @@ class LogoScroll {
   scrollFunctionMobile(headerHeight) {
     const elem = document.querySelector('body');
     const el = elem.getBoundingClientRect();
-    console.log(headerHeight);
     if (el.top <= -headerHeight){
       Helper.addClass(this.body, 'logo-shrink');
     }else{
@@ -66,6 +68,12 @@ class LogoScroll {
     } else {
       return false;
     }
+  }
+
+  addHeaderHeightToPlaceholder(header, targetElement) {
+    const headerHeight = header.offsetHeight;
+    console.log(headerHeight);
+    targetElement.style.height = `${headerHeight}px`;
   }
 }
 

@@ -1,7 +1,12 @@
 .prev-next{
-    @include flexbox(row, wrap, space-between, flex-start);
     @include ld-margin-bottom(0px);
-    @include font-size($font-settings-footer);
+    background-color: var(--mim-background-color);
+    
+    &__wrapper {
+        @include flexbox(row, wrap, space-between, flex-start);
+        @include font-size($font-settings-footer);
+    }
+    
     &__left{
         svg {
             height: 15px;

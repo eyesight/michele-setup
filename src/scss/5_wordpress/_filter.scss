@@ -6,9 +6,40 @@
 
 .filter {
     max-width: 70%;
-    @include flexbox(row, nowrap, space-between, flex-start);
-    // @include ld-margin-bottom($spacing-between-sections);
+    @include flexbox(row, nowrap, flex-end, flex-start);
+    margin-top: 30px;
+    top: 30px;
+    position: absolute;
+    background-color: var(--mim-background-color);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in-out 0.75s;
+
+    &::after {
+        background-color: var(--mim-background-color);
+        content: '';
+        position: absolute;
+        width: 100vw;
+        height: calc(100% + 10px);
+        left: -10px;
+        top: -10px;
+        z-index: -1;
+
+        @include md-min {
+            display: none;
+        }
+    }
+    
+    @include md-min {
+        position: relative;
+        margin-top: 0px;
+        top: 0px;
+        background-color: transparent;
+    }
+
     @include sm-max(){
+        max-width: 100%;
         @include ld-margin-bottom($spacing-between-sections/4);
     }
 
@@ -16,20 +47,40 @@
         --mim-icon-distance: 5px;
     }
 
-    &__wrapper{
-        @include flexbox(row, wrap, flex-end, flex-start);
-        max-width: calc(100% - 56px);
-
-        opacity: 0;
-        visibility: hidden;
-        transition: all ease-in-out 0.75s;
-        text-shadow: 0 0 20px rgba($color-white,1);
-        
-        .nav-is-open & {
+    .nav-is-visible & {
+        @include md-min{
             opacity: 1;
             visibility: visible;
             transition: all ease-in-out 0.75s;
-            text-shadow: none;
+        }
+    }
+    
+    .nav-is-open &,
+    .nav-is-visible.nav-is-open & {
+        opacity: 1;
+        visibility: visible;
+        transition: all ease-in-out 0.75s;
+    }
+
+    &__wrapper{
+        @include flexbox(row, wrap, flex-end, flex-start);
+        max-width: 100%;
+        gap: 8px;
+        padding-bottom: 15px;
+        text-shadow: none;
+
+        @include md-min{
+            max-width: calc(100% - 56px);
+        }
+
+        @include lg-min {
+            background-color: transparent;
+            padding-bottom: 0;
+        }
+
+        
+        a, button {
+            text-shadow: 2px 2px 50px rgba($color-white,1);
         }
     }
 
@@ -42,6 +93,19 @@
         color: var(--mim-text-color);
     }
 
+    &__button,
+    .nav-is-visible.scroll-up &__button {
+        color: transparent;
+        text-shadow: 0 0 7px rgba(255, 255, 255, .05);
+    }
+
+    .nav-is-visible &__button,
+    .nav-is-visible.scroll-down &__button {
+        color: var(--mim-text-color);
+        text-shadow: 0 0 0 rgba(255, 255, 255, 1);
+        transition: text-shadow 1.5s ease, color 0.5s ease 1.5s;
+    }
+
     &__button-wrapper {
         flex-shrink: 0;
     }
@@ -51,10 +115,18 @@
         cursor: pointer;
         text-align: left;
         white-space: nowrap;
-        padding-left: 23px;
-        padding-right: 15px;
+        padding: 6px 13px 8px 10px;
         position: relative;
         text-decoration: none;
+        border: 1px solid $color-white;
+        border-radius: 25px;
+        background-color: $color-black;
+        
+        @include md-min {
+            padding: 0 15px 0 23px;
+            border: none;
+            background-color: transparent;
+        }
         
         span{
             text-decoration: underline;
@@ -79,6 +151,7 @@
         }
 
         &::before {
+            display: none;
             content: '';
             position: absolute;
             width: 8px;
@@ -88,47 +161,14 @@
             left: 0;
             top: 50%;
             transform: translateY(-29%);
+
+            @include md-min{
+                display: block;
+            }
         }
 
         .filter__button-wrapper:first-child &::before {
             display: none;
-        }
-    }
-
-    &__burger {
-        width: 26px;
-        height: 23px;
-        @include flexbox(column, wrap, space-between, center);
-        margin-left: 25px;
-        padding: 5px;
-        margin-top: 13px;
-        cursor: pointer;
-
-        span {
-            width: 100%;
-            height: 1px;
-            background-color: $color-white;
-            display: block;
-            transform: rotate(0deg);
-            top: 0px;
-            transition: all ease-in-out 0.3s;
-        }
-
-        .nav-is-open & {
-            span:nth-child(1) {
-                transform: rotate(45deg);
-                top: 5px;
-                transition: all ease-in-out 0.3s;
-            }
-            span:nth-child(2) {
-                opacity: 0;
-                transition: all ease-in-out 0.3s;
-            }
-            span:nth-child(3) {
-                transform: rotate(-45deg);
-                top: -7px;
-                transition: all ease-in-out 0.3s;
-            }
         }
     }
 }
