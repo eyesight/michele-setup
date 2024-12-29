@@ -152,15 +152,12 @@
 
         &::before {
             display: none;
-            content: '';
+            content: '•';
             position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: currentColor;
-            left: 0;
-            top: 50%;
+            left: -0.5rem;
+            top: 1rem;
             transform: translateY(-29%);
+            font-size: 2rem;
 
             @include md-min{
                 display: block;

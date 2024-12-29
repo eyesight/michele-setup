@@ -12,6 +12,10 @@
         }
     }
 
+    &__item--page .tiles__item-link {
+        margin-top: 35px;
+    }
+
     &__cats-wrapper {
         @include make-grid-container();
         margin-bottom: $gutter;
