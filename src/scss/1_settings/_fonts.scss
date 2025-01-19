@@ -45,8 +45,8 @@
 }
 
 // TYPE-FACE SETTINGS
-$type-face-serif: "Mirador", serif !default;
-$type-face-serif2: "Mirador-regular", serif !default;
+$type-face-serif: "Matter", sans-serif !default;
+$type-face-serif2: "Matter", sans-serif !default;
 $type-face: "Matter", sans-serif !default;
 $font-weight: 300 !default;
 $font-weight-semibold: 300 !default;
@@ -59,7 +59,7 @@ $font-settings-h1: (null: (2.8rem, 3rem)) !default;
 
 $font-settings-h2: (null: (2.8rem, 3rem)) !default; 
 
-$font-settings-h2-article: (null: (9rem, 9rem)) !default; 
+$font-settings-h2-article: (null: (4.5rem, 4.5rem), md: (9rem, 9rem)) !default; 
 
 $font-settings-h3: (null: (2.5rem, 1.54), lg: (2.5rem, 1.54)) !default;
 

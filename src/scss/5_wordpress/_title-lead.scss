@@ -72,6 +72,9 @@ $space-between-title-lead: 115px;
         @include sm-max(){
             @include ld-margin-bottom($gutter);
         }
+        hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto
     }
     
     &__categories{ 

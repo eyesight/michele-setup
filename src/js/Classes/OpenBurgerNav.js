@@ -13,14 +13,14 @@ class OpenBurgerNav {
     if (this.header && this.headerPlaceholder) {
       this.addHeaderHeightToPlaceholder(this.header, this.headerPlaceholder);
       window.addEventListener('resize', () => {
-        console.log('resize');
         this.addHeaderHeightToPlaceholder(this.header, this.headerPlaceholder);
       });
     }
   }
 
   bindEvents() {
-    Helper.addClass(this.body, 'nav-is-visible');
+    Helper.addClass(this.body, 'nav-is-in-dom');
+    setTimeout(() => Helper.addClass(this.body, 'nav-is-visible'), 10);
     this.burger.addEventListener('click', e => {
       if (this.body.classList.contains('nav-is-open')) {
         Helper.removeClass(this.body, 'nav-is-open');
@@ -39,11 +39,17 @@ class OpenBurgerNav {
     if (scrollTop > this.lastScrollTop) {
       // Scrolling down
       body.classList.remove("scroll-down");
+      setTimeout(() => {
+        body.classList.remove("nav-is-in-dom");
+      }, 750);
       body.classList.add("scroll-up");
     } else if (scrollTop < this.lastScrollTop) {
       // Scrolling up
       body.classList.remove("scroll-up");
-      body.classList.add("scroll-down");
+      body.classList.add("nav-is-in-dom");
+      setTimeout(() => {
+        body.classList.add("scroll-down");
+      }, 10);
     }
 
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scrolling on mobile

@@ -151,6 +151,14 @@ figure {
 	margin-bottom: 0;
 }
 
+.page,
+.content-left-indent {
+	@include ld-margin-bottom($spacing-between-sections);
+    @include sm-max(){
+        @include ld-margin-bottom($spacing-between-sections / 2); 
+    }
+}
+
 .grid-container {
 	@include make-grid-container($justify-content: flex-end);
 }

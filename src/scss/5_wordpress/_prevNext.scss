@@ -1,89 +1,97 @@
-.prev-next{
-    @include ld-margin-bottom(0px);
-    background-color: var(--mim-background-color);
-    
-    &__wrapper {
-        @include flexbox(row, wrap, space-between, flex-start);
-        @include font-size($font-settings-footer);
-    }
-    
-    &__left{
-        svg {
-            height: 15px;
-        }
+.prev-next {
+	@include ld-margin-bottom(0px);
+	background-color: var(--mim-background-color);
 
-        span {
-            padding-bottom: 5px;
-        }
+	&__wrapper {
+		@include flexbox(row, wrap, space-between, flex-start);
+		@include font-size($font-settings-footer);
+	}
 
-        .st0 {
-            fill: none;
-            stroke: var(--mim-text-color);
-            stroke-width: 2;
-            stroke-miterlimit: 10;
-        }
-        a{
-            padding-left: 15px;
-        }
+	&__left {
+		svg {
+			height: 15px;
+		}
 
-        &:hover{
-            span{
-                opacity: 1;
-                transition: all 0.3s linear;
-            }
-        }
-    }
+		span {
+			padding-bottom: 5px;
+		}
 
-    &__right{
-        align-items: flex-end;
-        a{
-            padding-right: 15px;
-        }
-        span{
-            text-align: right;
-            padding-bottom: 5px;
-        }
+		.st0 {
+			fill: none;
+			stroke: var(--mim-text-color);
+			stroke-width: 2;
+			stroke-miterlimit: 10;
+		}
+		a {
+			padding-left: 15px;
+		}
 
-        svg {
-            height: 15px;
-        }
+		&:hover {
+			span {
+				opacity: 1;
+				transition: all 0.3s linear;
+			}
+		}
+	}
 
-        .st0 {
-            fill:none;
-            stroke: var(--mim-text-color);
-            stroke-width:2;
-            stroke-miterlimit:10;
-        }
+	&__right {
+		align-items: flex-end;
+		a {
+			padding-right: 15px;
+		}
+		span {
+			text-align: right;
+			padding-bottom: 5px;
+		}
 
-        &:hover{
-            span{
-                opacity: 1;
-                transition: all 0.3s linear;
-            }
-        }
-    }
+		svg {
+			height: 15px;
+		}
 
-    &__arrow{
-        background-size: 15px auto;
-        height: 35px;
-        @include flexbox(column, wrap, center, flex-start);
-        display: pointer;
+		.st0 {
+			fill: none;
+			stroke: var(--mim-text-color);
+			stroke-width: 2;
+			stroke-miterlimit: 10;
+		}
 
-        span{
-            @include md-max(){
-                margin-top: 2px;
-            }
-        }
-    }
+		&:hover {
+			span {
+				opacity: 1;
+				transition: all 0.3s linear;
+			}
+		}
+	}
 
-    span{
-        opacity: 0;
-        display: block;
-    }
+	&__arrow {
+		background-size: 15px auto;
+		height: 35px;
+		@include flexbox(column, wrap, center, flex-start);
+		display: pointer;
 
-    a{
-        display: block;
-        height: 100%;
-        text-decoration: none;
-    }
+		span {
+			@include md-max() {
+				margin-top: 2px;
+			}
+		}
+	}
+
+	span {
+		opacity: 0;
+		display: block;
+	}
+
+	a {
+		display: block;
+		height: 100%;
+		text-decoration: none;
+	}
+
+	* + & {
+		@include ld-margin-bottom($spacing-between-images);
+
+		@include md-max() {
+			@include ld-margin-bottom($spacing-between-images-s);
+		}
+	}
 }
