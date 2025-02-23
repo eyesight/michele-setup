@@ -68,7 +68,7 @@
 		text-shadow: none;
 
 		@include md-min {
-			max-width: calc(100% - 56px);
+			max-width: 100%;
 		}
 
 		@include lg-min {

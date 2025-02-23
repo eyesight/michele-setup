@@ -36,12 +36,10 @@
 
 @for $i from 3 through 12 {
     .image--col-#{$i} {
-        @include make-grid-item($item-col-spread: $i, $margin-bottom: 0);
-        @include ld-margin-bottom($spacing-between-images);
+        @include make-grid-item($item-col-spread: $i, $margin-bottom: $spacing-between-images);
         
         @include md-max(){
-            @include make-grid-item(12, $margin-bottom: 0);
-            @include ld-margin-bottom($spacing-between-images-s);
+            @include make-grid-item(12, $margin-bottom: $spacing-between-images-s);
         }
     }
 }

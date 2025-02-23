@@ -6,6 +6,20 @@
     &__image {
         width: 100%;
         max-width: 100%;
+
+        &.screen-only {
+            display: block;
+            @include sm-max(){
+                display: none;
+            }
+        }
+
+        &.mobile-only {
+            display: none;
+            @include sm-max(){
+                display: block;
+            }
+        }
     }
 }
 

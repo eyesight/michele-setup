@@ -16,7 +16,7 @@
     &__text{
         @include type-face($type-face-serif, $font-weight-bold);
         // @include font-size($font-settings-h2);
-        @include font-size($font-settings-h2-article);
+        @include font-size($font-settings-h1-pages);
         hyphens: auto;
         -ms-hyphens: auto;
         -webkit-hyphens: auto;

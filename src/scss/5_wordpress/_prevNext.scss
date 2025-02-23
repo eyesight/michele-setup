@@ -88,10 +88,10 @@
 	}
 
 	* + & {
-		@include ld-margin-bottom($spacing-between-images);
+		margin-top: $spacing-between-images;
 
 		@include md-max() {
-			@include ld-margin-bottom($spacing-between-images-s);
+			margin-top: $spacing-between-images-s;
 		}
 	}
 }

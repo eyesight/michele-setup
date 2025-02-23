@@ -19,7 +19,7 @@
     &__container{
         @include flexbox(row, wrap, space-between, flex-start);
         
-        @include md-max(){
+        @include sm-max(){
             @include flexbox(row, wrap, flex-start, flex-start);  
         }
     }
@@ -28,10 +28,13 @@
         flex-basis: 50%;
         @include flexbox(row, wrap, space-between, flex-start);
         
-        @include md-max(){
-            @include flexbox(column, wrap, space-between, flex-start);
+        @include lg-max(){
             flex-basis: 70%;  
             order: 1;
+        }
+        
+        @include sm-max(){
+            @include flexbox(column, wrap, space-between, flex-start);
         }
     }
 
@@ -40,7 +43,7 @@
         flex-basis: 50%;
         text-align: right;
         @include font-size($font-settings-footer);
-        @include md-max(){
+        @include lg-max(){
             @include flexbox(column, wrap, center, flex-end);
             flex-basis: 30%; 
             order: 2;
