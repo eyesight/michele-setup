@@ -21,6 +21,7 @@ class OpenBurgerNav {
   bindEvents() {
     Helper.addClass(this.body, 'nav-is-in-dom');
     setTimeout(() => Helper.addClass(this.body, 'nav-is-visible'), 10);
+    setTimeout(() => Helper.addClass(this.body, 'nav-is-animated'), 750);
     this.burger.addEventListener('click', e => {
       if (this.body.classList.contains('nav-is-open')) {
         Helper.removeClass(this.body, 'nav-is-open');

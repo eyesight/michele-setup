@@ -28,6 +28,19 @@ body {
 	}
 }
 
+main {
+	&::after {
+        content: '';
+        width: 100vw;
+        position: absolute;
+        height: 20px;
+        background: var(--mim-background-color);
+        bottom: -10px;
+        left: 0;
+        z-index: 1;
+    }
+}
+
 *,
 *:before,
 *:after {
@@ -205,4 +218,8 @@ strong {
 .bg-white {
 	padding-top: $spacing-between-images;
 	background-color: var(--mim-background-color);
+}
+
+.cky-btn-revisit-wrapper {
+	display: none !important;
 }

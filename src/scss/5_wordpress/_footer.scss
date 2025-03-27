@@ -26,7 +26,7 @@
     
     &__left{
         flex-basis: 50%;
-        @include flexbox(row, wrap, space-between, flex-start);
+        @include flexbox(row, wrap, flex-start, flex-start);
         
         @include lg-max(){
             flex-basis: 70%;  
@@ -61,7 +61,7 @@
     }
 
     &__menu-right {
-        @include flexbox(row, wrap, flex-end, flex-start);
+        @include flexbox(column, wrap, flex-end, flex-end);
         @include md-max(){
             @include flexbox(column, wrap, flex-end, flex-end);
             margin-left: 0;
@@ -86,8 +86,14 @@
 
     &__menu {
         margin-top: 0;
-        @include md-max(){
+        margin-left: 100px;
+        @include sm-max(){
             margin-top: 15px;
+            margin-left: 0;
         }
     }
+}
+
+.menu-item {
+    margin-bottom: 0;
 }

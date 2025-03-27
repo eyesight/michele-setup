@@ -29,14 +29,18 @@
 		}
 	}
 
-	@include md-min {
+	@include md-min { 
+		top: 25px;
+	}
+
+	@include lg-min {
 		position: relative;
 		margin-top: 0px;
 		top: 0px;
 		background-color: transparent;
 	}
 
-	@include sm-max() {
+	@include md-max() {
 		max-width: 100%;
 		@include ld-margin-bottom($spacing-between-sections/4);
 	}
@@ -46,7 +50,7 @@
 	}
 
 	.nav-is-visible & {
-		@include md-min {
+		@include lg-min {
 			opacity: 1;
 			visibility: visible;
 			transition: all ease-in-out 0.75s;
@@ -109,6 +113,12 @@
         &:focus-visible {
 			transition: none;
 			text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+		}
+	}
+
+	.nav-is-animated &__button {
+		@include lg-min {
+			transition: text-shadow 0s ease, color 0.5s ease 00s;
 		}
 	}
 

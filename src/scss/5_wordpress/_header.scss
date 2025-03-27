@@ -10,7 +10,7 @@
 	background-color: var(--mim-background-color);
 	// @include ld-margin-bottom($spacing-between-sections);
 
-	@include md-min() {
+	@include lg-min() {
 		background-color: transparent;
 	}
 
@@ -103,7 +103,7 @@
         cursor: pointer;
         background-color: transparent;
 
-        @include md-min{
+        @include lg-min{
             display: none;
         }
 
