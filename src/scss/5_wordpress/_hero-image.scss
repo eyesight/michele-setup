@@ -1,6 +1,8 @@
 
-.hero-image {
+.hero-image,
+.hero-video {
     height: 100vh;
+    display: flex; /* Ensures iframe takes full height */
     width: 100%;
     position: fixed;
     &__image {
@@ -20,6 +22,11 @@
                 display: block;
             }
         }
+    }
+
+    iframe {
+        height: 100vh;
+        width: 100%;
     }
 }
 

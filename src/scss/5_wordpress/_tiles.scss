@@ -77,7 +77,7 @@
 
     @for $i from 1 through 12 {
         &__item--col-#{$i} {
-            @include make-grid-item($item-col-spread: $i, $margin-bottom: $spacing-between-images);
+            @include make-grid-item($item-col-spread: $i, $margin-bottom: $spacing-between-images, $margin-side: $gutter-tiles * 2);
             
             @include md-max(){
                 @include make-grid-item($item-col-spread: $col-span-content, $margin-bottom: $spacing-between-images-s, $margin-side: $gutter-tiles * 2.5);
