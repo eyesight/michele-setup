@@ -38,6 +38,9 @@
         &.active {
             text-decoration: underline;
         }
+        @include md-max(){
+            margin-right: $gutter;
+        }
     }
 
     &__item{
