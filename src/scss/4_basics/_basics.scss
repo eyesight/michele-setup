@@ -1,6 +1,10 @@
 $var1: 100% / 12 * 4;
 $var2: $gutter * 5;
 
+:root {
+	--header-height: 130px; /* fallback value */
+}
+
 html {
 	font-size: 62.5%;
 	width: 100%;
@@ -29,15 +33,17 @@ body {
 }
 
 main {
-	&::after {
-        content: '';
-        width: 100vw;
-        position: absolute;
-        height: 20px;
-        background: var(--mim-background-color);
-        bottom: -10px;
-        left: 0;
-        z-index: 1;
+	@include sm-min {
+		&::after {
+			content: '';
+			width: 100vw;
+			position: absolute;
+			height: 200px;
+			background: var(--mim-background-color);
+			bottom: -190px;
+			left: 0;
+			z-index: 1;
+		}
     }
 }
 

@@ -32,5 +32,49 @@ import Sticky from 'sticky-js';  // Import sticky-js
         }
       });
     }
+
+    const imageWrappers = document.querySelectorAll(".hero-image__image");
+    const footer = document.querySelector("footer");
+    if (imageWrappers.length > 0 && footer) {
+      let footerVisible = false;
+
+      // Observe the footer visibility using IntersectionObserver
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            footerVisible = entry.isIntersecting;
+          });
+        },
+        {
+          root: null,
+          threshold: 0, // trigger when any part of the footer enters view
+        }
+      );
+
+      observer.observe(footer);
+
+      // Scroll logic for each image
+      window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const maxBlur = 10;
+
+        imageWrappers.forEach((imageWrapper) => {
+          // Apply blur based on scroll
+          const blurValue = Math.min(scrollTop / 85, maxBlur);
+          imageWrapper.style.filter = `blur(${blurValue}px)`;
+
+          // Handle opacity when the footer is visible
+          if (footerVisible) {
+            const footerRect = footer.getBoundingClientRect();
+            const fadeRange = 200; // pixels over which to fade out
+            const footerOffset = window.innerHeight - footerRect.top;
+            const fadeProgress = Math.min(Math.max(footerOffset / fadeRange, 0), 1);
+            imageWrapper.style.opacity = 1 - fadeProgress;
+          } else {
+            imageWrapper.style.opacity = 1;
+          }
+        });
+      });
+    }
   });
 })();   

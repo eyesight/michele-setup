@@ -137,6 +137,8 @@
 }
 
 .header-placeholder {
+	height: var(--header-height);
+	min-height: var(--header-height);
     @include ld-margin-bottom(50px);
 	@include md-min {
 		@include ld-margin-bottom(40px);

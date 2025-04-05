@@ -11,9 +11,9 @@ class OpenBurgerNav {
       this.bindEvents();
     }
     if (this.header && this.headerPlaceholder) {
-      this.addHeaderHeightToPlaceholder(this.header, this.headerPlaceholder);
+      this.setCSSHeaderHeightVar(this.header);
       window.addEventListener('resize', () => {
-        this.addHeaderHeightToPlaceholder(this.header, this.headerPlaceholder);
+        this.setCSSHeaderHeightVar(this.header);
       });
     }
   }
@@ -56,10 +56,9 @@ class OpenBurgerNav {
     this.lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scrolling on mobile
   }
 
-  addHeaderHeightToPlaceholder(header, targetElement) {
+  setCSSHeaderHeightVar(header) {
     const headerHeight = header.offsetHeight;
-    targetElement.style.height = `${headerHeight}px`;
-    targetElement.style.minHeight = `${headerHeight}px`;
+    document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
   }
 }
 
