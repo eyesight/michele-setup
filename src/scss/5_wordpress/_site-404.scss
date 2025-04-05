@@ -1,5 +1,6 @@
 .site-404{
   @include full-width;
+  height: 100%;
   @include flexbox(row, wrap, center, center);
   @include md-max(){
     @include flexbox(column, wrap, center, center);

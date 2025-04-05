@@ -15,14 +15,14 @@
 
         &.screen-only {
             display: block;
-            @include sm-max(){
+            @include md-max(){
                 display: none;
             }
         }
 
         &.mobile-only {
             display: none;
-            @include sm-max(){
+            @include md-max(){
                 display: block;
             }
         }
