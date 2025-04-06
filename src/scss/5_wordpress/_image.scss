@@ -1,5 +1,6 @@
 .image,
-.wp-block-image {
+.wp-block-image,
+.wp-block-video {
     @include ld-margin-bottom($spacing-between-sections/2);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/4);
