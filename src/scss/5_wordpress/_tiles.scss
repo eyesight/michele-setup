@@ -137,7 +137,7 @@
     }
 
     &__item-title{
-        @include type-face($type-face, $font-weight);
+        @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-tiles-title);
     }
     

@@ -66,7 +66,7 @@ $space-between-title-lead: 115px;
     }
 
     &__title{
-        @include type-face($type-face, $font-weight);
+        @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-h2-article);
         @include ld-margin-bottom($space-between-title-lead);
         @include sm-max(){
@@ -90,7 +90,7 @@ $space-between-title-lead: 115px;
     }
 
     &__lead{
-        @include type-face($type-face, $font-weight);
+        @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-lead);
         @include make-grid-item($col-span-tile-8);
         padding-left: 0;

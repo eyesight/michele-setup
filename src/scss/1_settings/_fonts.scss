@@ -3,24 +3,11 @@
 @import url("//hello.myfonts.net/count/3afa97");
 
 @font-face {
-    font-family: 'Mirador';
-    src: url("#{$font-path}3AFA97_0_0.eot");
-    src: url("#{$font-path}3AFA97_0_0.eot?#iefix") format("embedded-opentype"), 
-    url("#{$font-path}3AFA97_0_0.woff2") format("woff2"), 
-    url("#{$font-path}3AFA97_0_0.woff") format("woff"), 
-    url("#{$font-path}3AFA97_0_0.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: 'Mirador';
-  src: url("#{$font-path}3B067A_0_0.eot");
-  src: url("#{$font-path}3B067A_0_0.eot?#iefix") format("embedded-opentype"), 
-  url("#{$font-path}3B067A_0_0.woff2") format("woff2"), 
-  url("#{$font-path}3B067A_0_0.woff") format("woff"), 
-  url("#{$font-path}3B067A_0_0.ttf") format("truetype");
-  font-weight: 300;
+  font-family: 'Mint';
+  src: url("#{$font-path}MintGroteskDisplay-Regular.woff2") format("woff2"), 
+  url("#{$font-path}MintGroteskDisplay-Regular.woff") format("woff"), 
+  url("#{$font-path}MintGroteskDisplay-Regular.otf") format("truetype");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -45,8 +32,7 @@
 }
 
 // TYPE-FACE SETTINGS
-$type-face-serif: "Matter", sans-serif !default;
-$type-face-serif2: "Matter", sans-serif !default;
+$type-face-title: "Mint", sans-serif !default;
 $type-face: "Matter", sans-serif !default;
 $font-weight: 300 !default;
 $font-weight-semibold: 300 !default;
@@ -59,13 +45,13 @@ $font-settings-h1: (null: (2.8rem, 3rem)) !default;
 
 $font-settings-h2: (null: (2.8rem, 3rem)) !default; 
 
-$font-settings-h2-article: (null: (4.5rem, 4.5rem), md: (9rem, 9rem)) !default; 
+$font-settings-h2-article: (null: (2.4rem, 1.1), md: (5rem, 1) , lg: (8rem, 1)) !default; 
 
 $font-settings-h1-pages: (null: (2.8rem, 3rem), md: (6rem, 6rem)) !default; 
 
 $font-settings-h3: (null: (2.5rem, 1.54), lg: (2.5rem, 1.54)) !default;
 
-$font-settings-image-title: (null: (1.8rem, 1.25), lg: (2.2rem, 2.4rem)) !default;
+$font-settings-image-title: (null: (2.6rem, 1.1), md: (5rem, 1) , lg: (8rem, 1)) !default;
 
 $font-settings-header: (null: (1.8rem, 2.4rem), lg: (1.8rem, 2.4rem)) !default;
 
@@ -85,6 +71,8 @@ $font-settings-categories-post: (null: (1.2rem, 1.4rem), lg: (2.6rem, 3rem)) !de
 
 $font-settings-lead: (null: (1.8rem, 2rem), lg: (2.4rem, 3rem)) !default;
 
+$font-settings-image-text-lead: (null: (1.8rem, 1.1), lg: (4rem, 1.1)) !default;
+
 $font-settings-image-text: $font-settings-body !default;
 
 $font-settings-image-text-cat: $font-settings-body !default;
@@ -96,3 +84,5 @@ $font-settings-caption: $font-settings-infotext !default;
 $font-settings-list: (null: (1.8rem, 2.4rem), lg: (2rem, 2.6rem)) !default;
 
 $font-settings-mobile-navigation: (null: (2.6rem, 3.2rem)) !default;
+
+$font-settings-credits: (null: (1.5rem, 1.2), lg: (1.8rem, 1.2)) !default;

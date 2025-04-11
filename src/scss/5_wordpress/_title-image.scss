@@ -14,7 +14,7 @@
     }
     
     &__title{
-        @include type-face($type-face, $font-weight);
+        @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-image-title);
         @include ld-margin-bottom($spacing-between-lead-content);
         
@@ -24,12 +24,13 @@
     }
 
     &__lead{ 
-        @include type-face($type-face, $font-weight);
-        @include font-size($font-settings-lead);
-        @include make-grid-item($col-span-content);
+        @include type-face($type-face-title, $font-weight);
+        @include font-size($font-settings-image-text-lead);
+        @include make-grid-item($col-count, $col-count, 0);
+        @include ld-margin-bottom(80px); 
         
         @include sm-max(){
-            @include make-grid-item($col-count);
+            @include ld-margin-bottom(45px); 
         }
     }
 
@@ -42,6 +43,24 @@
             margin-right: 0; 
             @include make-grid-item($col-count, $margin-bottom: 0);
             @include ld-margin-bottom($spacing-between-sections / 2); 
+        }
+    }
+
+    &__credit {
+        display: flex;
+        margin-bottom: 50px;
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    &__text {
+        @include font-size($font-settings-credits);
+
+        &.bold {
+            @include type-face($type-face, $font-weight-bold);
+            margin-right: 24px;
         }
     }
 

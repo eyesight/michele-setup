@@ -57,7 +57,7 @@ main {
 h1,
 h2,
 h3 {
-	@include type-face($type-face, $font-weight);
+	@include type-face($type-face-title, $font-weight);
 }
 
 h1 {
@@ -80,7 +80,7 @@ h4.wp-block-heading,
 h5.wp-block-heading,
 h6.wp-block-heading {
 	@include font-size($font-settings-body);
-	@include type-face($type-face, $font-weight-bold);
+	@include type-face($type-face-title, $font-weight-bold);
 }
 
 h2.wp-block-heading,
