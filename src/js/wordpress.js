@@ -75,6 +75,10 @@ import Sticky from 'sticky-js';  // Import sticky-js
           }
         });
       });
+
+      window.addEventListener('resize', () => {
+        sticky.update(); // Forces recalculation of positions and widths
+      });
     }
   });
 })();   

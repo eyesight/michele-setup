@@ -121,7 +121,7 @@
 
 /*
   Usage:
-  @include lg-min() {
+  @include xl-min() {
 
   }
 */
@@ -175,6 +175,12 @@
 */
 @mixin lg-max() {
   @include media-breakpoint-down(lg) {
+    @content;
+  }
+}
+
+@mixin xl-max() {
+  @include media-breakpoint-down(xl) {
     @content;
   }
 }

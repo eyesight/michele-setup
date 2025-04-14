@@ -1,4 +1,6 @@
-$space-between-title-lead: 115px;
+$space-between-title-lead: 130px;
+$space-between-title-lead-s: 65px;
+$space-between-credits-title: 130px;
 
 .title-lead {
     @include ld-margin-bottom($spacing-between-sections);
@@ -10,7 +12,6 @@ $space-between-title-lead: 115px;
     min-height: 100vh;
 
     &__container{
-        min-height: 100vh;
         padding: $spacing-header-plus-space 0 $spacing-between-sections 0;
         @include sm-max(){
             @include flexbox(column, wrap, flex-start, flex-start);
@@ -18,13 +19,17 @@ $space-between-title-lead: 115px;
     }
 
     &__categories-wrapper{
-        @include make-grid-item($col-span-marginal, $margin-bottom: 0);
+        @include make-grid-item($col-span-tile-4, $margin-bottom: $space-between-credits-title);
         @include font-size($font-settings-infotext);
         padding-top: 8px;
+        order: 2;
+
+        @include md-max(){
+            order: 3;
+        }
         
         @include sm-max(){
-            @include make-grid-item($col-count, $margin-bottom: 0);
-            order: 2;
+            @include make-grid-item($col-count);
             padding-top: 0;
         }
     }
@@ -46,22 +51,34 @@ $space-between-title-lead: 115px;
     &__credit-item{
         @include flexbox();
     }
+
+    &__client-wrapper {
+        order: 1;
+        @include make-grid-item($col-span-tile-4, $margin-bottom: $space-between-credits-title);
+        display: flex;
+
+        @include md-max(){
+            margin-bottom: 50px;
+        }
+    }
     
     &__text{
         @include font-size($font-settings-infotext);
+        @include ld-margin-bottom(0);
+    }
 
-        &:first-child {
-            @include ld-margin-bottom(0);
-            margin-right: 8px;
-        }
+    &__text--bold {
+        font-weight: $font-weight-bold;
+        margin-right: 24px;
     }
 
     &__wrapper{
-        @include make-grid-item($col-span-tile-8);
+        @include make-grid-item($col-count);
+        order: 4;
         
-        @include sm-max(){
-            @include make-grid-item($col-count);
-            order: 1;
+        @include md-max(){
+            order: 2;
+            margin-bottom: $space-between-title-lead-s;
         }
     }
 
@@ -69,8 +86,8 @@ $space-between-title-lead: 115px;
         @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-h2-article);
         @include ld-margin-bottom($space-between-title-lead);
-        @include sm-max(){
-            @include ld-margin-bottom($gutter);
+        @include md-max(){
+            @include ld-margin-bottom($space-between-title-lead-s);
         }
         hyphens: auto;
         -ms-hyphens: auto;
@@ -89,19 +106,28 @@ $space-between-title-lead: 115px;
         }
     }
 
-    &__lead{
+    &__lead {
         @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-lead);
-        @include make-grid-item($col-span-tile-8);
-        padding-left: 0;
-        
-        @include lg-max(){
-            @include make-grid-item($col-count);
+        @include make-grid-item($col-span-tile-7, $col-count-push: $col-span-tile-4);
+
+        @media (max-width: map-get($layout-breakpoints, xl)) {
+            @include make-grid-item($col-span-tile-8, $col-count-push: $col-span-tile-4);
         }
         
-        @include sm-max(){
-            @include make-grid-item($col-count, $margin-bottom: 0);
-            padding-left: 0;
+        
+        @media (max-width: map-get($layout-breakpoints, lg)) {
+            @include make-grid-item($col-count, $margin-side:0);
+        }
+    }
+
+    &__copyright-wrapper{
+       order: 3;
+       @include make-grid-item($col-span-tile-4, $margin-bottom: $space-between-credits-title);
+
+       @include md-max(){
+            order: 4;
+            margin-bottom: 0
         }
     }
 
