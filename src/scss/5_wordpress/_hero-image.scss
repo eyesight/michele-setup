@@ -28,9 +28,16 @@
         }
     }
 
-    &__wrapper.fullwidth {
-        width: 100%;
-        height: 100%;
+    &.fullwidth {
+        top: 0;
+        height: 100vh;
+    }
+
+    &__wrapper {
+        .fullwidth & {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__wrapper--contain .hero-image__image {
@@ -40,6 +47,10 @@
     iframe {
         height: calc(100vh - var(--header-height));
         width: 100%;
+    }
+    
+    &.fullwidth iframe {
+        height: 100vh;
     }
 }
 

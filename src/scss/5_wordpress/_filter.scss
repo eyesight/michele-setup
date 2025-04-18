@@ -20,11 +20,15 @@
 		position: absolute;
 		width: 100vw;
 		height: calc(100% + 10px);
-		left: -10px;
+		left: -20px;
 		top: -10px;
 		z-index: -1;
 
 		@include md-min {
+			left: -65px;
+		}
+
+		@include lg-min {
 			display: none;
 		}
 	}
@@ -142,7 +146,7 @@
 		background-color: var(--mim-background-color);
 		flex-shrink: 0;
 
-		@include md-min {
+		@include lg-min {
 			padding: 0 15px 0 23px;
 			border: none;
 			background-color: transparent;
@@ -158,7 +162,7 @@
             background-color: $color-blue;
             transition: none;
 
-            @include md-min {
+            @include lg-min {
                 color: $color-blue !important;
                 background-color: transparent;
                 border-color: transparent;
@@ -178,7 +182,7 @@
 			transform: translateY(-29%);
 			font-size: 2rem;
 
-			@include md-min {
+			@include lg-min {
 				display: block;
 			}
 		}

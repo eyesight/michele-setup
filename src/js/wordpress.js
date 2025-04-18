@@ -3,6 +3,7 @@ import CategoryLoader from './Classes/CategoryLoader';
 import ToTop from './Classes/ToTop';
 import OpenBurgerNav from './Classes/OpenBurgerNav';
 import Sticky from 'sticky-js';  // Import sticky-js
+import Accordion from './Classes/Accordion';
 
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
@@ -11,6 +12,10 @@ import Sticky from 'sticky-js';  // Import sticky-js
     const toTop = new ToTop();
     const openBurgerNav = new OpenBurgerNav();
     const sticky = new Sticky('.sticky');
+
+    const accordionInstance = new Accordion({
+      accordions: '.js-toggle-accordion'
+    });
 
     const videoOverlay = document.querySelector(".hero-image--placeholder");
     const videoIframe = document.querySelector(".hero-video iframe");
