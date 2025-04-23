@@ -214,6 +214,53 @@ class Helper {
         }
 		}
 
+    static slideClose(elem) {
+      let height = elem.clientHeight + 'px';
+      elem.animate([
+        // keyframes
+        {
+          height: height
+        },
+        {
+          height: '0px'
+        }
+      ], {
+        // timing options
+        duration: 100,
+        iterations: 1
+      });
+      elem.style.height = 0;
+    }
+  
+    static slideOpen(elem, auto = false) {
+      let height = this.getHeight(elem);
+      elem.animate([
+        // keyframes
+        {
+          height: '0px'
+        },
+        {
+          height: height
+        }
+      ], {
+        // timing options
+        duration: 100,
+        iterations: 1
+      });
+      if(auto){
+        elem.style.height = 'auto';
+      } else{
+        elem.style.height = height;
+      }
+    }
+
+    static getHeight(elem) {
+      elem.style.display = 'block'; // Make it visible
+      var height = elem.scrollHeight + 'px'; // Get it's height
+      elem.style.display = ''; //  Hide it again
+      return height;
+    }
+
 
 		static setCookie(name,value,days) {
 			if (days) {

@@ -89,7 +89,9 @@
 .image-container,
 .embedVideo,
 .list__container,
-.list__wrapper {
+.list__wrapper,
+.accordion,
+.accordion-item {
   border: 1px solid $color-backend;
   min-height: 100px;
 }
