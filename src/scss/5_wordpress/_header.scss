@@ -54,17 +54,17 @@
 
 	.mi-logo path,
 	.mi-logo rect {
-		fill: var(--mim-text-color);
+		fill: var(--mim-header-color);
 	}
 
 	&__text {
 		text-decoration: none;
-		color: $color-main-text;
+		color: var(--mim-header-color);
 
 		&:hover,
 		&:focus {
 			text-decoration: none;
-			color: $color-main-text;
+			color: var(--mim-header-color);
 		}
 	}
 
@@ -111,7 +111,7 @@
         span {
             width: 100%;
             height: 1px;
-            background-color: var(--mim-text-color);
+            background-color: var(--mim-header-color);
             display: block;
             transform: rotate(0deg);
             top: 0px;

@@ -86,7 +86,7 @@
 
 		a,
 		button {
-			text-shadow: 2px 2px 50px var(--mim-text-color);
+			text-shadow: 2px 2px 50px var(--mim-header-color);
 		}
 	}
 
@@ -96,7 +96,7 @@
 		@include font-size($font-settings-filter);
 		display: block;
 		background: transparent;
-		color: var(--mim-text-color);
+		color: var(--mim-header-color);
 	}
 
 	&__button,
@@ -108,8 +108,8 @@
 
 	.nav-is-visible &__button,
 	.nav-is-visible.scroll-down &__button {
-		color: var(--mim-text-color);
-		text-shadow: 0 0 0 var(--mim-text-color);
+		color: var(--mim-header-color);
+		text-shadow: 0 0 0 var(--mim-header-color);
 		transition: text-shadow 1.5s ease, color 0.5s ease 1.5s;
 
 		&.active,
@@ -141,7 +141,7 @@
 		padding: 6px 13px 8px 10px;
 		position: relative;
 		text-decoration: none;
-		border: 1px solid var(--mim-text-color);
+		border: 1px solid var(--mim-header-color);
 		border-radius: 25px;
 		background-color: var(--mim-background-color);
 		flex-shrink: 0;
@@ -158,7 +158,7 @@
 		&.active,
 		&:hover,
 		&:focus-visible {
-            color: var(--mim-text-color);
+            color: var(--mim-header-color);
             background-color: $color-blue;
             transition: none;
 
@@ -168,7 +168,7 @@
                 border-color: transparent;
 
                 &::before {
-                    color: var(--mim-text-color) !important;
+                    color: var(--mim-header-color) !important;
                 }
             }
 		}
@@ -191,7 +191,7 @@
             transition: color .01s ease;
 
             &::before {
-                color: var(--mim-text-color) !important;
+                color: var(--mim-header-color) !important;
             }
         }
 
