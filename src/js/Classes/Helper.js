@@ -226,7 +226,7 @@ class Helper {
         }
       ], {
         // timing options
-        duration: 100,
+        duration: 200,
         iterations: 1
       });
       elem.style.height = 0;
@@ -244,7 +244,7 @@ class Helper {
         }
       ], {
         // timing options
-        duration: 100,
+        duration: 200,
         iterations: 1
       });
       if(auto){

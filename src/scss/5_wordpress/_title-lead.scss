@@ -89,9 +89,6 @@ $space-between-credits-title: 130px;
         @include md-max(){
             @include ld-margin-bottom($space-between-title-lead-s);
         }
-        hyphens: auto;
-        -ms-hyphens: auto;
-        -webkit-hyphens: auto
     }
     
     &__categories{ 

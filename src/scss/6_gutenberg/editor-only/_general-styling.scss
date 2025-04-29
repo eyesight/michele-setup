@@ -126,3 +126,14 @@
     left: 0;
     display: inline-block;
 }
+
+.accordion-item__button {
+  color: $color-black;
+}
+
+.accordion-item__content,
+.accordion-item__content-inner {
+  height: auto;
+  color: $color-black;
+  opacity: 1;
+}

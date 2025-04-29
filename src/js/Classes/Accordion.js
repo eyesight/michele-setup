@@ -15,17 +15,26 @@ class Accordion {
   bindEvents() {
     this.accordions.forEach(el => {
       el.addEventListener('click', (e) => {
-        if(el.classList.contains('active')){
+        // If it's already active, close it
+        if (el.classList.contains('active')) {
           Helper.slideClose(el.nextElementSibling);
           el.classList.remove('active');
-        } else{
+        } else {
+          // Close all other accordions
+          this.accordions.forEach(otherEl => {
+            if (otherEl !== el && otherEl.classList.contains('active')) {
+              Helper.slideClose(otherEl.nextElementSibling);
+              otherEl.classList.remove('active');
+            }
+          });
+  
+          // Open the clicked one
           el.classList.add('active');
           Helper.slideOpen(el.nextElementSibling, true);
         }
       });
     });
-  }
-
+  }  
 }
 
 export default Accordion;
