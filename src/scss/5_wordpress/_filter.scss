@@ -84,8 +84,8 @@
 			padding-bottom: 0;
 		}
 
-		a,
-		button {
+		.home & a,
+		.home & button {
 			text-shadow: 2px 2px 50px var(--mim-header-color);
 		}
 	}
