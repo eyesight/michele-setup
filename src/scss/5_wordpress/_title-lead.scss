@@ -3,6 +3,7 @@ $space-between-title-lead-s: 65px;
 $space-between-credits-title: 130px;
 
 .title-lead {
+    @include ld-margin-bottom(0, '.bg-white');
     @include ld-margin-bottom($spacing-between-sections);
     @include sm-max(){
         @include ld-margin-bottom($spacing-between-sections/2);

@@ -16,6 +16,7 @@
     &__title{
         @include type-face($type-face-title, $font-weight);
         @include font-size($font-settings-image-title);
+        @include fluid-fontsize(2.6rem, 8rem);
         @include ld-margin-bottom($spacing-between-lead-content);
         
         .title-image__wrapper--big &{

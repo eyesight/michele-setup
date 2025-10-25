@@ -22,6 +22,7 @@ class OpenBurgerNav {
     Helper.addClass(this.body, 'nav-is-in-dom');
     setTimeout(() => Helper.addClass(this.body, 'nav-is-visible'), 10);
     setTimeout(() => Helper.addClass(this.body, 'nav-is-animated'), 750);
+  
     this.burger.addEventListener('click', e => {
       if (this.body.classList.contains('nav-is-open')) {
         Helper.removeClass(this.body, 'nav-is-open');
@@ -29,9 +30,19 @@ class OpenBurgerNav {
         Helper.addClass(this.body, 'nav-is-open');
       }
     });
+  
     this.lastScrollTop = 0;
-    window.addEventListener("scroll", this.handleScrollDirection);
-  }
+  
+    // Bind with context
+    this.handleScrollDirection = this.handleScrollDirection.bind(this);
+  
+    // Debounce scroll detection to avoid triggering on layout changes
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(this.handleScrollDirection, 100);
+    });
+  }  
 
   handleScrollDirection() {
     const body = document.body;
