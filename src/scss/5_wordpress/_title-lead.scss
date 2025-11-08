@@ -1,5 +1,6 @@
-$space-between-title-lead: 130px;
-$space-between-title-lead-s: 65px;
+$space-between-title-lead: 80px;
+$space-between-title-lead-s: 30px;
+$space-between-lead-credits-s: 65px;
 $space-between-credits-title: 130px;
 
 .title-lead {
@@ -15,17 +16,18 @@ $space-between-credits-title: 130px;
     &__container{
         padding: $spacing-header-plus-space 0 $spacing-between-sections 0;
         @include sm-max(){
+            padding: 95px 0 135px 0;
             @include flexbox(column, wrap, flex-start, flex-start);
         }
     }
 
     &__categories-wrapper{
-        @include make-grid-item($col-span-tile-4, $margin-bottom: $space-between-credits-title);
+        @include make-grid-item($col-span-tile-8, $margin-bottom: $space-between-credits-title);
         @include font-size($font-settings-infotext);
-        padding-top: 8px;
         order: 2;
-
+        
         @include md-max(){
+            padding-top: 8px;
             order: 3;
         }
         
@@ -59,18 +61,20 @@ $space-between-credits-title: 130px;
         display: flex;
 
         @include md-max(){
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
     }
     
     &__text{
         @include font-size($font-settings-infotext);
         @include ld-margin-bottom(0);
+        width: 100%;
+        white-space: nowrap;
     }
 
     &__text--bold {
         font-weight: $font-weight-bold;
-        margin-right: 24px;
+        // margin-right: 24px;
     }
 
     &__wrapper{
@@ -79,7 +83,7 @@ $space-between-credits-title: 130px;
         
         @include md-max(){
             order: 2;
-            margin-bottom: $space-between-title-lead-s;
+            margin-bottom: $space-between-lead-credits-s;
         }
     }
 
@@ -106,14 +110,9 @@ $space-between-credits-title: 130px;
 
     &__headline,
     &__lead {
-        @include type-face($type-face-title, $font-weight);
+        @include type-face($type-face, $font-weight);
         @include font-size($font-settings-lead);
-        @include make-grid-item($col-span-tile-7, $col-count-push: $col-span-tile-4);
-        
-        @media (max-width: map-get($layout-breakpoints, xl)) {
-            @include make-grid-item($col-span-tile-8, $col-count-push: $col-span-tile-4);
-        }
-        
+        @include make-grid-item($col-span-tile-8, $col-count-push: 0);      
         
         @media (max-width: map-get($layout-breakpoints, lg)) {
             @include make-grid-item($col-count, $margin-side:0);
@@ -127,7 +126,7 @@ $space-between-credits-title: 130px;
         @include ld-margin-bottom(19px, '.title-lead__lead');
         
         @include md-max(){
-            @include ld-margin-bottom(0, '.title-lead__lead');
+            @include ld-margin-bottom(13px, '.title-lead__lead');
         }
     }
 
