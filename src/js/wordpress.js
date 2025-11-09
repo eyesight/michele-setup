@@ -2,76 +2,87 @@
 import CategoryLoader from './Classes/CategoryLoader';
 import ToTop from './Classes/ToTop';
 import OpenBurgerNav from './Classes/OpenBurgerNav';
-import Sticky from 'sticky-js';  // Import sticky-js
+import Sticky from 'sticky-js';
 import Accordion from './Classes/Accordion';
+
+let sticky = null; // make sticky available globally in this file
 
 (function () {
   document.addEventListener('DOMContentLoaded', function () {
-
+    // Initialize classes
     const categoriesLoader = new CategoryLoader();
     const toTop = new ToTop();
     const openBurgerNav = new OpenBurgerNav();
-    const sticky = new Sticky('.sticky');
+
+    // Initialize Sticky
+    sticky = new Sticky('.sticky');
 
     const accordionInstance = new Accordion({
       accordions: '.js-toggle-accordion'
     });
 
+    // --- Video overlay logic ---
     const videoOverlay = document.querySelector(".hero-image--placeholder");
     const videoIframe = document.querySelector(".hero-video iframe");
 
     if (videoOverlay && videoIframe) {
-      let originalSrc = videoIframe.getAttribute("src"); // Store original src without autoplay
+      const originalSrc = videoIframe.getAttribute("src") || "";
 
       videoOverlay.addEventListener("click", function () {
-        let currentSrc = videoIframe.getAttribute("src");
-
-        if (currentSrc.includes("autoplay=1")) {
-          // Remove autoplay and reload iframe to stop video
-          let newSrc = currentSrc.replace("&autoplay=1", "").replace("?autoplay=1", "");
-          videoIframe.setAttribute("src", newSrc);
-        } else {
-          // Add autoplay=1 to start video
-          let newSrc = originalSrc.includes("?") ? originalSrc + "&autoplay=1" : originalSrc + "?autoplay=1";
-          videoIframe.setAttribute("src", newSrc);
+        try {
+          const url = new URL(videoIframe.src || originalSrc, window.location.href);
+          const params = url.searchParams;
+          if (params.get('autoplay') === '1') {
+            params.delete('autoplay');
+          } else {
+            params.set('autoplay', '1');
+          }
+          videoIframe.setAttribute('src', url.toString());
+        } catch (e) {
+          // Fallback
+          let currentSrc = videoIframe.getAttribute("src") || originalSrc;
+          if (currentSrc.includes("autoplay=1")) {
+            currentSrc = currentSrc.replace("&autoplay=1", "").replace("?autoplay=1", "");
+          } else {
+            currentSrc = (currentSrc.includes("?") ? currentSrc + "&autoplay=1" : currentSrc + "?autoplay=1");
+          }
+          videoIframe.setAttribute("src", currentSrc);
         }
       });
     }
 
+    // --- Image blur + footer fade logic ---
     const imageWrappers = document.querySelectorAll(".hero-image__image");
     const footer = document.querySelector("footer");
+
     if (imageWrappers.length > 0 && footer) {
       let footerVisible = false;
 
-      // Observe the footer visibility using IntersectionObserver
+      // Observe footer visibility
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             footerVisible = entry.isIntersecting;
           });
         },
-        {
-          root: null,
-          threshold: 0, // trigger when any part of the footer enters view
-        }
+        { root: null, threshold: 0 }
       );
 
       observer.observe(footer);
 
-      // Scroll logic for each image
-      window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const maxBlur = 10;
+      const maxBlur = 10;
+      let ticking = false;
+
+      function updateOnScroll() {
+        const scrollTop = window.scrollY || 0;
 
         imageWrappers.forEach((imageWrapper) => {
-          // Apply blur based on scroll
           const blurValue = Math.min(scrollTop / 85, maxBlur);
           imageWrapper.style.filter = `blur(${blurValue}px)`;
 
-          // Handle opacity when the footer is visible
           if (footerVisible) {
             const footerRect = footer.getBoundingClientRect();
-            const fadeRange = 200; // pixels over which to fade out
+            const fadeRange = 200;
             const footerOffset = window.innerHeight - footerRect.top;
             const fadeProgress = Math.min(Math.max(footerOffset / fadeRange, 0), 1);
             imageWrapper.style.opacity = 1 - fadeProgress;
@@ -79,11 +90,31 @@ import Accordion from './Classes/Accordion';
             imageWrapper.style.opacity = 1;
           }
         });
-      });
 
-      window.addEventListener('resize', () => {
-        sticky.update(); // Forces recalculation of positions and widths
-      });
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateOnScroll);
+          ticking = true;
+        }
+      }, { passive: true });
     }
   });
-})();   
+})();
+
+// ✅ Safe event listeners for Sticky.js
+// Recalculate after everything (images, fonts, layout)
+window.addEventListener('load', () => {
+  if (sticky && typeof sticky.update === 'function') {
+    sticky.update();
+  }
+});
+
+// Recalculate on window resize
+window.addEventListener('resize', () => {
+  if (sticky && typeof sticky.update === 'function') {
+    sticky.update();
+  }
+}, { passive: true });

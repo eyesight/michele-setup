@@ -69,12 +69,10 @@ $space-between-credits-title: 130px;
         @include font-size($font-settings-infotext);
         @include ld-margin-bottom(0);
         width: 100%;
-        white-space: nowrap;
     }
 
     &__text--bold {
         font-weight: $font-weight-bold;
-        // margin-right: 24px;
     }
 
     &__wrapper{
