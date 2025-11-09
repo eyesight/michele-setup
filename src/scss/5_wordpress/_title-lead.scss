@@ -27,6 +27,7 @@ $space-between-credits-title: 130px;
         order: 2;
         
         @include md-max(){
+            @include make-grid-item($col-count, $margin-bottom: $space-between-credits-title);
             padding-top: 8px;
             order: 3;
         }
@@ -59,8 +60,9 @@ $space-between-credits-title: 130px;
         order: 1;
         @include make-grid-item($col-span-tile-4, $margin-bottom: $space-between-credits-title);
         display: flex;
-
+        
         @include md-max(){
+            @include make-grid-item($col-count, $margin-bottom: 40px);
             margin-bottom: 40px;
         }
     }
